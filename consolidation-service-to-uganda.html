@@ -1,0 +1,71 @@
+<?php
+$page_title = "Cargo & Consolidation Service to Uganda | Seychelles International Cargo LLC";
+$page_description = "Best air freight and sea freight cargo consolidation service from Dubai to Uganda (Kampala). Door to door delivery, customs clearance, and commercial package shipping.";
+$page_keywords = "cargo to uganda, dubai to kampala cargo, consolidation service to uganda, air freight to uganda, door to door cargo to uganda";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">🇺🇬 Cargo & Consolidation Service to Uganda</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <span>Uganda Sector</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-subpage">
+      <div>
+        <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Fast Freight & Delivery</span>
+        <h2 style="font-size:2.2rem; margin-top:0.25rem; margin-bottom:1.25rem;">Dubai to Kampala (Uganda) Air & Sea Cargo Solutions</h2>
+        
+        <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
+          Seychelles International Cargo LLC provides reliable freight forwarding, air cargo express, LCL sea freight consolidation, and door-to-door delivery from Dubai to Kampala and all major cities in Uganda.
+        </p>
+
+        <div class="feature-box" style="background:var(--color-primary-light); border-color:rgba(0,102,255,0.2);">
+          <h4 style="color:var(--color-primary); margin-bottom:0.5rem;">Uganda Cargo Service Highlights:</h4>
+          <ul style="list-style:disc; padding-left:1.25rem; color:var(--text-main); line-height:1.8;">
+            <li>Express Air Freight from Dubai Airport (DXB) to Entebbe International Airport (EBB)</li>
+            <li>Frequent Sea Cargo LCL Consolidation via Mombasa / Dar Es Salaam corridor to Kampala</li>
+            <li>Personal belongings, commercial electronics, apparel & spare parts shipping</li>
+            <li>Complete export documentation & customs clearance handling</li>
+            <li>Safe warehouse storage & box packing services in Bur Dubai</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="padding:2rem;">
+          <h3 style="font-size:1.35rem; margin-bottom:1rem;">Inquire Uganda Cargo Rates</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Get competitive Air & Sea rates for Kampala & Entebbe.</p>
+          
+          <form action="request.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            <input type="hidden" name="recipient" value="Uganda (Kampala)">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="contact" class="form-control" placeholder="+971..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cargo Volume / Weight</label>
+              <input type="text" name="message" class="form-control" placeholder="e.g. 100 KG / 3 Boxes" required>
+            </div>
+            <button type="submit" class="btn btn-accent btn-block">Get Uganda Quotation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

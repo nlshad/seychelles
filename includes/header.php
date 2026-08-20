@@ -117,6 +117,8 @@ $page_keywords = $page_keywords ?? 'Door to Door delivery to india, Packing and 
               <a href="consolidation-service-to-zanzibar.html" class="dropdown-item">🇹🇿 Zanzibar Sector</a>
               <a href="consolidation-service-to-comoros.html" class="dropdown-item">🇰🇲 Comoros Sector</a>
               <a href="consolidation-service-to-dar-es-salam.html" class="dropdown-item">🇹🇿 Dar Es Salaam</a>
+              <a href="consolidation-service-to-uganda.html" class="dropdown-item">🇺🇬 Uganda Sector</a>
+              <a href="consolidation-service-to-zambia.html" class="dropdown-item">🇿🇲 Zambia Sector</a>
               <a href="consolidation-service-to-maldives.html" class="dropdown-item">🇲🇻 Maldives Sector</a>
               <a href="door-to-door-service-to-india.html" class="dropdown-item">🇮🇳 India Sector</a>
               <a href="door-to-door-service-to-nepal.html" class="dropdown-item">🇳🇵 Nepal Sector</a>

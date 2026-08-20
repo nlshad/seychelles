@@ -15,7 +15,7 @@
             </a>
           </div>
           <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:1rem;">
-            Seychelles International Cargo LLC is your trusted freight forwarding and door-to-door cargo partner in Dubai, UAE. Serving Seychelles, Mauritius, Zanzibar, Comoros, Dar Es Salaam, Maldives, India, China, and beyond.
+            Seychelles International Cargo LLC is your trusted freight forwarding and door-to-door cargo partner in Dubai, UAE. Serving Seychelles, Mauritius, Zanzibar, Comoros, Dar Es Salaam, Uganda, Zambia, Maldives, India, China, and beyond.
           </p>
           <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-plane-up me-1 text-primary"></i> Air Freight</span>
@@ -49,9 +49,10 @@
             <a href="consolidation-service-to-zanzibar.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Cargo to Zanzibar</a>
             <a href="consolidation-service-to-comoros.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Cargo to Comoros</a>
             <a href="consolidation-service-to-dar-es-salam.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Cargo to Dar Es Salaam</a>
+            <a href="consolidation-service-to-uganda.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Cargo to Uganda</a>
+            <a href="consolidation-service-to-zambia.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Cargo to Zambia</a>
             <a href="consolidation-service-to-maldives.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Cargo to Maldives</a>
             <a href="door-to-door-service-to-india.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Door to Door to India</a>
-            <a href="door-to-door-service-to-nepal.html" class="footer-link"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Door to Door to Nepal</a>
           </div>
         </div>
 

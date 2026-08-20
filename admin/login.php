@@ -186,9 +186,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </button>
   </form>
 
-  <div class="default-info">
-    <!-- <i class="fa-solid fa-key me-1"></i> Initial Login: <strong>admin</strong> / <strong>Admin@Seychelles2026!</strong> -->
-  </div>
+  <!--div class="default-info">
+    <i class="fa-solid fa-key me-1"></i> Initial Login: <strong>admin</strong> / <strong>Admin@Seychelles2026!</strong>
+  </div>-->
 </div>
 
 </body>

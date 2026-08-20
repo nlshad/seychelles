@@ -1,0 +1,83 @@
+<?php
+$page_title = "Sea Freight Dubai | Best LCL / FCL Service to Seychelles & Mauritius";
+$page_description = "Sea freight Dubai LCL service, best seafreight service to Dubai, seafreight service Mauritius, seafreight to Seychelles, UAFL service, Maersk, Safmarine consolidation containers.";
+$page_keywords = "sea freight dubai, lcl service to dubai, best seafreight service to dubai, seafreight service mauritius, seafreight to seychelles, uafl service, maersk, safmarine";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<!-- Banner -->
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">Sea Freight Services (FCL & LCL)</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <a href="#">Services</a> &rsaquo; <span>Sea Freight</span>
+    </div>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="section">
+  <div class="container">
+    <div class="grid-subpage">
+      <div>
+        <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Ocean Transportation</span>
+        <h2 style="font-size:2.2rem; margin-top:0.25rem; margin-bottom:1.25rem;">Full Container & Groupage Consolidation to Seychelles & Africa</h2>
+        
+        <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
+          Seychelles International Cargo LLC offers weekly ocean freight shipping for Full Container Loads (FCL 20ft & 40ft) and Less than Container Load (LCL Groupage) from Jebel Ali Port to Victoria (Seychelles), Port Louis (Mauritius), Zanzibar, Comoros, and West Africa.
+        </p>
+
+        <div class="feature-box">
+          <h4 style="color:var(--color-secondary); margin-bottom:0.5rem;">Our Sea Freight Capabilities:</h4>
+          <ul style="list-style:disc; padding-left:1.25rem; color:var(--text-main); line-height:1.8;">
+            <li>Weekly consolidated LCL containers to Port Victoria (Seychelles)</li>
+            <li>FCL 20' / 40' Dry & High-Cube container bookings with top shipping lines (Maersk, UAFL, MSC)</li>
+            <li>Customs clearance, export documentation, & Bill of Lading (B/L) processing</li>
+            <li>Personal effects, household goods, heavy equipment & vehicle shipping</li>
+            <li>Deconsolidation and port-to-door delivery services</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar Form -->
+      <div>
+        <div class="card" style="padding:2rem;">
+          <h3 style="font-size:1.35rem; margin-bottom:1rem;">Inquire Sea Freight Rates</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Get CBM or container quotation for Seychelles & Mauritius.</p>
+          
+          <form action="request.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="contact" class="form-control" placeholder="+971..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Container / Shipment Type</label>
+              <select name="message" class="form-control">
+                <option value="LCL Consolidation">LCL Groupage (By CBM)</option>
+                <option value="20ft FCL Container">20ft FCL Container</option>
+                <option value="40ft FCL Container">40ft FCL Container</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Destination Port</label>
+              <input type="text" name="recipient" class="form-control" value="Victoria Port, Seychelles" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Request Sea Quotation
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

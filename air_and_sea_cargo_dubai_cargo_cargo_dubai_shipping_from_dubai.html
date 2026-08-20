@@ -1,0 +1,52 @@
+<?php
+$page_title = "Air & Sea Cargo Dubai | Seychelles Cargo Shipping from Dubai";
+$page_description = "Air and sea cargo Dubai, Dubai cargo company, shipping from Dubai to Seychelles, Mauritius, Zanzibar, Comoros, and international ports.";
+$page_keywords = "air and sea cargo dubai, cargo dubai, shipping from dubai, dubai cargo company";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">Air & Sea Cargo Dubai</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <span>Air & Sea Cargo</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-subpage">
+      <div>
+        <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Dubai Air & Ocean Hub</span>
+        <h2 style="font-size:2.2rem; margin-top:0.25rem; margin-bottom:1.25rem;">Comprehensive Air & Sea Freight Shipping from Dubai</h2>
+        <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
+          Seychelles International Cargo LLC provides fast air cargo dispatch and ocean freight consolidation from Dubai airports and Jebel Ali port.
+        </p>
+      </div>
+
+      <div>
+        <div class="card" style="padding:2rem;">
+          <h3 style="font-size:1.35rem; margin-bottom:1rem;">Inquire Shipping Rates</h3>
+          <form action="request.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="contact" class="form-control" placeholder="+971..." required>
+            </div>
+            <button type="submit" class="btn btn-accent btn-block">Get Rate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

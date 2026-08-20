@@ -1,0 +1,52 @@
+<?php
+$page_title = "Road Transport Company in Dubai | Inland Cargo Trucking UAE";
+$page_description = "Road transport company in Dubai, inland cargo transport UAE, pickup truck rental, trailer transport, and GCC land freight.";
+$page_keywords = "road transport company in dubai, inland transport uae, dubai pickup truck service, gcc land freight";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">Road Transport & Inland Trucking</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <span>Road Transport</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-subpage">
+      <div>
+        <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Land Freight & Pickup</span>
+        <h2 style="font-size:2.2rem; margin-top:0.25rem; margin-bottom:1.25rem;">Dubai Inland Trucking & GCC Land Transport</h2>
+        <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
+          Reliable 3-ton pickup trucks, 7-ton trucks, and heavy trailer transport for cargo pickup and delivery across Dubai, Abu Dhabi, Sharjah, and GCC borders.
+        </p>
+      </div>
+
+      <div>
+        <div class="card" style="padding:2rem;">
+          <h3 style="font-size:1.35rem; margin-bottom:1rem;">Inquire Transport</h3>
+          <form action="request.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="contact" class="form-control" placeholder="+971..." required>
+            </div>
+            <button type="submit" class="btn btn-accent btn-block">Get Trucking Quote</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

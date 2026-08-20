@@ -1,0 +1,126 @@
+<?php
+$page_title = "Contact I Seychelles International Cargo LLC I International And Local Packers & Movers In Dubai UAE Abudhabi Sharjah I Best Door to Door Service";
+$page_description = "Seychelles International Cargo LLC - international & local packers and movers in Dubai UAE. We international and local packers & movers in Dubai offers services like door to door cargo services relocation etc Port to Port Cargo Services from Dubai to Africa";
+$page_keywords = "International Packers and Movers Companies In Dubai, International Packing and Moving Companies In Abudhabi, International Packing and Moving Companies In sharjah, International Packing and Moving Companies In UAE";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<!-- Page Subpage Banner -->
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">Contact Seychelles Cargo</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <span>Contact Us</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Content & Interactive Form Section -->
+<section class="section">
+  <div class="container">
+    <div class="grid-subpage">
+      
+      <!-- Contact Details -->
+      <div>
+        <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Get in Touch</span>
+        <h2 style="font-size:2rem; margin-top:0.25rem; margin-bottom:1.25rem;">We Are Here To Help You</h2>
+        
+        <p style="color:var(--text-muted); margin-bottom:1.75rem;">
+          You can contact us any way that is convenient for you. We are available via phone, email, or WhatsApp. You can also use our quick contact form or visit our office in Dubai.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+          <!-- Office Address -->
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div class="card-icon" style="margin-bottom:0; flex-shrink:0;">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h4 style="font-size:1.05rem; margin-bottom:0.25rem;">Head Office Address</h4>
+              <p style="color:var(--text-muted); margin-bottom:0; font-size:0.95rem;">
+                Seychelles International Cargo LLC<br>
+                Bur Dubai, Dubai, United Arab Emirates
+              </p>
+            </div>
+          </div>
+
+          <!-- Telephone -->
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div class="card-icon" style="margin-bottom:0; flex-shrink:0;">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <h4 style="font-size:1.05rem; margin-bottom:0.25rem;">Phone Number</h4>
+              <p style="color:var(--text-muted); margin-bottom:0; font-size:0.95rem;">
+                <a href="<?php echo COMPANY_TEL_HREF; ?>" style="color:var(--color-primary); font-weight:600;"><?php echo COMPANY_PHONE; ?></a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div class="card-icon" style="margin-bottom:0; flex-shrink:0;">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div>
+              <h4 style="font-size:1.05rem; margin-bottom:0.25rem;">Email Address</h4>
+              <p style="color:var(--text-muted); margin-bottom:0; font-size:0.95rem;">
+                <a href="mailto:<?php echo COMPANY_EMAIL; ?>" style="color:var(--color-primary); font-weight:600;"><?php echo COMPANY_EMAIL; ?></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Contact Form Card -->
+      <div>
+        <div class="card" style="padding:2.5rem;">
+          <h3 style="font-size:1.5rem; margin-bottom:0.5rem;"><i class="fa-solid fa-paper-plane me-2 text-primary"></i>Send Us A Direct Message</h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.75rem;">
+            Email us with any questions or inquiries. We would be happy to answer your questions.
+          </p>
+
+          <form action="contact.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" name="firstname" class="form-control" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <input type="text" name="lastname" class="form-control" placeholder="Doe" required>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label">Your Email *</label>
+                <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+971 50 123 4567">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Your Message *</label>
+              <textarea name="message" class="form-control" rows="5" placeholder="Write your cargo query or message details here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:1rem;">
+              <i class="fa-solid fa-paper-plane me-1"></i> Send Message Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

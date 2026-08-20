@@ -1,0 +1,83 @@
+<?php
+$page_title = "Air Freight Service Dubai to Seychelles | Seychelles Cargo Air Freight Clearance";
+$page_description = "Airfreight service Dubai, airfreight service to Seychelles, best airfreight team in Dubai, airfreight clearance & cargo delivery to Seychelles, Mauritius, and worldwide airports.";
+$page_keywords = "Airfreight service Dubai, airfreight service to Seychelles, airfreight Dubai, best airfreight team in Dubai, airfreight clearance, airfreight to Seychelles";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<!-- Banner -->
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">Air Freight Services</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <a href="#">Services</a> &rsaquo; <span>Air Freight</span>
+    </div>
+  </div>
+</section>
+
+<!-- Air Freight Details -->
+<section class="section">
+  <div class="container">
+    <div class="grid-subpage">
+      <div>
+        <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Fast Air Cargo Dispatch</span>
+        <h2 style="font-size:2.2rem; margin-top:0.25rem; margin-bottom:1.25rem;">Express Air Freight & Customs Clearance in Dubai</h2>
+        
+        <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
+          Seychelles International Cargo LLC provides premier air freight solutions from Dubai International Airport (DXB) and Al Maktoum International Airport (DWC) to Seychelles (SEZ), Mauritius (MRU), Zanzibar (ZNZ), and destinations across Africa and Asia.
+        </p>
+
+        <div class="feature-box" style="background:var(--color-primary-light); border-color:rgba(0,102,255,0.2);">
+          <h4 style="color:var(--color-primary); margin-bottom:0.5rem;">Key Air Freight Advantages:</h4>
+          <ul style="list-style:disc; padding-left:1.25rem; color:var(--text-main); line-height:1.8;">
+            <li>Daily express flights with leading commercial airlines & cargo carriers</li>
+            <li>Complete airport customs clearance and document handling</li>
+            <li>Perishable goods, temperature-controlled cargo, & commercial packages</li>
+            <li>Door-to-airport & door-to-door express delivery to Seychelles</li>
+            <li>Real-time shipment status updates and track-and-trace support</li>
+          </ul>
+        </div>
+
+        <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
+          Whether you need to ship urgent commercial spare parts, retail goods, personal baggage, or luxury consignments, our experienced air freight clearance team ensures hassle-free delivery with short transit times.
+        </p>
+      </div>
+
+      <!-- Quick Action Sidebar -->
+      <div>
+        <div class="card" style="padding:2rem;">
+          <h3 style="font-size:1.35rem; margin-bottom:1rem;">Book Air Freight Cargo</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Get competitive air freight rates per KG for Seychelles and island destinations.</p>
+          
+          <form action="request.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="contact" class="form-control" placeholder="+971..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Destination Airport / Country</label>
+              <input type="text" name="recipient" class="form-control" value="Seychelles (SEZ)" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Estimated Weight (KG)</label>
+              <input type="text" name="message" class="form-control" placeholder="e.g. 50 KG">
+            </div>
+            <button type="submit" class="btn btn-accent btn-block">
+              Request Air Rate
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

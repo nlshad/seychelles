@@ -1,0 +1,78 @@
+<?php
+$page_title = "Online Enquiry | Seychelles International Cargo LLC";
+$page_description = "Submit an online cargo enquiry for rates, door-to-door delivery, air freight, and sea freight consolidation from Dubai to Seychelles, Mauritius, Zanzibar, and global ports.";
+$page_keywords = "Online Cargo Enquiry, Seychelles Cargo Enquiry, Dubai Cargo Rates, Sea Freight Enquiry, Air Freight Quotation";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<!-- Page Banner -->
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">Online Cargo Enquiry</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <span>Online Enquiry</span>
+    </div>
+  </div>
+</section>
+
+<!-- Enquiry Content & Form Section -->
+<section class="section">
+  <div class="container">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="card" style="padding: 3rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Fast Response</span>
+          <h2 style="font-size:2.2rem; margin-top:0.25rem;"><i class="fa-solid fa-file-pen text-primary me-2"></i>Submit Your Freight Enquiry</h2>
+          <p style="color:var(--text-muted);">
+            Fill in the online form below with your cargo specifications. Our customer team in Dubai will calculate the best freight rates and contact you promptly.
+          </p>
+        </div>
+
+        <form action="enquiryform.php" method="POST" data-ajax="true">
+          <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" name="firstname" class="form-control" placeholder="Enter first name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" name="lastname" class="form-control" placeholder="Enter last name" required>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" name="phone" class="form-control" placeholder="+971 50 123 4567" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Destination / Location (Place)</label>
+            <input type="text" name="place" class="form-control" placeholder="e.g. Victoria (Seychelles), Port Louis (Mauritius), Zanzibar, India">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Enquiry Message / Cargo Details *</label>
+            <textarea name="message" class="form-control" rows="5" placeholder="Specify cargo weight, volume, type (Personal/Commercial), origin, and any special packing requirements..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-lg btn-block" style="margin-top:1rem;">
+            <i class="fa-solid fa-paper-plane me-1"></i> Submit Enquiry Now
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

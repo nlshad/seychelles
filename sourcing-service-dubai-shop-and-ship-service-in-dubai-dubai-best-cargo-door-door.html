@@ -1,0 +1,74 @@
+<?php
+$page_title = "Shop & Ship Service Dubai | Sourcing & Purchasing Service to Seychelles";
+$page_description = "Sourcing service Dubai, Shop and Ship service in Dubai, buy goods from Dubai market and ship to Seychelles, Mauritius, and global destinations with full consolidation.";
+$page_keywords = "sourcing service dubai, shop and ship service in dubai, dubai best cargo door door, purchasing agent dubai, personal shopping dubai to seychelles";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<!-- Banner -->
+<section class="page-banner">
+  <div class="container" style="position:relative; z-index:10;">
+    <h1 class="page-banner-title">Shop & Ship / Sourcing Service</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> &rsaquo; <a href="#">Services</a> &rsaquo; <span>Shop & Ship</span>
+    </div>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="section">
+  <div class="container">
+    <div class="grid-subpage">
+      <div>
+        <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Personal Procurement & Shipping</span>
+        <h2 style="font-size:2.2rem; margin-top:0.25rem; margin-bottom:1.25rem;">Shop in Dubai & Ship Directly to Seychelles</h2>
+        
+        <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
+          Our <strong>Shop & Ship / Sourcing Service</strong> allows clients in Seychelles, Mauritius, Zanzibar, and Africa to purchase goods, electronics, building materials, clothing, or auto parts from Dubai & China suppliers and ship them easily to their home country.
+        </p>
+
+        <div class="feature-box" style="background:var(--color-primary-light); border-color:rgba(0,102,255,0.2);">
+          <h4 style="color:var(--color-primary); margin-bottom:0.5rem;">How Shop & Ship Works:</h4>
+          <ol style="list-style:decimal; padding-left:1.25rem; color:var(--text-main); line-height:1.8;">
+            <li><strong>Purchase or Request Sourcing:</strong> Buy online or ask us to source items from Dubai wholesale markets (Dragon Mart, Deira, Bur Dubai).</li>
+            <li><strong>Deliver to Our Dubai Warehouse:</strong> Have your packages delivered to our secure Dubai warehouse address.</li>
+            <li><strong>Inspection & Consolidation:</strong> We combine multiple packages into one box/pallet to save you shipping costs.</li>
+            <li><strong>Dispatch & Delivery:</strong> We ship your cargo via Air or Sea to your home address or destination port in Seychelles.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Sidebar Form -->
+      <div>
+        <div class="card" style="padding:2rem;">
+          <h3 style="font-size:1.35rem; margin-bottom:1rem;">Request Sourcing Assistance</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Tell us what items you need purchased or shipped from Dubai.</p>
+          
+          <form action="request.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="contact" class="form-control" placeholder="+971..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Items to Sourcing / Ship</label>
+              <textarea name="message" class="form-control" rows="4" placeholder="List items, stores, or procurement details..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent btn-block">
+              Submit Sourcing Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

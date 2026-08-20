@@ -1,0 +1,9 @@
+# SQLite WAL and SHM temporary files
+data/*.sqlite-wal
+data/*.sqlite-shm
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

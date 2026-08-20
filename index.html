@@ -1,0 +1,320 @@
+<?php
+$page_title = "Seychelles International Cargo LLC I Seychelles Cargo Dubai";
+$page_description = "Seychelles Cargo is one of the best Cargo company in Dubai having service to Seychelles , Mauritius, Moroni , Maldives , Zanzibar. Door to door service LCL service Pickup full container Dubai Burdubai";
+$page_keywords = "Door to Door delivery to india , Packing and moving service, Packing and shifting service, Door to door service to india, Door to port service, Courier services to Seychelles, Best FCL ,LCL services to Seychelles , Zanzibar ,Mauritius, Ghana and Comoros sectors, Postal service to Seychelles, Zanzibar, Mauritius and Comoros sector, Best logistics company in uae, Seychelles Mauritius Zanzibar moroni, ghana Cargo, Road transport company in dubai, freight forwarding companies in uae, dubai cargo companies, Air & Sea cargo, Dubai Cargo, Cargo Dubai, shipping from dubai";
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<!-- Modern Logistics Hero Section -->
+<section class="hero">
+  <div class="hero-slider">
+    <div class="hero-slide active" style="background-image: url('images/backgrounds/chinaseychellescargo.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/backgrounds/bg-02-1920x660.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/backgrounds/bg-03-1918x761.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/backgrounds/bg-04-1918x660.jpg');"></div>
+  </div>
+  
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <i class="fa-solid fa-plane-departure me-1"></i>
+          We Are Now In China & GCC Sectors
+        </div>
+        <h1 class="hero-title">
+          Global Logistics <span>Unlimited Delivery</span> & Door-to-Door Service
+        </h1>
+        <p class="hero-subtitle">
+          We help people save time and make business simple with reliable Air & Sea cargo, LCL consolidation, and personal door-to-door shipping from Dubai to Seychelles, Mauritius, Zanzibar, Comoros, India, and beyond.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-accent btn-lg" data-open-modal="quoteModal">
+            <i class="fa-solid fa-bolt me-1"></i> Request Instant Quote
+          </button>
+          <a href="door-to-door-service-from-dubai-to-india-best-door-to-door-dubai-uae-dubai-cargo.html" class="btn btn-outline-white btn-lg">
+            <i class="fa-solid fa-circle-info me-1"></i> Learn More About Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Hero Quote Form -->
+      <div>
+        <div class="hero-card">
+          <h3 class="hero-card-title">
+            <i class="fa-solid fa-truck-fast text-primary me-2"></i>
+            Quick Rate Estimation
+          </h3>
+          <form action="request.php" method="POST" data-ajax="true">
+            <input type="hidden" name="csrf_token" value="<?php echo get_csrf_token(); ?>">
+            <div class="form-group form-group-dark">
+              <label class="form-label"><i class="fa-regular fa-user me-1"></i> Your Name</label>
+              <input type="text" name="name" class="form-control form-control-dark" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group form-group-dark">
+              <label class="form-label"><i class="fa-solid fa-phone me-1"></i> Mobile / WhatsApp</label>
+              <input type="tel" name="contact" class="form-control form-control-dark" placeholder="+971 50 000 0000" required>
+            </div>
+            <div class="form-group form-group-dark">
+              <label class="form-label"><i class="fa-solid fa-location-dot me-1"></i> Destination</label>
+              <select name="recipient" class="form-control form-control-dark" required>
+                <option value="">Select Destination Sector...</option>
+                <option value="Seychelles">Seychelles</option>
+                <option value="Mauritius">Mauritius</option>
+                <option value="Zanzibar">Zanzibar</option>
+                <option value="Comoros">Comoros</option>
+                <option value="Dar Es Salaam">Dar Es Salaam</option>
+                <option value="Maldives">Maldives</option>
+                <option value="India">India</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="China">China</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-calculator me-1"></i> Calculate Cargo Rate
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sector Destinations Highlights -->
+<div class="container">
+  <div class="destinations-bar">
+    <div class="destinations-list">
+      <a href="consolidation-service-to-seychelles.html" class="destination-item">
+        <span class="destination-flag">🇸🇨</span> Seychelles
+      </a>
+      <a href="consolidation-service-to-mauritius.html" class="destination-item">
+        <span class="destination-flag">🇲🇺</span> Mauritius
+      </a>
+      <a href="consolidation-service-to-zanzibar.html" class="destination-item">
+        <span class="destination-flag">🇹🇿</span> Zanzibar
+      </a>
+      <a href="consolidation-service-to-comoros.html" class="destination-item">
+        <span class="destination-flag">🇰🇲</span> Comoros
+      </a>
+      <a href="consolidation-service-to-dar-es-salam.html" class="destination-item">
+        <span class="destination-flag">🇹🇿</span> Dar Es Salaam
+      </a>
+      <a href="consolidation-service-to-maldives.html" class="destination-item">
+        <span class="destination-flag">🇲🇻</span> Maldives
+      </a>
+      <a href="door-to-door-service-to-india.html" class="destination-item">
+        <span class="destination-flag">🇮🇳</span> India
+      </a>
+    </div>
+  </div>
+
+<?php
+// Query Active Vessel Schedules from Database
+require_once __DIR__ . '/includes/db.php';
+$vessel_schedules = get_db_connection()->query("SELECT * FROM vessel_schedules WHERE status != 'Departed' ORDER BY etd_date ASC LIMIT 6")->fetchAll();
+?>
+
+<?php if (!empty($vessel_schedules)): ?>
+<!-- Upcoming Vessel Schedules Section -->
+<section class="section" style="background:#F8FAFC; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding:4rem 0;">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem;">
+      <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">
+        <i class="fa-solid fa-ship me-1"></i>Direct Ocean Freight Sailings
+      </span>
+      <h2 style="font-size:2.1rem; margin-top:0.25rem;">Upcoming Vessel Departures from Dubai (Jebel Ali)</h2>
+      <p style="color:var(--text-muted); font-size:0.95rem;">
+        Check our weekly container closing dates and vessel departure schedules to reserve your cargo space in advance.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <?php foreach ($vessel_schedules as $vs): ?>
+        <div class="card" style="background:#FFFFFF; border:1px solid var(--border-color); padding:1.75rem; border-radius:var(--radius-md);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+            <div>
+              <span class="badge" style="background:rgba(0,102,255,0.1); color:var(--color-primary); font-size:0.9rem; font-weight:700; padding:0.4rem 0.85rem; border-radius:50px;">
+                <i class="fa-solid fa-location-dot me-1"></i><?php echo htmlspecialchars($vs['destination']); ?> Sector
+              </span>
+            </div>
+            <span class="badge badge-<?php echo (str_replace(' ', '', strtolower($vs['status'])) === 'bookingopen') ? 'quoted' : 'pending'; ?>" style="font-size:0.75rem;">
+              <i class="fa-solid fa-circle-dot me-1"></i><?php echo htmlspecialchars($vs['status']); ?>
+            </span>
+          </div>
+
+          <div style="background:#F8FAFC; border-radius:8px; padding:0.85rem 1rem; margin-bottom:1.25rem; font-size:0.85rem; display:flex; flex-direction:column; gap:0.5rem;">
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--text-muted);"><i class="fa-solid fa-hourglass-half me-1 text-danger"></i>Cargo Cut-off:</span>
+              <strong style="color:#DC2626;"><?php echo date('M d, Y', strtotime($vs['cutoff_date'])); ?></strong>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--text-muted);"><i class="fa-solid fa-ship me-1 text-primary"></i>ETD Dubai:</span>
+              <strong><?php echo date('M d, Y', strtotime($vs['etd_date'])); ?></strong>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--text-muted);"><i class="fa-solid fa-anchor me-1 text-success"></i>ETA <?php echo htmlspecialchars($vs['destination']); ?>:</span>
+              <strong style="color:#059669;"><?php echo date('M d, Y', strtotime($vs['eta_date'])); ?></strong>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block btn-sm" data-open-modal="quoteModal">
+            <i class="fa-solid fa-box-archive me-1"></i> Book Cargo Space
+          </button>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
+<!-- Core Cargo Services Section -->
+<section class="section">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+      <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">What We Offer</span>
+      <h2 style="font-size:2.25rem; margin-top:0.25rem;">Our Comprehensive Freight & Cargo Services</h2>
+      <p style="color:var(--text-muted);">
+        Delivering end-to-end logistics solutions with maximum security, speed, and competitive pricing across Africa, Asia, and Indian Ocean island sectors.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Air Freight -->
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-plane-up"></i>
+        </div>
+        <h3 class="card-title">Air Freight Services</h3>
+        <p class="card-text">
+          Express air cargo dispatch, express document courier, customs clearance, and daily flights from Dubai International Airport to Seychelles, Mauritius, and worldwide airports.
+        </p>
+        <a href="Airfreight-service-dubai-airfreight-service-to-seychelles-airfreight-dubai-best-airfreight-team-in-dubai-airfreight-clearance-airfreight-to-seychelles.html" class="card-link">
+          Explore Air Freight <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <!-- Sea Freight -->
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-ship"></i>
+        </div>
+        <h3 class="card-title">Sea Freight (FCL / LCL)</h3>
+        <p class="card-text">
+          Full Container Load (FCL) and Less than Container Load (LCL) consolidation shipping services from Dubai ports to Victoria (Seychelles), Port Louis, and Zanzibar.
+        </p>
+        <a href="sea-freight-dubai-lcl-service-to-dubai-best-seafreight-service-to-dubai-seafreight-service-mauritius-seafreight-to-seychelles-uafl-service-maersk-safmarine.html" class="card-link">
+          Explore Sea Freight <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <!-- Shop & Ship -->
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <h3 class="card-title">Shop & Ship / Sourcing</h3>
+        <p class="card-text">
+          Buy from Dubai or China markets, send to our warehouse, and we consolidate, pack, and ship your goods straight to your destination address hassle-free.
+        </p>
+        <a href="sourcing-service-dubai-shop-and-ship-service-in-dubai-dubai-best-cargo-door-door.html" class="card-link">
+          Explore Shop & Ship <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <!-- Door to Door -->
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-truck-ramp-box"></i>
+        </div>
+        <h3 class="card-title">Door to Door Cargo</h3>
+        <p class="card-text">
+          Complete home pickup, professional box packing, custom documentation, clearance, and direct delivery to your doorstep in Seychelles, India, Nepal & Comoros.
+        </p>
+        <a href="dubai-door-to-door-door-to-door-india-door-to-door-shifting-door-to-door-delivery-to-india-best-door-to-door-cargo-in-dubai-door-to-door-uae-door-to-door-service-provider-door-to-door-ajman.html" class="card-link">
+          Explore Door to Door <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <!-- Warehousing -->
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-warehouse"></i>
+        </div>
+        <h3 class="card-title">Warehousing & Storage</h3>
+        <p class="card-text">
+          State-of-the-art secure warehouse storage in Dubai and Sharjah with 24/7 CCTV surveillance, inventory management, and freight consolidation facilities.
+        </p>
+        <a href="Warehousing-service-dubai-best-warehouse-inventory-warehouse-lcl-service-warehousing-service-uae-warehousing-sharjah.html" class="card-link">
+          Explore Warehousing <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <!-- Consolidation -->
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-boxes-stacked"></i>
+        </div>
+        <h3 class="card-title">LCL Cargo Consolidation</h3>
+        <p class="card-text">
+          Frequent weekly container sailings for small packages and commercial cargo to Seychelles, Zanzibar, Mauritius, Moroni, and Dar Es Salaam.
+        </p>
+        <a href="consolidation-service-to-seychelles.html" class="card-link">
+          Explore Consolidation <i class="fa-solid fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Trust & Statistics Section -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="grid-4" style="text-align: center;">
+      <div>
+        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-award"></i></div>
+        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">15+</h2>
+        <p style="color:#94a3b8; font-weight:600;">Years of Cargo Excellence</p>
+      </div>
+      <div>
+        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-box-archive"></i></div>
+        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">10,000+</h2>
+        <p style="color:#94a3b8; font-weight:600;">Successful Shipments</p>
+      </div>
+      <div>
+        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-route"></i></div>
+        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">11+</h2>
+        <p style="color:#94a3b8; font-weight:600;">Global Direct Routes</p>
+      </div>
+      <div>
+        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-face-smile"></i></div>
+        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">100%</h2>
+        <p style="color:#94a3b8; font-weight:600;">Customer Satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA Banner -->
+<section class="section" style="background:#FFFFFF; border-top:1px solid var(--border-color);">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem;">
+    <div>
+      <h2 style="font-size:1.85rem; margin-bottom:0.4rem;">Have Questions About Cargo Rates or Schedules?</h2>
+      <p style="color:var(--text-muted); margin-bottom:0;">Contact our dedicated support team in Bur Dubai for immediate assistance.</p>
+    </div>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="<?php echo COMPANY_TEL_HREF; ?>" class="btn btn-outline">
+        <i class="fa-solid fa-phone me-1"></i> Call +971-4-3550903
+      </a>
+      <a href="Contact.html" class="btn btn-primary">
+        <i class="fa-solid fa-headset me-1"></i> Visit Contact Page
+      </a>
+    </div>
+  </div>
+</section>
+
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>

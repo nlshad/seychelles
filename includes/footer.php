@@ -171,6 +171,6 @@
   </div>
 
   <!-- Modern Vanilla JS -->
-  <script src="js/main.js?v=2.5"></script>
+  <script src="js/main.js?v=3.0"></script>
 </body>
 </html>

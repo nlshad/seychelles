@@ -118,6 +118,8 @@ ul {
 .section-dark {
   background-color: var(--color-secondary);
   color: var(--text-light);
+  width: 100%;
+  max-width: 100%;
 }
 .section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 {
   color: #FFFFFF;
@@ -890,6 +892,8 @@ select.form-control-dark option {
   position: relative;
   z-index: 10;
   clear: both;
+  width: 100%;
+  max-width: 100%;
 }
 .footer-grid {
   display: grid;

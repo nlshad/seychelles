@@ -9,15 +9,10 @@
       <div class="footer-grid">
         <!-- Company Overview -->
         <div>
-          <div style="margin-bottom: 1.25rem;">
-            <a href="index.html" class="brand">
-              <span class="brand-title" style="color:#ffffff;">SEYCHELLES <span style="color:#60A5FA;">CARGO</span></span>
-            </a>
-          </div>
-          <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6;">
+          <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:1rem;">
             Seychelles International Cargo LLC is your trusted freight forwarding and door-to-door cargo partner in Dubai, UAE. Serving Seychelles, Mauritius, Zanzibar, Comoros, Dar Es Salaam, Maldives, India, China, and beyond.
           </p>
-          <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-plane-up me-1 text-primary"></i> Air Freight</span>
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-ship me-1 text-primary"></i> Sea Freight</span>
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-boxes-stacked me-1 text-primary"></i> LCL / FCL</span>
@@ -77,12 +72,9 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="footer-bottom">
+      <div class="footer-bottom" style="justify-content:center; text-align:center;">
         <div>
           &copy; <?php echo date('Y'); ?> Seychelles International Cargo LLC. All Rights Reserved.
-        </div>
-        <div>
-          Designed & Optimized for Ultra-Fast Performance
         </div>
       </div>
     </div>

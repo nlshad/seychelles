@@ -306,6 +306,140 @@ $vessel_schedules = get_db_connection()->query("SELECT * FROM vessel_schedules W
   </div>
 </section>
 
+<!-- Interactive Shipping Service Journey Animation Section -->
+<section class="section" style="background:#F8FAFC; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); position:relative; overflow:hidden;">
+  <div class="container">
+    <div style="text-align: center; max-width: 720px; margin: 0 auto 3.5rem;">
+      <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">
+        <i class="fa-solid fa-route me-1"></i>How Your Cargo Moves
+      </span>
+      <h2 style="font-size:2.25rem; margin-top:0.25rem;">Our End-to-End Shipping Journey</h2>
+      <p style="color:var(--text-muted);">
+        Experience seamless logistics from warehouse receiving in Dubai & China to final doorstep delivery across Indian Ocean islands and Africa.
+      </p>
+    </div>
+
+    <!-- Animated Logistics Pipeline -->
+    <div class="shipping-pipeline">
+      <!-- Animated Beam Line -->
+      <div class="pipeline-progress-bar">
+        <div class="pipeline-progress-pulse"></div>
+      </div>
+
+      <!-- Stage 1 -->
+      <div class="pipeline-stage active" data-stage="1">
+        <div class="pipeline-icon-circle">
+          <i class="fa-solid fa-warehouse"></i>
+          <span class="pipeline-step-badge">1</span>
+        </div>
+        <div class="pipeline-content">
+          <h4 class="pipeline-stage-title">Receiving & Sourcing</h4>
+          <span class="pipeline-stage-subtitle">Dubai & China Hubs</span>
+          <p class="pipeline-stage-desc">Free warehouse receiving, barcoding, weight verification, and quality inspection.</p>
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="pipeline-stage" data-stage="2">
+        <div class="pipeline-icon-circle">
+          <i class="fa-solid fa-boxes-packing"></i>
+          <span class="pipeline-step-badge">2</span>
+        </div>
+        <div class="pipeline-content">
+          <h4 class="pipeline-stage-title">Custom Packing & CBM</h4>
+          <span class="pipeline-stage-subtitle">Secure Stuffing</span>
+          <p class="pipeline-stage-desc">Professional wooden crating, LCL groupage consolidation, and volume optimization.</p>
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="pipeline-stage" data-stage="3">
+        <div class="pipeline-icon-circle">
+          <i class="fa-solid fa-ship"></i>
+          <span class="pipeline-step-badge">3</span>
+        </div>
+        <div class="pipeline-content">
+          <h4 class="pipeline-stage-title">Express Air & Sailing</h4>
+          <span class="pipeline-stage-subtitle">Scheduled Departures</span>
+          <p class="pipeline-stage-desc">Weekly ocean vessel sailings & fast air freight flights with status tracking.</p>
+        </div>
+      </div>
+
+      <!-- Stage 4 -->
+      <div class="pipeline-stage" data-stage="4">
+        <div class="pipeline-icon-circle">
+          <i class="fa-solid fa-truck-ramp-box"></i>
+          <span class="pipeline-step-badge">4</span>
+        </div>
+        <div class="pipeline-content">
+          <h4 class="pipeline-stage-title">Customs & Door Delivery</h4>
+          <span class="pipeline-stage-subtitle">Destination Hubs</span>
+          <p class="pipeline-stage-desc">Hassle-free customs clearance and direct doorstep delivery to your location.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Stage Showcase Feature Box -->
+    <div class="pipeline-showcase-box" style="margin-top:3.5rem; background:#FFFFFF; border-radius:var(--radius-lg); padding:2.25rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); border:1px solid var(--border-color);">
+      <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:2.5rem; align-items:center;">
+        <div>
+          <span style="background:var(--color-primary-light); color:var(--color-primary); padding:0.3rem 0.8rem; border-radius:var(--radius-full); font-size:0.8rem; font-weight:700; text-transform:uppercase;">
+            <i class="fa-solid fa-bolt me-1"></i>Guaranteed Cargo Safety & Speed
+          </span>
+          <h3 style="font-size:1.6rem; margin-top:0.75rem; margin-bottom:0.75rem; color:var(--color-secondary);">
+            Full Trackability & Professional Cargo Management
+          </h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1.25rem;">
+            Whether you are sending personal luggage, commercial LCL pallets, or full container loads (FCL), our logistics team ensures complete peace of mind with insured handling, zero hidden charges, and transparent schedule updates.
+          </p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="Enquiry.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-paper-plane me-1"></i> Submit Shipping Inquiry
+            </a>
+            <a href="Contact.html" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-location-dot me-1"></i> View Warehouse Locations
+            </a>
+          </div>
+        </div>
+
+        <!-- Animated Motion Vessel / Transport Card -->
+        <div style="background:var(--color-secondary); border-radius:var(--radius-md); padding:1.75rem; color:#FFFFFF; position:relative; overflow:hidden;">
+          <div class="vessel-animated-glow"></div>
+          <div style="position:relative; z-index:2;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+              <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase; letter-spacing:1px; font-weight:700;">Live Cargo Transit</span>
+              <span style="background:rgba(16,185,129,0.2); color:#10B981; padding:0.25rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:700;">Active Pipeline</span>
+            </div>
+            
+            <div class="animated-transport-vehicle" style="display:flex; align-items:center; gap:1rem; margin:1.5rem 0;">
+              <div class="ship-motion-icon" style="font-size:2.25rem; color:var(--color-accent);">
+                <i class="fa-solid fa-ship"></i>
+              </div>
+              <div style="flex-grow:1;">
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.3rem;">
+                  <span>Jebel Ali Port (DXB)</span>
+                  <span style="color:var(--color-accent);">Port Victoria (SEZ)</span>
+                </div>
+                <div style="height:6px; background:rgba(255,255,255,0.15); border-radius:3px; overflow:hidden; position:relative;">
+                  <div class="ship-progress-fill" style="width:75%; height:100%; background:linear-gradient(90deg, var(--color-primary), var(--color-accent)); border-radius:3px; position:relative;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; font-size:0.8rem; color:#cbd5e1; background:rgba(255,255,255,0.06); padding:0.75rem; border-radius:6px;">
+              <div><i class="fa-solid fa-boxes-stacked text-primary me-1"></i> LCL / FCL Cargo</div>
+              <div><i class="fa-solid fa-plane-up text-primary me-1"></i> Air Express Transit</div>
+              <div><i class="fa-solid fa-shield-halved text-success me-1"></i> Cargo Insured</div>
+              <div><i class="fa-solid fa-truck-fast text-accent me-1"></i> Door Step Delivery</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Company Trust & Statistics Section -->
 <section class="section section-dark">
   <div class="container">

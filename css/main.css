@@ -699,44 +699,104 @@ select.form-control-dark option {
 .destinations-bar {
   background: #FFFFFF;
   border-radius: var(--radius-lg);
-  box-shadow: 0 12px 32px rgba(10, 25, 47, 0.08);
-  padding: 1.25rem 1.75rem;
-  margin-top: -3rem;
+  box-shadow: 0 16px 40px rgba(10, 25, 47, 0.1);
+  padding: 1.5rem 2rem;
+  margin-top: -3.5rem;
   position: relative;
   z-index: 20;
-  border: 1px solid rgba(0, 102, 255, 0.12);
+  border: 1px solid var(--border-color);
 }
-.destinations-list {
+.destinations-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+.destinations-bar-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.65rem 0.85rem;
-}
-.destination-item {
-  display: inline-flex;
-  align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+}
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 0.75rem;
+}
+.destination-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 0.5rem;
   background: #F8FAFC;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  font-family: var(--font-heading);
-  font-weight: 650;
-  font-size: 0.9rem;
-  color: var(--color-secondary);
+  border-radius: var(--radius-md);
+  text-align: center;
   transition: all var(--transition-fast);
+  text-decoration: none;
 }
-.destination-item:hover {
+.destination-card:hover {
   background: var(--color-primary-light);
-  border-color: rgba(0, 102, 255, 0.3);
-  color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.15);
 }
-.destination-flag {
+.destination-card-icon {
   font-size: 1.25rem;
-  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+/* Animated Flag Waving Micro-Interactions */
+@keyframes flagWave {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-2px) rotate(3deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(2px) rotate(-3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.destination-card-flag {
+  width: 32px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+  margin-bottom: 0.45rem;
+  transition: all var(--transition-fast);
+  animation: flagWave 3.2s infinite ease-in-out;
+  transform-origin: center center;
+}
+
+.destination-card:nth-child(1) .destination-card-flag { animation-delay: 0s; }
+.destination-card:nth-child(2) .destination-card-flag { animation-delay: 0.4s; }
+.destination-card:nth-child(3) .destination-card-flag { animation-delay: 0.8s; }
+.destination-card:nth-child(4) .destination-card-flag { animation-delay: 1.2s; }
+.destination-card:nth-child(5) .destination-card-flag { animation-delay: 1.6s; }
+.destination-card:nth-child(6) .destination-card-flag { animation-delay: 2.0s; }
+.destination-card:nth-child(7) .destination-card-flag { animation-delay: 2.4s; }
+.destination-card:nth-child(8) .destination-card-flag { animation-delay: 2.8s; }
+
+.destination-card:hover .destination-card-flag {
+  transform: scale(1.22) translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 102, 255, 0.3);
+  animation-play-state: paused;
+}
+.destination-card-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+  line-height: 1.2;
+}
+.destination-card:hover .destination-card-name {
+  color: var(--color-primary);
 }
 
 /* Page Header Banner for Subpages */

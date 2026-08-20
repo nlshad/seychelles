@@ -12,8 +12,10 @@
   --color-primary-light: #EBF3FF;
   --color-secondary: #0A192F;
   --color-dark-surface: #112240;
-  --color-accent: #FF9F0A;
-  --color-accent-hover: #E08700;
+  --color-accent: #E52326;
+  --color-accent-hover: #C81E21;
+  --color-brand-red: #E52326;
+  --color-brand-red-hover: #C81E21;
   --color-success: #10B981;
   --color-danger: #EF4444;
 
@@ -391,14 +393,15 @@ ul {
   box-shadow: 0 6px 20px rgba(0, 102, 255, 0.45);
   transform: translateY(-2px);
 }
-.btn-accent {
-  background: var(--color-accent);
+.btn-accent, .btn-quote {
+  background: var(--color-brand-red);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(255, 159, 10, 0.35);
+  box-shadow: 0 4px 14px rgba(229, 35, 38, 0.35);
 }
-.btn-accent:hover {
-  background: var(--color-accent-hover);
+.btn-accent:hover, .btn-quote:hover {
+  background: var(--color-brand-red-hover);
   color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(229, 35, 38, 0.45);
   transform: translateY(-2px);
 }
 .btn-outline {

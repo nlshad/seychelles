@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $poster    = sanitize_input($_POST['poster'] ?? '');
     $recipient = sanitize_input($_POST['recipient'] ?? '');
     $departure = sanitize_input($_POST['departure'] ?? '');
+    $volume    = sanitize_input($_POST['volume'] ?? '');
     $message   = sanitize_input($_POST['message'] ?? '');
 
     if (empty($name) || empty($contact)) {
@@ -52,7 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'City Origin'     => $poster ?: 'Dubai, UAE',
         'Destination'     => $recipient ?: 'Not specified',
         'Departure Date'  => $departure ?: 'Flexible',
-        'Notes / Details' => $message ?: 'Standard Quote Request'
+        'Cargo Volume'    => $volume ?: 'Not specified',
+        'Cargo Details / Message' => $message ?: 'Standard Quote Request'
     ];
 
     $sent = send_inquiry_email($subject, $data);

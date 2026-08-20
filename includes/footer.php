@@ -135,6 +135,8 @@
               <option value="Zanzibar">Zanzibar</option>
               <option value="Comoros">Comoros</option>
               <option value="Dar Es Salaam">Dar Es Salaam</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Zambia">Zambia</option>
               <option value="Maldives">Maldives</option>
               <option value="India">India</option>
               <option value="Nepal">Nepal</option>
@@ -145,9 +147,20 @@
           </div>
         </div>
 
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-group">
+            <label class="form-label">Preferred Departure Date</label>
+            <input type="date" name="departure" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cargo Weight / Volume</label>
+            <input type="text" name="volume" class="form-control" placeholder="e.g. 100 KG / 3 CBM">
+          </div>
+        </div>
+
         <div class="form-group">
-          <label class="form-label">Preferred Departure Date</label>
-          <input type="date" name="departure" class="form-control">
+          <label class="form-label">Message / Cargo Details</label>
+          <textarea name="message" class="form-control" rows="3" placeholder="Describe your cargo items, packing requirements, or specific delivery instructions..."></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:1rem;">

@@ -8,7 +8,7 @@
 
        // set here
        $subject = "Request";
-       $to = 'jafer@seychellescargo.com';
+       $to = 'sales@seychellescargo.com';
        $email = 'noreplay@everbrightgroup.in';
 
        $body = <<<HTML

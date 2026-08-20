@@ -9,7 +9,7 @@
 
        // set here
        $subject = "Enquiry";
-       $to = 'jafer@seychellescargo.com';
+       $to = 'sales@seychellescargo.com';
 
        $body = <<<HTML
     First Name : $firstname <br/>

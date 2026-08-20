@@ -10,7 +10,7 @@ define('COMPANY_PHONE', '+971-4-3550903');
 define('COMPANY_TEL_HREF', 'tel:+97143550903');
 define('COMPANY_WHATSAPP', '+971501234567'); // Default WhatsApp contact
 define('COMPANY_EMAIL', 'sales@seychellescargo.com');
-define('FORM_TARGET_EMAIL', 'jafer@seychellescargo.com');
+define('FORM_TARGET_EMAIL', 'sales@seychellescargo.com');
 define('COMPANY_ADDRESS', 'Bur Dubai, Dubai, United Arab Emirates');
 
 // Base URL detection

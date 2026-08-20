@@ -7,7 +7,7 @@
 
        // set here
        $subject = "Contact Us";
-       $to = 'jafer@seychellescargo.com';
+       $to = 'sales@seychellescargo.com';
 
        $body = <<<HTML
     First Name :    $firstname <br/>

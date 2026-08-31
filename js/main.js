@@ -236,5 +236,28 @@ function initVesselSlider() {
   wrapper.addEventListener('mouseenter', () => { if (autoTimer) clearInterval(autoTimer); });
   wrapper.addEventListener('mouseleave', resetTimer);
 
+  // Touch Swipe Support for Mobile Devices
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  wrapper.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  wrapper.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeThreshold = 40;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      next();
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+      prev();
+    }
+  }
+
   resetTimer();
 }

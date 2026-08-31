@@ -159,13 +159,17 @@ require_once __DIR__ . '/includes/header.php';
       <img src="https://flagcdn.com/w40/in.png" alt="India" width="22" height="15" style="border-radius:2px;">
       INDIA <span class="marquee-star">✦</span>
     </a>
-    <a href="door-to-door-service-to-nepal.html" class="marquee-item">
-      <img src="https://flagcdn.com/w40/np.png" alt="Nepal" width="22" height="15" style="border-radius:2px;">
-      NEPAL <span class="marquee-star">✦</span>
+    <a href="sea-freight-dubai-lcl-service-to-dubai-best-seafreight-service-to-dubai-seafreight-service-mauritius-seafreight-to-seychelles-uafl-service-maersk-safmarine.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/cn.png" alt="China" width="22" height="15" style="border-radius:2px;">
+      CHINA <span class="marquee-star">✦</span>
     </a>
-    <a href="door-to-door-service-to-bangladesh.html" class="marquee-item">
-      <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh" width="22" height="15" style="border-radius:2px;">
-      BANGLADESH <span class="marquee-star">✦</span>
+    <a href="consolidation-service-to-comoros.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/yt.png" alt="Mayotte" width="22" height="15" style="border-radius:2px;">
+      MAYOTTE <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-comoros.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/mg.png" alt="Madagascar" width="22" height="15" style="border-radius:2px;">
+      MADAGASCAR <span class="marquee-star">✦</span>
     </a>
 
     <!-- Loop Set 2 (Identical Clone for Seamless Infinite Loop) -->
@@ -205,13 +209,17 @@ require_once __DIR__ . '/includes/header.php';
       <img src="https://flagcdn.com/w40/in.png" alt="India" width="22" height="15" style="border-radius:2px;">
       INDIA <span class="marquee-star">✦</span>
     </a>
-    <a href="door-to-door-service-to-nepal.html" class="marquee-item">
-      <img src="https://flagcdn.com/w40/np.png" alt="Nepal" width="22" height="15" style="border-radius:2px;">
-      NEPAL <span class="marquee-star">✦</span>
+    <a href="sea-freight-dubai-lcl-service-to-dubai-best-seafreight-service-to-dubai-seafreight-service-mauritius-seafreight-to-seychelles-uafl-service-maersk-safmarine.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/cn.png" alt="China" width="22" height="15" style="border-radius:2px;">
+      CHINA <span class="marquee-star">✦</span>
     </a>
-    <a href="door-to-door-service-to-bangladesh.html" class="marquee-item">
-      <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh" width="22" height="15" style="border-radius:2px;">
-      BANGLADESH <span class="marquee-star">✦</span>
+    <a href="consolidation-service-to-comoros.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/yt.png" alt="Mayotte" width="22" height="15" style="border-radius:2px;">
+      MAYOTTE <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-comoros.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/mg.png" alt="Madagascar" width="22" height="15" style="border-radius:2px;">
+      MADAGASCAR <span class="marquee-star">✦</span>
     </a>
   </div>
 </div>
@@ -263,9 +271,12 @@ $vessel_schedules = get_db_connection()->query("SELECT * FROM vessel_schedules W
           <div class="vessel-slide-content">
             <!-- Left Info -->
             <div class="vessel-left-info">
-              <span class="vessel-pre-badge">
-                <i class="fa-solid fa-location-dot me-1"></i> — <?php echo strtoupper(htmlspecialchars($vs['destination'])); ?> SECTOR
-              </span>
+              <div class="vessel-top-meta">
+                <span class="vessel-pre-badge">
+                  <i class="fa-solid fa-location-dot me-1"></i> — <?php echo strtoupper(htmlspecialchars($vs['destination'])); ?> SECTOR
+                </span>
+                <span class="vessel-mobile-counter"><span><?php echo $current_num; ?></span> / <?php echo $total_num; ?></span>
+              </div>
               <h2 class="vessel-slide-title">
                 <?php echo htmlspecialchars($vs['destination']); ?> <span>Express Vessel</span>
               </h2>
@@ -489,59 +500,57 @@ $vessel_schedules = get_db_connection()->query("SELECT * FROM vessel_schedules W
       </div>
     </div>
 
-    <!-- Live Stage Showcase Feature Box -->
-    <div class="pipeline-showcase-box" style="margin-top:3.5rem; background:#FFFFFF; border-radius:var(--radius-lg); padding:2.25rem; box-shadow:0 10px 30px rgba(0,0,0,0.06); border:1px solid var(--border-color);">
-      <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:2.5rem; align-items:center;">
+    <!-- Redesigned Live Stage Showcase Feature Box (Cluster Travels Theme) -->
+    <div class="pipeline-showcase-box">
+      <div class="pipeline-showcase-grid">
+        <!-- Left Feature Content -->
         <div>
-          <span style="background:var(--color-primary-light); color:var(--color-primary); padding:0.3rem 0.8rem; border-radius:var(--radius-full); font-size:0.8rem; font-weight:700; text-transform:uppercase;">
-            <i class="fa-solid fa-bolt me-1"></i>Guaranteed Cargo Safety & Speed
+          <span class="pipeline-badge">
+            <i class="fa-solid fa-bolt me-1"></i> GUARANTEED CARGO SAFETY & SPEED
           </span>
-          <h3 style="font-size:1.6rem; margin-top:0.75rem; margin-bottom:0.75rem; color:var(--color-secondary);">
-            Full Trackability & Professional Cargo Management
+          <h3 class="pipeline-title">
+            Full Trackability & <span>Professional Cargo Management</span>
           </h3>
-          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1.25rem;">
+          <p class="pipeline-desc">
             Whether you are sending personal luggage, commercial LCL pallets, or full container loads (FCL), our logistics team ensures complete peace of mind with insured handling, zero hidden charges, and transparent schedule updates.
           </p>
-          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="Enquiry.html" class="btn btn-primary btn-sm">
+          <div class="pipeline-btn-group">
+            <a href="Enquiry.html" class="btn btn-primary">
               <i class="fa-solid fa-paper-plane me-1"></i> Submit Shipping Inquiry
             </a>
-            <a href="Contact.html" class="btn btn-outline btn-sm">
+            <a href="Contact.html" class="btn-outline-orange">
               <i class="fa-solid fa-location-dot me-1"></i> View Warehouse Locations
             </a>
           </div>
         </div>
 
-        <!-- Animated Motion Vessel / Transport Card -->
-        <div style="background:var(--color-secondary); border-radius:var(--radius-md); padding:1.75rem; color:#FFFFFF; position:relative; overflow:hidden;">
-          <div class="vessel-animated-glow"></div>
-          <div style="position:relative; z-index:2;">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
-              <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase; letter-spacing:1px; font-weight:700;">Live Cargo Transit</span>
-              <span style="background:rgba(16,185,129,0.2); color:#10B981; padding:0.25rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:700;">Active Pipeline</span>
+        <!-- Right Dark Transit Widget Card -->
+        <div class="pipeline-widget-card">
+          <div class="pipeline-widget-header">
+            <span class="pipeline-widget-label"><i class="fa-solid fa-satellite-dish me-1 text-primary"></i> LIVE CARGO TRANSIT</span>
+            <span class="pipeline-pulse-badge"><i class="fa-solid fa-circle-dot me-1"></i>Active Pipeline</span>
+          </div>
+          
+          <div class="pipeline-transit-area">
+            <div class="pipeline-ship-icon">
+              <i class="fa-solid fa-ship"></i>
             </div>
-            
-            <div class="animated-transport-vehicle" style="display:flex; align-items:center; gap:1rem; margin:1.5rem 0;">
-              <div class="ship-motion-icon" style="font-size:2.25rem; color:var(--color-accent);">
-                <i class="fa-solid fa-ship"></i>
+            <div class="pipeline-track-container">
+              <div class="pipeline-track-labels">
+                <span class="pipeline-origin"><i class="fa-solid fa-circle-dot me-1" style="color:#0066FF;"></i> Jebel Ali Port (DXB)</span>
+                <span class="pipeline-dest"><i class="fa-solid fa-location-dot me-1 text-accent"></i> Port Victoria (SEZ)</span>
               </div>
-              <div style="flex-grow:1;">
-                <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.3rem;">
-                  <span>Jebel Ali Port (DXB)</span>
-                  <span style="color:var(--color-accent);">Port Victoria (SEZ)</span>
-                </div>
-                <div style="height:6px; background:rgba(255,255,255,0.15); border-radius:3px; overflow:hidden; position:relative;">
-                  <div class="ship-progress-fill" style="width:75%; height:100%; background:linear-gradient(90deg, var(--color-primary), var(--color-accent)); border-radius:3px; position:relative;"></div>
-                </div>
+              <div class="pipeline-track-bar">
+                <div class="pipeline-track-fill"></div>
               </div>
             </div>
+          </div>
 
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; font-size:0.8rem; color:#cbd5e1; background:rgba(255,255,255,0.06); padding:0.75rem; border-radius:6px;">
-              <div><i class="fa-solid fa-boxes-stacked text-primary me-1"></i> LCL / FCL Cargo</div>
-              <div><i class="fa-solid fa-plane-up text-primary me-1"></i> Air Express Transit</div>
-              <div><i class="fa-solid fa-shield-halved text-success me-1"></i> Cargo Insured</div>
-              <div><i class="fa-solid fa-truck-fast text-accent me-1"></i> Door Step Delivery</div>
-            </div>
+          <div class="pipeline-feature-grid">
+            <div class="pipeline-feat-item"><i class="fa-solid fa-boxes-stacked me-1.5" style="color:#0066FF;"></i> LCL / FCL Cargo</div>
+            <div class="pipeline-feat-item"><i class="fa-solid fa-plane-up me-1.5" style="color:#0066FF;"></i> Air Express Transit</div>
+            <div class="pipeline-feat-item"><i class="fa-solid fa-shield-halved text-success me-1.5"></i> Cargo Insured</div>
+            <div class="pipeline-feat-item"><i class="fa-solid fa-truck-fast text-accent me-1.5"></i> Door Step Delivery</div>
           </div>
         </div>
 

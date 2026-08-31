@@ -88,7 +88,7 @@
 
   <!-- Floating Quick Actions -->
   <div class="floating-actions">
-    <a href="https://wa.me/97143550903" target="_blank" rel="noopener" class="float-btn float-whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp Chat">
+    <a href="<?php echo defined('COMPANY_WHATSAPP_LINK') ? COMPANY_WHATSAPP_LINK : 'https://wa.me/971552038001'; ?>" target="_blank" rel="noopener" class="float-btn float-whatsapp" title="Chat on WhatsApp (+971 55 203 8001)" aria-label="WhatsApp Chat">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
     <a href="<?php echo COMPANY_TEL_HREF; ?>" class="float-btn float-phone" title="Call Us" aria-label="Call Us">

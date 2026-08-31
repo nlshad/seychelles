@@ -35,7 +35,7 @@ $page_keywords = $page_keywords ?? 'Door to Door delivery to india, Packing and 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Modern Main CSS Design System -->
-  <link rel="stylesheet" href="css/main.css?v=3.0">
+  <link rel="stylesheet" href="css/main.css?v=12.0">
 </head>
 <body>
 
@@ -137,7 +137,7 @@ $page_keywords = $page_keywords ?? 'Door to Door delivery to india, Packing and 
         <!-- CTA Header Action -->
         <div style="display:flex; align-items:center; gap:1rem;">
           <button class="btn btn-accent btn-sm" data-open-modal="quoteModal">
-            <i class="fa-solid fa-paper-plane me-1"></i> Request Quote
+            Request Quote <i class="fa-solid fa-arrow-right ms-1"></i>
           </button>
           
           <button class="mobile-toggle" aria-label="Toggle Navigation">

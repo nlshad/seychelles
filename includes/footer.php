@@ -164,7 +164,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:1rem;">
-          <i class="fa-solid fa-paper-plane me-1"></i> Submit Quote Request
+          Submit Quote Request <i class="fa-solid fa-arrow-right ms-1"></i>
         </button>
       </form>
     </div>

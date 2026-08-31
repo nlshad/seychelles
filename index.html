@@ -21,28 +21,36 @@ require_once __DIR__ . '/includes/header.php';
     <div class="hero-grid">
       <div>
         <div class="hero-badge">
-          <i class="fa-solid fa-plane-departure me-1"></i>
-          We Are Now In China & GCC Sectors
+          <i class="fa-solid fa-circle text-primary" style="font-size:0.5rem;"></i>
+          DUBAI & CHINA'S MOST LOVED CARGO PLATFORM
         </div>
         <h1 class="hero-title">
-          Global Logistics <span>Unlimited Delivery</span> & Door-to-Door Service
+          Curated Cargo <span>Journeys</span> For <span>Every Shipper</span>
         </h1>
         <p class="hero-subtitle">
-          We help people save time and make business simple with reliable Air & Sea cargo, LCL consolidation, and personal door-to-door shipping from Dubai to Seychelles, Mauritius, Zanzibar, Comoros, India, and beyond.
+          Premium LCL consolidation, express air freight, door-to-door delivery and handcrafted logistics across Africa, Central Asia, Europe and island escapes.
         </p>
-        <div class="hero-actions">
+        <div class="hero-actions" style="margin-bottom: 1.75rem;">
           <button class="btn btn-primary btn-lg" data-open-modal="quoteModal">
-            <i class="fa-solid fa-bolt me-1"></i> Request Instant Quote
+            Request Quote <i class="fa-solid fa-arrow-right ms-1"></i>
           </button>
-          <a href="door-to-door-service-from-dubai-to-india-best-door-to-door-dubai-uae-dubai-cargo.html" class="btn btn-outline-white btn-lg">
-            <i class="fa-solid fa-circle-info me-1"></i> Learn More About Us
+          <a href="#hero-quote-card" class="btn btn-glass-pill btn-lg">
+            <i class="fa-solid fa-calculator me-1"></i> Calculate Cargo Rate
           </a>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center; opacity:0.9;">
+          <span style="font-size:0.75rem; color:#94A3B8; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Popular Sectors:</span>
+          <a href="consolidation-service-to-seychelles.html" class="btn-glass-pill" style="padding:0.25rem 0.75rem; font-size:0.75rem;">Seychelles</a>
+          <a href="consolidation-service-to-mauritius.html" class="btn-glass-pill" style="padding:0.25rem 0.75rem; font-size:0.75rem;">Mauritius</a>
+          <a href="consolidation-service-to-zanzibar.html" class="btn-glass-pill" style="padding:0.25rem 0.75rem; font-size:0.75rem;">Zanzibar</a>
+          <a href="consolidation-service-to-uganda.html" class="btn-glass-pill" style="padding:0.25rem 0.75rem; font-size:0.75rem;">Uganda</a>
+          <a href="consolidation-service-to-zambia.html" class="btn-glass-pill" style="padding:0.25rem 0.75rem; font-size:0.75rem;">Zambia</a>
         </div>
       </div>
 
       <!-- Quick Interactive Hero Quote Form -->
       <div>
-        <div class="hero-card">
+        <div class="hero-card" id="hero-quote-card">
           <h3 class="hero-card-title">
             <i class="fa-solid fa-truck-fast text-primary me-2"></i>
             Quick Rate Estimation
@@ -80,79 +88,135 @@ require_once __DIR__ . '/includes/header.php';
               <textarea name="message" class="form-control form-control-dark" rows="2" placeholder="e.g. 2 boxes, 50kg, personal belongings..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
-              <i class="fa-solid fa-paper-plane me-1"></i> Request Cargo Rate
+              Request Cargo Rate <i class="fa-solid fa-arrow-right ms-1"></i>
             </button>
           </form>
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Sector Destinations Highlights -->
-<div class="container">
-  <div class="destinations-bar">
-    <div class="destinations-bar-header">
-      <div class="destinations-bar-title">
-        <i class="fa-solid fa-plane-departure text-primary"></i> Direct Cargo Routes & Destination Sectors
+  <!-- Hero Bottom Live Ticker Bar (Cluster Travels Style) -->
+  <div style="background: rgba(7, 11, 18, 0.95); border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 1.25rem 0; width: 100%; position: relative; z-index: 10;">
+    <div class="container" style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1.5rem; text-align: center;">
+      <div>
+        <h4 style="color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.1rem; font-weight: 800;">15,000+</h4>
+        <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">HAPPY SHIPPERS</span>
       </div>
-      <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">
-        <i class="fa-solid fa-circle-check text-success me-1"></i> Weekly Consolidations & Express Air Cargo
+      <div>
+        <h4 style="color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.1rem; font-weight: 800;">11+</h4>
+        <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">DIRECT SECTORS</span>
       </div>
-    </div>
-    
-    <div class="destinations-grid">
-      <a href="consolidation-service-to-seychelles.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/sc.png" srcset="https://flagcdn.com/w80/sc.png 2x" alt="Seychelles Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Seychelles</span>
-      </a>
-      <a href="consolidation-service-to-mauritius.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/mu.png" srcset="https://flagcdn.com/w80/mu.png 2x" alt="Mauritius Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Mauritius</span>
-      </a>
-      <a href="consolidation-service-to-zanzibar.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/tz.png" srcset="https://flagcdn.com/w80/tz.png 2x" alt="Zanzibar Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Zanzibar</span>
-      </a>
-      <a href="consolidation-service-to-comoros.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/km.png" srcset="https://flagcdn.com/w80/km.png 2x" alt="Comoros Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Comoros</span>
-      </a>
-      <a href="consolidation-service-to-dar-es-salam.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/tz.png" srcset="https://flagcdn.com/w80/tz.png 2x" alt="Dar Es Salaam Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Dar Es Salaam</span>
-      </a>
-      <a href="consolidation-service-to-uganda.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/ug.png" srcset="https://flagcdn.com/w80/ug.png 2x" alt="Uganda Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Uganda</span>
-      </a>
-      <a href="consolidation-service-to-zambia.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/zm.png" srcset="https://flagcdn.com/w80/zm.png 2x" alt="Zambia Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Zambia</span>
-      </a>
-      <a href="consolidation-service-to-maldives.html" class="destination-card">
-        <div class="destination-card-flag-wrapper">
-          <img src="https://flagcdn.com/w40/mv.png" srcset="https://flagcdn.com/w80/mv.png 2x" alt="Maldives Flag" class="destination-card-flag" width="36" height="24">
-        </div>
-        <span class="destination-card-name">Maldives</span>
-      </a>
+      <div>
+        <h4 style="color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.1rem; font-weight: 800;">10,000+</h4>
+        <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">SHIPMENTS DONE</span>
+      </div>
+      <div>
+        <h4 style="color: #FF7A00; font-size: 1.4rem; margin-bottom: 0.1rem; font-weight: 800;"><i class="fa-solid fa-star me-1" style="font-size:1.1rem;"></i>4.9</h4>
+        <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">AVG RATING</span>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- Infinite Moving Marquee Section (Cluster Travels Style) -->
+<div class="marquee-container">
+  <div class="marquee-track">
+    <!-- Loop Set 1 -->
+    <a href="consolidation-service-to-seychelles.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/sc.png" alt="Seychelles" width="22" height="15" style="border-radius:2px;">
+      SEYCHELLES <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-mauritius.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/mu.png" alt="Mauritius" width="22" height="15" style="border-radius:2px;">
+      MAURITIUS <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-zanzibar.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/tz.png" alt="Zanzibar" width="22" height="15" style="border-radius:2px;">
+      ZANZIBAR <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-comoros.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/km.png" alt="Comoros" width="22" height="15" style="border-radius:2px;">
+      COMOROS <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-dar-es-salam.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/tz.png" alt="Dar Es Salaam" width="22" height="15" style="border-radius:2px;">
+      DAR ES SALAAM <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-uganda.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/ug.png" alt="Uganda" width="22" height="15" style="border-radius:2px;">
+      UGANDA <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-zambia.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/zm.png" alt="Zambia" width="22" height="15" style="border-radius:2px;">
+      ZAMBIA <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-maldives.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/mv.png" alt="Maldives" width="22" height="15" style="border-radius:2px;">
+      MALDIVES <span class="marquee-star">✦</span>
+    </a>
+    <a href="door-to-door-service-to-india.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/in.png" alt="India" width="22" height="15" style="border-radius:2px;">
+      INDIA <span class="marquee-star">✦</span>
+    </a>
+    <a href="door-to-door-service-to-nepal.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/np.png" alt="Nepal" width="22" height="15" style="border-radius:2px;">
+      NEPAL <span class="marquee-star">✦</span>
+    </a>
+    <a href="door-to-door-service-to-bangladesh.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh" width="22" height="15" style="border-radius:2px;">
+      BANGLADESH <span class="marquee-star">✦</span>
+    </a>
+
+    <!-- Loop Set 2 (Identical Clone for Seamless Infinite Loop) -->
+    <a href="consolidation-service-to-seychelles.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/sc.png" alt="Seychelles" width="22" height="15" style="border-radius:2px;">
+      SEYCHELLES <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-mauritius.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/mu.png" alt="Mauritius" width="22" height="15" style="border-radius:2px;">
+      MAURITIUS <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-zanzibar.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/tz.png" alt="Zanzibar" width="22" height="15" style="border-radius:2px;">
+      ZANZIBAR <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-comoros.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/km.png" alt="Comoros" width="22" height="15" style="border-radius:2px;">
+      COMOROS <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-dar-es-salam.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/tz.png" alt="Dar Es Salaam" width="22" height="15" style="border-radius:2px;">
+      DAR ES SALAAM <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-uganda.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/ug.png" alt="Uganda" width="22" height="15" style="border-radius:2px;">
+      UGANDA <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-zambia.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/zm.png" alt="Zambia" width="22" height="15" style="border-radius:2px;">
+      ZAMBIA <span class="marquee-star">✦</span>
+    </a>
+    <a href="consolidation-service-to-maldives.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/mv.png" alt="Maldives" width="22" height="15" style="border-radius:2px;">
+      MALDIVES <span class="marquee-star">✦</span>
+    </a>
+    <a href="door-to-door-service-to-india.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/in.png" alt="India" width="22" height="15" style="border-radius:2px;">
+      INDIA <span class="marquee-star">✦</span>
+    </a>
+    <a href="door-to-door-service-to-nepal.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/np.png" alt="Nepal" width="22" height="15" style="border-radius:2px;">
+      NEPAL <span class="marquee-star">✦</span>
+    </a>
+    <a href="door-to-door-service-to-bangladesh.html" class="marquee-item">
+      <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh" width="22" height="15" style="border-radius:2px;">
+      BANGLADESH <span class="marquee-star">✦</span>
+    </a>
+  </div>
 </div>
+
+
 
 <?php
 // Query Active Vessel Schedules from Database
@@ -451,23 +515,23 @@ $vessel_schedules = get_db_connection()->query("SELECT * FROM vessel_schedules W
   <div class="container">
     <div class="grid-4" style="text-align: center;">
       <div>
-        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-award"></i></div>
-        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">15+</h2>
+        <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.5rem;"><i class="fa-solid fa-award"></i></div>
+        <h2 style="font-size:3rem; color:#FFFFFF; margin-bottom:0.25rem;">15+</h2>
         <p style="color:#94a3b8; font-weight:600;">Years of Cargo Excellence</p>
       </div>
       <div>
-        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-box-archive"></i></div>
-        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">10,000+</h2>
+        <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.5rem;"><i class="fa-solid fa-box-archive"></i></div>
+        <h2 style="font-size:3rem; color:#FFFFFF; margin-bottom:0.25rem;">10,000+</h2>
         <p style="color:#94a3b8; font-weight:600;">Successful Shipments</p>
       </div>
       <div>
-        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-route"></i></div>
-        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">11+</h2>
+        <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.5rem;"><i class="fa-solid fa-route"></i></div>
+        <h2 style="font-size:3rem; color:#FFFFFF; margin-bottom:0.25rem;">11+</h2>
         <p style="color:#94a3b8; font-weight:600;">Global Direct Routes</p>
       </div>
       <div>
-        <div style="font-size:2rem; color:var(--color-accent); margin-bottom:0.5rem;"><i class="fa-solid fa-face-smile"></i></div>
-        <h2 style="font-size:3rem; color:var(--color-primary-light); margin-bottom:0.25rem;">100%</h2>
+        <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.5rem;"><i class="fa-solid fa-face-smile"></i></div>
+        <h2 style="font-size:3rem; color:#FFFFFF; margin-bottom:0.25rem;">100%</h2>
         <p style="color:#94a3b8; font-weight:600;">Customer Satisfaction</p>
       </div>
     </div>

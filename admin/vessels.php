@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $etd_date    = sanitize_input($_POST['etd_date'] ?? '');
         $eta_date    = sanitize_input($_POST['eta_date'] ?? '');
         $cutoff_date = sanitize_input($_POST['cutoff_date'] ?? '');
+        $bg_image    = sanitize_input($_POST['bg_image'] ?? '');
         $status      = sanitize_input($_POST['status'] ?? 'Booking Open');
         $vessel_name = $destination . ' Cargo Sailing';
         $voyage_no   = 'N/A';
@@ -24,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($destination) || empty($etd_date) || empty($cutoff_date)) {
             $error = 'Please fill in Destination Sector, Cut-off Date, and ETD Date.';
         } else {
-            $stmt = $db->prepare("INSERT INTO vessel_schedules (vessel_name, voyage_no, destination, etd_date, eta_date, cutoff_date, status) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$vessel_name, $voyage_no, $destination, $etd_date, $eta_date, $cutoff_date, $status]);
+            $stmt = $db->prepare("INSERT INTO vessel_schedules (vessel_name, voyage_no, destination, etd_date, eta_date, cutoff_date, bg_image, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$vessel_name, $voyage_no, $destination, $etd_date, $eta_date, $cutoff_date, $bg_image, $status]);
             $msg = 'Vessel schedule added successfully!';
         }
     } elseif ($action === 'edit_schedule') {
@@ -34,12 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $etd_date    = sanitize_input($_POST['etd_date'] ?? '');
         $eta_date    = sanitize_input($_POST['eta_date'] ?? '');
         $cutoff_date = sanitize_input($_POST['cutoff_date'] ?? '');
+        $bg_image    = sanitize_input($_POST['bg_image'] ?? '');
         $status      = sanitize_input($_POST['status'] ?? 'Booking Open');
         $vessel_name = $destination . ' Cargo Sailing';
 
         if ($id > 0 && !empty($destination) && !empty($etd_date)) {
-            $stmt = $db->prepare("UPDATE vessel_schedules SET vessel_name = ?, destination = ?, etd_date = ?, eta_date = ?, cutoff_date = ?, status = ? WHERE id = ?");
-            $stmt->execute([$vessel_name, $destination, $etd_date, $eta_date, $cutoff_date, $status, $id]);
+            $stmt = $db->prepare("UPDATE vessel_schedules SET vessel_name = ?, destination = ?, etd_date = ?, eta_date = ?, cutoff_date = ?, bg_image = ?, status = ? WHERE id = ?");
+            $stmt->execute([$vessel_name, $destination, $etd_date, $eta_date, $cutoff_date, $bg_image, $status, $id]);
             $msg = 'Vessel schedule updated successfully!';
         } else {
             $error = 'Failed to update schedule. Please check required fields.';
@@ -93,9 +95,9 @@ $schedules = $db->query("SELECT * FROM vessel_schedules ORDER BY id DESC")->fetc
         <select name="destination" class="btn-sm btn-admin-secondary" style="width:100%; padding:0.65rem; border:1px solid var(--admin-border); outline:none;" required>
           <option value="Seychelles">🇸🇨 Seychelles (Port Victoria)</option>
           <option value="Mauritius">🇲🇺 Mauritius (Port Louis)</option>
-          <option value="Zanzibar">🇹ℤ Zanzibar (Malindi Port)</option>
+          <option value="Zanzibar">🇹🇿 Zanzibar (Malindi Port)</option>
           <option value="Comoros">🇰🇲 Comoros (Moroni Port)</option>
-          <option value="Dar Es Salaam">🇹ℤ Dar Es Salaam</option>
+          <option value="Dar Es Salaam">🇹🇿 Dar Es Salaam</option>
           <option value="Uganda">🇺🇬 Uganda (Kampala)</option>
           <option value="Zambia">🇿🇲 Zambia (Lusaka)</option>
           <option value="Maldives">🇲🇻 Maldives (Port of Male)</option>
@@ -117,6 +119,11 @@ $schedules = $db->query("SELECT * FROM vessel_schedules ORDER BY id DESC")->fetc
       <div>
         <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.4rem;">ETA Date (Destination Arrival) *</label>
         <input type="date" name="eta_date" class="btn-sm btn-admin-secondary" style="width:100%; padding:0.65rem; border:1px solid var(--admin-border);" required>
+      </div>
+
+      <div>
+        <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.4rem;">Background Image URL (Optional)</label>
+        <input type="text" name="bg_image" placeholder="e.g. images/backgrounds/chinaseychellescargo.jpg" class="btn-sm btn-admin-secondary" style="width:100%; padding:0.65rem; border:1px solid var(--admin-border);">
       </div>
 
       <div>
@@ -149,6 +156,7 @@ $schedules = $db->query("SELECT * FROM vessel_schedules ORDER BY id DESC")->fetc
           <th>Cut-off Date</th>
           <th>ETD (Dubai)</th>
           <th>ETA (Destination)</th>
+          <th>Background Image</th>
           <th>Status</th>
           <th style="text-align:right;">Actions</th>
         </tr>
@@ -156,7 +164,7 @@ $schedules = $db->query("SELECT * FROM vessel_schedules ORDER BY id DESC")->fetc
       <tbody>
         <?php if (empty($schedules)): ?>
           <tr>
-            <td colspan="7" style="text-align:center; color:var(--admin-muted); padding:3rem;">No sailing schedules added yet. Use the form above to add your first schedule!</td>
+            <td colspan="8" style="text-align:center; color:var(--admin-muted); padding:3rem;">No sailing schedules added yet. Use the form above to add your first schedule!</td>
           </tr>
         <?php else: ?>
           <?php foreach ($schedules as $s): ?>
@@ -170,6 +178,15 @@ $schedules = $db->query("SELECT * FROM vessel_schedules ORDER BY id DESC")->fetc
               <td><span style="color:#DC2626; font-weight:600;"><?php echo date('M d, Y', strtotime($s['cutoff_date'])); ?></span></td>
               <td><strong><?php echo date('M d, Y', strtotime($s['etd_date'])); ?></strong></td>
               <td><span style="color:#059669; font-weight:600;"><?php echo date('M d, Y', strtotime($s['eta_date'])); ?></span></td>
+              <td>
+                <?php if (!empty($s['bg_image'])): ?>
+                  <span style="font-size:0.78rem; color:var(--admin-muted); font-family:monospace;" title="<?php echo htmlspecialchars($s['bg_image']); ?>">
+                    <i class="fa-solid fa-image me-1 text-primary"></i><?php echo htmlspecialchars(basename($s['bg_image'])); ?>
+                  </span>
+                <?php else: ?>
+                  <span style="font-size:0.75rem; color:var(--admin-muted); font-style:italic;">Default</span>
+                <?php endif; ?>
+              </td>
               <td>
                 <span class="badge badge-<?php 
                   if ($s['status']==='Booking Open') echo 'quoted';
@@ -255,7 +272,7 @@ $schedules = $db->query("SELECT * FROM vessel_schedules ORDER BY id DESC")->fetc
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.25rem;">
         <div>
           <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.4rem;">ETA Date (Destination) *</label>
           <input type="date" name="eta_date" id="edit_eta_date" class="btn-sm btn-admin-secondary" style="width:100%; padding:0.65rem; border:1px solid var(--admin-border);" required>
@@ -268,6 +285,11 @@ $schedules = $db->query("SELECT * FROM vessel_schedules ORDER BY id DESC")->fetc
             <option value="Departed">Departed</option>
           </select>
         </div>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.4rem;">Background Image URL (Optional)</label>
+        <input type="text" name="bg_image" id="edit_bg_image" placeholder="e.g. images/backgrounds/chinaseychellescargo.jpg" class="btn-sm btn-admin-secondary" style="width:100%; padding:0.65rem; border:1px solid var(--admin-border);">
       </div>
 
       <div style="display:flex; justify-content:flex-end; gap:0.75rem;">
@@ -285,6 +307,7 @@ function editSchedule(schedule) {
   document.getElementById('edit_cutoff_date').value = schedule.cutoff_date;
   document.getElementById('edit_etd_date').value = schedule.etd_date;
   document.getElementById('edit_eta_date').value = schedule.eta_date;
+  document.getElementById('edit_bg_image').value = schedule.bg_image || '';
   document.getElementById('edit_status').value = schedule.status;
 
   const modal = document.getElementById('editScheduleModal');

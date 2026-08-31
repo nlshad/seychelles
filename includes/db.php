@@ -96,9 +96,17 @@ function init_database() {
         etd_date TEXT NOT NULL,
         eta_date TEXT NOT NULL,
         cutoff_date TEXT NOT NULL,
+        bg_image TEXT DEFAULT '',
         status TEXT DEFAULT 'Booking Open',
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );");
+
+    // Ensure bg_image column exists if table was created previously
+    try {
+        $db->exec("ALTER TABLE vessel_schedules ADD COLUMN bg_image TEXT DEFAULT '';");
+    } catch (PDOException $e) {
+        // Column already exists
+    }
 
     // Seed default admin user if none exists
     $stmt = $db->query("SELECT COUNT(*) FROM users");

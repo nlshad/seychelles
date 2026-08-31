@@ -948,6 +948,212 @@ select.form-control-dark option {
   line-height: 1;
 }
 
+/* Cluster Travels Style Vessel Schedule Slider UI */
+.vessel-slider-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  background: #090D16;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.vessel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  z-index: 1;
+}
+.vessel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+.vessel-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.35) 0%, rgba(9, 13, 22, 0.85) 100%);
+}
+.vessel-slide-content {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  padding: 3rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.vessel-left-info {
+  max-width: 580px;
+}
+.vessel-pre-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FF7A00;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+.vessel-slide-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.85);
+}
+.vessel-slide-title span {
+  color: #FF7A00;
+}
+.vessel-slide-desc {
+  color: #CBD5E1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.85);
+}
+
+/* Floating Glassmorphism Schedule Card */
+.vessel-glass-card {
+  background: rgba(17, 24, 39, 0.84);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  width: 320px;
+  max-width: 100%;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+  align-self: center;
+}
+.vessel-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.vessel-card-label {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.vessel-card-counter {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+}
+.vessel-card-counter span {
+  color: #FF7A00;
+}
+.vessel-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+}
+.vessel-date-label {
+  color: #94A3B8;
+  font-weight: 600;
+}
+.vessel-date-value {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.vessel-date-value.highlight {
+  color: #FF7A00;
+  font-size: 1.05rem;
+}
+
+/* Slider Nav Arrows & Dots */
+.vessel-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+.vessel-slider-btn:hover {
+  background: #FF7A00;
+  border-color: #FF7A00;
+  color: #FFFFFF;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+}
+.vessel-slider-prev { left: 1.5rem; }
+.vessel-slider-next { right: 1.5rem; }
+
+.vessel-dots-container {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.vessel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.vessel-dot.active {
+  width: 28px;
+  border-radius: 9999px;
+  background: #FF7A00;
+  box-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .vessel-slide-content {
+    padding: 2.5rem 1.5rem 3.5rem;
+  }
+  .vessel-slide-title {
+    font-size: 2rem;
+  }
+  .vessel-glass-card {
+    width: 100%;
+  }
+  .vessel-slider-prev { left: 0.5rem; }
+  .vessel-slider-next { right: 0.5rem; }
+}
+
 /* Animated Shipping Journey Pipeline Section */
 .shipping-pipeline {
   display: grid;

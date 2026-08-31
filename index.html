@@ -225,53 +225,93 @@ $vessel_schedules = get_db_connection()->query("SELECT * FROM vessel_schedules W
 ?>
 
 <?php if (!empty($vessel_schedules)): ?>
-<!-- Upcoming Vessel Schedules Section -->
+<!-- Upcoming Vessel Schedules Section (Cluster Travels Slider UI) -->
 <section class="section" style="background:#F8FAFC; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding:4rem 0;">
   <div class="container">
     <div style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem;">
-      <span style="color:var(--color-primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">
-        <i class="fa-solid fa-ship me-1"></i>Direct Ocean Freight Sailings
+      <span class="pill-badge mb-2">
+        <i class="fa-solid fa-ship me-1"></i> DIRECT OCEAN FREIGHT SAILINGS
       </span>
-      <h2 style="font-size:2.1rem; margin-top:0.25rem;">Upcoming Vessel Departures from Dubai (Jebel Ali)</h2>
+      <h2 style="font-size:2.35rem; font-weight:800; margin-top:0.35rem;">
+        Upcoming Vessel Departures <span class="heading-highlight">from Dubai</span>
+      </h2>
       <p style="color:var(--text-muted); font-size:0.95rem;">
         Check our weekly container closing dates and vessel departure schedules to reserve your cargo space in advance.
       </p>
     </div>
 
-    <div class="grid-3">
-      <?php foreach ($vessel_schedules as $vs): ?>
-        <div class="card" style="background:#FFFFFF; border:1px solid var(--border-color); padding:1.75rem; border-radius:var(--radius-md);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
-            <div>
-              <span class="badge" style="background:rgba(0,102,255,0.1); color:var(--color-primary); font-size:0.9rem; font-weight:700; padding:0.4rem 0.85rem; border-radius:50px;">
-                <i class="fa-solid fa-location-dot me-1"></i><?php echo htmlspecialchars($vs['destination']); ?> Sector
+    <!-- Cluster Travels Style Interactive Slider -->
+    <div class="vessel-slider-wrapper">
+      <button class="vessel-slider-btn vessel-slider-prev" aria-label="Previous Vessel"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="vessel-slider-btn vessel-slider-next" aria-label="Next Vessel"><i class="fa-solid fa-chevron-right"></i></button>
+
+      <?php 
+      $total_schedules = count($vessel_schedules);
+      $bg_images = [
+        'images/backgrounds/chinaseychellescargo.jpg',
+        'images/backgrounds/bg-02-1920x660.jpg',
+        'images/backgrounds/bg-03-1918x761.jpg',
+        'images/backgrounds/bg-04-1918x660.jpg'
+      ];
+      foreach ($vessel_schedules as $index => $vs): 
+        $bg_img = !empty($vs['bg_image']) ? $vs['bg_image'] : $bg_images[$index % count($bg_images)];
+        $current_num = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
+        $total_num = str_pad($total_schedules, 2, '0', STR_PAD_LEFT);
+      ?>
+        <div class="vessel-slide <?php echo ($index === 0) ? 'active' : ''; ?>" style="background-image: url('<?php echo $bg_img; ?>');">
+          <div class="vessel-slide-overlay"></div>
+          <div class="vessel-slide-content">
+            <!-- Left Info -->
+            <div class="vessel-left-info">
+              <span class="vessel-pre-badge">
+                <i class="fa-solid fa-location-dot me-1"></i> — <?php echo strtoupper(htmlspecialchars($vs['destination'])); ?> SECTOR
               </span>
+              <h2 class="vessel-slide-title">
+                <?php echo htmlspecialchars($vs['destination']); ?> <span>Express Vessel</span>
+              </h2>
+              <p class="vessel-slide-desc">
+                Direct sea freight consolidation & FCL container shipping from Jebel Ali Port (Dubai) to <?php echo htmlspecialchars($vs['destination']); ?> with guaranteed weekly departures and custom clearance support.
+              </p>
             </div>
-            <span class="badge badge-<?php echo (str_replace(' ', '', strtolower($vs['status'])) === 'bookingopen') ? 'quoted' : 'pending'; ?>" style="font-size:0.75rem;">
-              <i class="fa-solid fa-circle-dot me-1"></i><?php echo htmlspecialchars($vs['status']); ?>
-            </span>
-          </div>
 
-          <div style="background:#F8FAFC; border-radius:8px; padding:0.85rem 1rem; margin-bottom:1.25rem; font-size:0.85rem; display:flex; flex-direction:column; gap:0.5rem;">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="color:var(--text-muted);"><i class="fa-solid fa-hourglass-half me-1 text-danger"></i>Cargo Cut-off:</span>
-              <strong style="color:#DC2626;"><?php echo date('M d, Y', strtotime($vs['cutoff_date'])); ?></strong>
-            </div>
-            <div style="display:flex; justify-content:space-between;">
-              <span style="color:var(--text-muted);"><i class="fa-solid fa-ship me-1 text-primary"></i>ETD Dubai:</span>
-              <strong><?php echo date('M d, Y', strtotime($vs['etd_date'])); ?></strong>
-            </div>
-            <div style="display:flex; justify-content:space-between;">
-              <span style="color:var(--text-muted);"><i class="fa-solid fa-anchor me-1 text-success"></i>ETA <?php echo htmlspecialchars($vs['destination']); ?>:</span>
-              <strong style="color:#059669;"><?php echo date('M d, Y', strtotime($vs['eta_date'])); ?></strong>
+            <!-- Right Glassmorphism Card -->
+            <div class="vessel-glass-card">
+              <div class="vessel-card-header">
+                <span class="vessel-card-label"><i class="fa-solid fa-calendar-days me-1 text-primary"></i> VOYAGE SCHEDULE</span>
+                <span class="vessel-card-counter"><span><?php echo $current_num; ?></span> / <?php echo $total_num; ?></span>
+              </div>
+              
+              <div class="vessel-date-row">
+                <span class="vessel-date-label"><i class="fa-solid fa-hourglass-half me-1 text-danger"></i> Cargo Cut-off:</span>
+                <span class="vessel-date-value highlight"><?php echo date('M d, Y', strtotime($vs['cutoff_date'])); ?></span>
+              </div>
+              
+              <div class="vessel-date-row">
+                <span class="vessel-date-label"><i class="fa-solid fa-ship me-1 text-primary"></i> ETD Jebel Ali:</span>
+                <span class="vessel-date-value"><?php echo date('M d, Y', strtotime($vs['etd_date'])); ?></span>
+              </div>
+              
+              <div class="vessel-date-row" style="margin-bottom: 1.25rem;">
+                <span class="vessel-date-label"><i class="fa-solid fa-anchor me-1 text-success"></i> ETA <?php echo htmlspecialchars($vs['destination']); ?>:</span>
+                <span class="vessel-date-value" style="color:#34D399;"><?php echo date('M d, Y', strtotime($vs['eta_date'])); ?></span>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                <span class="vessel-date-label">STATUS:</span>
+                <span class="badge badge-quoted" style="background:rgba(16, 185, 129, 0.2); color:#34D399; border:1px solid rgba(16,185,129,0.4); padding:0.25rem 0.75rem; font-size:0.75rem;">
+                  <i class="fa-solid fa-circle-dot me-1"></i><?php echo htmlspecialchars($vs['status']); ?>
+                </span>
+              </div>
+
+              <button class="btn btn-primary btn-block" data-open-modal="quoteModal">
+                Reserve Space <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
             </div>
           </div>
-
-          <button class="btn btn-primary btn-block btn-sm" data-open-modal="quoteModal">
-            <i class="fa-solid fa-box-archive me-1"></i> Book Cargo Space
-          </button>
         </div>
       <?php endforeach; ?>
+
+      <div class="vessel-dots-container"></div>
     </div>
   </div>
 </section>

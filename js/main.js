@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initHeroSlider();
+  initVesselSlider();
   initScrollTop();
   initModals();
   initFormProcessors();
@@ -178,4 +179,62 @@ function showToast(type, message) {
   setTimeout(() => {
     toast.remove();
   }, 4500);
+}
+
+/* Vessel Schedule Interactive Slider */
+function initVesselSlider() {
+  const wrapper = document.querySelector('.vessel-slider-wrapper');
+  if (!wrapper) return;
+
+  const slides = wrapper.querySelectorAll('.vessel-slide');
+  const prevBtn = wrapper.querySelector('.vessel-slider-prev');
+  const nextBtn = wrapper.querySelector('.vessel-slider-next');
+  const dotsContainer = wrapper.querySelector('.vessel-dots-container');
+
+  if (slides.length < 1) return;
+
+  let currentIdx = 0;
+  let autoTimer = null;
+
+  // Render dots
+  if (dotsContainer && slides.length > 1) {
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `vessel-dot ${idx === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+      dot.addEventListener('click', () => goToSlide(idx));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function goToSlide(idx) {
+    slides[currentIdx].classList.remove('active');
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.vessel-dot') : [];
+    if (dots[currentIdx]) dots[currentIdx].classList.remove('active');
+
+    currentIdx = (idx + slides.length) % slides.length;
+
+    slides[currentIdx].classList.add('active');
+    if (dots[currentIdx]) dots[currentIdx].classList.add('active');
+    resetTimer();
+  }
+
+  function next() { goToSlide(currentIdx + 1); }
+  function prev() { goToSlide(currentIdx - 1); }
+
+  if (nextBtn) nextBtn.addEventListener('click', next);
+  if (prevBtn) prevBtn.addEventListener('click', prev);
+
+  function resetTimer() {
+    if (autoTimer) clearInterval(autoTimer);
+    if (slides.length > 1) {
+      autoTimer = setInterval(next, 6000);
+    }
+  }
+
+  wrapper.addEventListener('mouseenter', () => { if (autoTimer) clearInterval(autoTimer); });
+  wrapper.addEventListener('mouseleave', resetTimer);
+
+  resetTimer();
 }

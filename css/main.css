@@ -1831,18 +1831,132 @@ select.form-control-dark option {
   font-size: 0.875rem;
 }
 
-/* Responsive Breakpoints */
+/* Responsive Breakpoints & Smart Mobile View Architecture */
 @media (max-width: 991px) {
   .nav-menu {
-    display: none;
+    display: none !important;
   }
   .mobile-toggle {
-    display: block;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
   }
   .hero-title {
-    font-size: 2.1rem;
+    font-size: 2.25rem;
   }
   .section {
     padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Sleek 1-Line Top Bar on Mobile */
+  .top-bar {
+    padding: 0.35rem 0;
+    font-size: 0.75rem;
+    background: #090D16;
+  }
+  .top-bar .container {
+    justify-content: center;
+    gap: 0.85rem;
+  }
+  .top-bar-badge, 
+  .top-bar-info:nth-child(2) {
+    display: none !important;
+  }
+  .top-bar-info {
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .top-bar-link {
+    font-size: 0.75rem;
+    gap: 0.3rem;
+  }
+
+  /* Compact Header Bar */
+  .header-inner {
+    height: 64px;
+  }
+  .brand-logo-img {
+    height: 40px;
+    max-height: 40px;
+  }
+  .header-inner .btn-accent, 
+  .header-inner .btn-quote, 
+  .header-inner .btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.78rem;
+    border-radius: var(--radius-full);
+  }
+  .mobile-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.05);
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+    padding: 0;
+    margin-left: 0.25rem;
+  }
+
+  /* Mobile Hero Adjustments */
+  .hero {
+    min-height: auto;
+    padding: 2rem 0 3rem;
+  }
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.18;
+  }
+  .hero-subtitle {
+    font-size: 0.925rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+  }
+  .hero-actions {
+    gap: 0.75rem;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Floating Quick Action Buttons */
+  .floating-actions {
+    bottom: 1.25rem;
+    right: 0.85rem;
+    gap: 0.65rem;
+  }
+  .float-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (max-width: 576px) {
+  .header-inner {
+    height: 58px;
+  }
+  .brand-logo-img {
+    height: 34px;
+    max-height: 34px;
+  }
+  .header-inner .btn-accent, 
+  .header-inner .btn-quote, 
+  .header-inner .btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
+  }
+  .hero-title {
+    font-size: 1.75rem;
   }
 }

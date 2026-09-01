@@ -308,3 +308,121 @@ body {
     margin-left: 0;
   }
 }
+
+/* Admin Modal Dialog */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+.admin-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+.admin-modal-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  position: relative;
+  transform: translateY(20px) scale(0.96);
+  transition: all 0.25s ease;
+  overflow: hidden;
+  border: 1px solid var(--admin-border);
+}
+.admin-modal-overlay.open .admin-modal-card {
+  transform: translateY(0) scale(1);
+}
+.admin-modal-header {
+  background: #0A192F;
+  color: #FFFFFF;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-modal-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.admin-modal-close {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #FFFFFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.admin-modal-close:hover {
+  background: #EF4444;
+}
+.admin-modal-body {
+  padding: 1.75rem 1.5rem;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+.admin-modal-footer {
+  padding: 1.25rem 1.5rem;
+  background: #F8FAFC;
+  border-top: 1px solid var(--admin-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover {
+  background: #1DA851;
+  color: #FFFFFF;
+}
+.btn-email-reply {
+  background: #0066FF;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+.btn-email-reply:hover {
+  background: #0052CC;
+  color: #FFFFFF;
+}

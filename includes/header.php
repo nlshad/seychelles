@@ -8,6 +8,12 @@ require_once __DIR__ . '/functions.php';
 $page_title = $page_title ?? 'Seychelles International Cargo LLC | Best Door to Door & Cargo Service in Dubai';
 $page_description = $page_description ?? 'Seychelles Cargo is one of the best Cargo company in Dubai having service to Seychelles, Mauritius, Moroni, Maldives, Zanzibar. Door to door service LCL service Pickup full container Dubai.';
 $page_keywords = $page_keywords ?? 'Door to Door delivery to india, Packing and moving service, Packing and shifting service, Door to door service to india, Door to port service, Courier services to Seychelles, Best FCL, LCL services to Seychelles, Zanzibar, Mauritius, Ghana and Comoros sectors, Seychelles Cargo Dubai';
+
+if (!isset($asset_prefix)) {
+    $script_dir = basename(dirname($_SERVER['SCRIPT_FILENAME'] ?? ''));
+    $req_uri    = $_SERVER['REQUEST_URI'] ?? '';
+    $asset_prefix = ($script_dir === 'blogs' || str_contains($req_uri, '/blogs/')) ? '../' : '';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +30,7 @@ $page_keywords = $page_keywords ?? 'Door to Door delivery to india, Packing and 
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="YOJIANLayhLffJXegCyAmKKZwq2NbjvwqSCcqawONF8" />
   
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="<?php echo $asset_prefix; ?>images/favicon.ico" type="image/x-icon">
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +41,7 @@ $page_keywords = $page_keywords ?? 'Door to Door delivery to india, Packing and 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Modern Main CSS Design System -->
-  <link rel="stylesheet" href="css/main.css?v=21.0">
+  <link rel="stylesheet" href="<?php echo $asset_prefix; ?>css/main.css?v=21.0">
 </head>
 <body>
 
@@ -69,13 +75,13 @@ $page_keywords = $page_keywords ?? 'Door to Door delivery to india, Packing and 
     <div class="container">
       <div class="header-inner">
         <!-- Brand Logo -->
-        <a href="index.html" class="brand">
-          <img src="images/logo.gif" alt="Seychelles International Cargo LLC" class="brand-logo-img">
+        <a href="<?php echo $asset_prefix; ?>index.html" class="brand">
+          <img src="<?php echo $asset_prefix; ?>images/logo.gif" alt="Seychelles International Cargo LLC" class="brand-logo-img">
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="nav-menu">
-          <a href="index.html" class="nav-link <?php echo is_active_page('index.html'); ?>">
+          <a href="<?php echo $asset_prefix; ?>index.html" class="nav-link <?php echo is_active_page('index.html'); ?>">
             <i class="fa-solid fa-house me-1" style="font-size:0.85rem;"></i> Home
           </a>
           <a href="door-to-door-service-from-dubai-to-india-best-door-to-door-dubai-uae-dubai-cargo.html" class="nav-link <?php echo is_active_page('door-to-door-service-from-dubai-to-india-best-door-to-door-dubai-uae-dubai-cargo.html'); ?>">

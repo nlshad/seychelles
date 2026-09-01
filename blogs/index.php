@@ -11,9 +11,14 @@ $page_description = "Explore expert shipping guides, sea freight consolidation a
 $page_keywords = "Seychelles Cargo Blogs, Dubai Shipping Guides, Jebel Ali Cargo News, Sea Freight Articles, LCL Consolidation Seychelles";
 
 // Fetch All Published Blogs
-$stmt = $db->prepare("SELECT * FROM blogs WHERE status = 'Published' ORDER BY id DESC");
-$stmt->execute();
-$db_blogs = $stmt->fetchAll();
+$db_blogs = [];
+try {
+    $stmt = $db->prepare("SELECT * FROM blogs WHERE status = 'Published' ORDER BY id DESC");
+    $stmt->execute();
+    $db_blogs = $stmt->fetchAll() ?: [];
+} catch (Exception $e) {
+    $db_blogs = [];
+}
 
 // Category List
 $categories = ['All Articles', 'Seychelles Sector', 'Sea Freight', 'LCL Consolidation', 'Air Freight', 'Customs & Clearance', 'Door to Door'];

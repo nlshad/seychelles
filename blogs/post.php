@@ -8,19 +8,37 @@ $db = get_db_connection();
 
 $slug = sanitize_input($_GET['slug'] ?? '');
 
-// Handle root SEO guide fallback
-if (empty($slug) || $slug === 'ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles') {
-    require_once __DIR__ . '/../ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles.html';
-    exit;
+$blog = null;
+try {
+    $stmt = $db->prepare("SELECT * FROM blogs WHERE slug = ? AND status = 'Published'");
+    $stmt->execute([$slug]);
+    $blog = $stmt->fetch();
+} catch (Exception $e) {
+    $blog = null;
 }
 
-// Fetch Article from DB by Slug
-$stmt = $db->prepare("SELECT * FROM blogs WHERE slug = ? AND status = 'Published'");
-$stmt->execute([$slug]);
-$blog = $stmt->fetch();
+// Fallback for featured guide if DB record is missing
+if (!$blog && ($slug === 'ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles' || empty($slug))) {
+    $slug = 'ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles';
+    $blog = [
+        'id' => 1,
+        'title' => 'Ship Your Cargo from Jebel Ali (Dubai) to Port Victoria, Seychelles',
+        'slug' => 'ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles',
+        'category' => 'Seychelles Sector',
+        'read_time' => '8 min read',
+        'meta_title' => 'Ship Your Cargo from Jebel Ali (Dubai) to Port Victoria, Seychelles | Complete Freight Guide',
+        'meta_description' => 'Ship cargo from Jebel Ali, Dubai to Port Victoria, Seychelles with reliable sea freight and LCL solutions. Learn about shipping, documents, customs and delivery.',
+        'meta_keywords' => 'Ship cargo from Jebel Ali to Port Victoria Seychelles, Jebel Ali to Seychelles shipping, Dubai to Seychelles shipping, Jebel Ali to Port Victoria, sea freight to Seychelles',
+        'feature_image' => 'images/backgrounds/chinaseychellescargo.jpg',
+        'banner_image' => 'images/backgrounds/chinaseychellescargo.jpg',
+        'excerpt' => 'Shipping cargo from Dubai to Seychelles is a vital trade route. Jebel Ali Port in Dubai is the primary departure hub while Port Victoria in Mahé is the main destination.',
+        'content' => file_exists(__DIR__ . '/../ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles.html') ? file_get_contents(__DIR__ . '/../ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles.html') : '',
+        'author' => 'Seychelles Cargo Team',
+        'created_at' => '2026-09-01 12:00:00'
+    ];
+}
 
 if (!$blog) {
-    // Fallback if post not found
     header('Location: index.php');
     exit;
 }
@@ -39,9 +57,14 @@ $feature_img = !empty($blog['feature_image']) ? (str_starts_with($blog['feature_
 $banner_img  = !empty($blog['banner_image']) ? (str_starts_with($blog['banner_image'], 'http') ? $blog['banner_image'] : '../' . ltrim($blog['banner_image'], '/')) : '../images/backgrounds/chinaseychellescargo.jpg';
 
 // Fetch Related Articles in same category
-$rel_stmt = $db->prepare("SELECT * FROM blogs WHERE category = ? AND id != ? AND status = 'Published' LIMIT 3");
-$rel_stmt->execute([$blog['category'] ?? 'Sea Freight', $blog['id']]);
-$related_posts = $rel_stmt->fetchAll();
+$related_posts = [];
+try {
+    $rel_stmt = $db->prepare("SELECT * FROM blogs WHERE category = ? AND id != ? AND status = 'Published' LIMIT 3");
+    $rel_stmt->execute([$blog['category'] ?? 'Sea Freight', $blog['id']]);
+    $related_posts = $rel_stmt->fetchAll() ?: [];
+} catch (Exception $e) {
+    $related_posts = [];
+}
 
 require_once __DIR__ . '/../includes/header.php';
 ?>

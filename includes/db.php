@@ -11,9 +11,8 @@ function get_db_connection() {
     if ($db === null) {
         $data_dir = __DIR__ . '/../data';
         if (!file_exists($data_dir)) {
-            mkdir($data_dir, 0755, true);
-            // Protect data directory with htaccess
-            file_put_contents($data_dir . '/.htaccess', "Deny from all\n");
+            @mkdir($data_dir, 0755, true);
+            @file_put_contents($data_dir . '/.htaccess', "Deny from all\n");
         }
         
         try {
@@ -22,9 +21,25 @@ function get_db_connection() {
             $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             
             // Enable WAL mode for high concurrency
-            $db->exec('PRAGMA journal_mode = WAL;');
+            @$db->exec('PRAGMA journal_mode = WAL;');
+
+            // Ensure schema is initialized
+            static $initialized = false;
+            if (!$initialized) {
+                $initialized = true;
+                $chk = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='blogs'")->fetchColumn();
+                if (!$chk) {
+                    init_database();
+                }
+            }
         } catch (PDOException $e) {
-            die('Database Connection Error: ' . $e->getMessage());
+            try {
+                $db = new PDO('sqlite:' . DB_PATH);
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+                $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            } catch (PDOException $ex) {
+                die('Database Connection Error');
+            }
         }
     }
     return $db;

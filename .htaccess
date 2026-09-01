@@ -1,16 +1,17 @@
 # Seychelles International Cargo LLC - Apache Configuration
 # PHP 8+ Modern Execution & URL Preservation
 
+DirectoryIndex index.php index.html
+
 RewriteEngine On
 
 # Blog Clean URL Rewrites under /blogs/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^blogs/?$ blogs/index.php [L,QSA]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^blogs/([a-zA-Z0-9\-]+)/?$ blogs/post.php?slug=$1 [L,QSA]
+RewriteRule ^blogs/?$ blogs/index.php [L,QSA]
+RewriteRule ^blogs/([a-zA-Z0-9\-_]+)/?$ blogs/post.php?slug=$1 [L,QSA]
 
 # Enable PHP processing inside .html files if supported
 <FilesMatch "\.html$">

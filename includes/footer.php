@@ -10,8 +10,8 @@
         <!-- Company Overview -->
         <div>
           <div style="margin-bottom: 1.25rem;">
-            <a href="index.html" class="brand">
-              <img src="images/logo.gif" alt="Seychelles International Cargo LLC" class="brand-logo-img" style="height:48px; width:auto; background:#ffffff; padding:4px 8px; border-radius:6px; display:inline-block;">
+            <a href="<?php echo $asset_prefix; ?>index.html" class="brand">
+              <img src="<?php echo $asset_prefix; ?>images/logo.gif" alt="Seychelles International Cargo LLC" class="brand-logo-img" style="height:48px; width:auto; background:#ffffff; padding:4px 8px; border-radius:6px; display:inline-block;">
             </a>
           </div>
           <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:1rem;">

@@ -96,6 +96,29 @@ body {
   color: #FFFFFF;
   box-shadow: 0 4px 12px rgba(0,102,255,0.3);
 }
+.sidebar-link span:first-of-type {
+  flex-grow: 1;
+}
+.nav-badge-count {
+  margin-left: auto;
+  padding: 0.18rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-badge-orange {
+  background: #FF7A00;
+  color: #FFFFFF;
+}
+.sidebar-link.active .nav-badge-orange {
+  background: #FFFFFF;
+  color: #0066FF;
+}
 
 /* Main Content Area */
 .admin-main {

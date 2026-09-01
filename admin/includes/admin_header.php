@@ -6,6 +6,20 @@ require_once __DIR__ . '/auth.php';
 require_admin_login();
 
 $current_page = basename($_SERVER['PHP_SELF']);
+
+// Fetch Pending Counts for Nav Badges
+$admin_nav_db = get_db_connection();
+$nav_pending_quotes = 0;
+$nav_pending_enquiries = 0;
+$nav_pending_contacts = 0;
+
+try {
+    $nav_pending_quotes    = $admin_nav_db->query("SELECT COUNT(*) FROM quotes WHERE status = 'Pending'")->fetchColumn() ?: 0;
+    $nav_pending_enquiries = $admin_nav_db->query("SELECT COUNT(*) FROM enquiries WHERE status = 'Pending'")->fetchColumn() ?: 0;
+    $nav_pending_contacts  = $admin_nav_db->query("SELECT COUNT(*) FROM contacts WHERE status = 'Pending'")->fetchColumn() ?: 0;
+} catch (Exception $e) {
+    // Graceful fallback
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,25 +48,38 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     <nav class="sidebar-nav">
       <a href="index.php" class="sidebar-link <?php echo $current_page === 'index.php' ? 'active' : ''; ?>">
-        <i class="fa-solid fa-chart-pie"></i> Dashboard
+        <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
       </a>
+
       <a href="quotes.php" class="sidebar-link <?php echo $current_page === 'quotes.php' ? 'active' : ''; ?>">
-        <i class="fa-solid fa-calculator"></i> Quote Requests
+        <i class="fa-solid fa-calculator"></i> <span>Quote Requests</span>
+        <?php if ($nav_pending_quotes > 0): ?>
+          <span class="nav-badge-count nav-badge-orange" title="<?php echo $nav_pending_quotes; ?> Pending Quotes"><?php echo $nav_pending_quotes; ?></span>
+        <?php endif; ?>
       </a>
+
       <a href="enquiries.php" class="sidebar-link <?php echo $current_page === 'enquiries.php' ? 'active' : ''; ?>">
-        <i class="fa-solid fa-file-pen"></i> Online Enquiries
+        <i class="fa-solid fa-file-pen"></i> <span>Online Enquiries</span>
+        <?php if ($nav_pending_enquiries > 0): ?>
+          <span class="nav-badge-count nav-badge-orange" title="<?php echo $nav_pending_enquiries; ?> Pending Enquiries"><?php echo $nav_pending_enquiries; ?></span>
+        <?php endif; ?>
       </a>
+
       <a href="contacts.php" class="sidebar-link <?php echo $current_page === 'contacts.php' ? 'active' : ''; ?>">
-        <i class="fa-solid fa-envelope"></i> Contact Messages
+        <i class="fa-solid fa-envelope"></i> <span>Contact Messages</span>
+        <?php if ($nav_pending_contacts > 0): ?>
+          <span class="nav-badge-count nav-badge-orange" title="<?php echo $nav_pending_contacts; ?> Pending Messages"><?php echo $nav_pending_contacts; ?></span>
+        <?php endif; ?>
       </a>
+
       <a href="cbm_calculator.php" class="sidebar-link <?php echo $current_page === 'cbm_calculator.php' ? 'active' : ''; ?>">
-        <i class="fa-solid fa-cubes"></i> CBM Calculator
+        <i class="fa-solid fa-cubes"></i> <span>CBM Calculator</span>
       </a>
       <a href="vessels.php" class="sidebar-link <?php echo $current_page === 'vessels.php' ? 'active' : ''; ?>">
-        <i class="fa-solid fa-ship"></i> Vessel Schedules
+        <i class="fa-solid fa-ship"></i> <span>Vessel Schedules</span>
       </a>
       <a href="settings.php" class="sidebar-link <?php echo $current_page === 'settings.php' ? 'active' : ''; ?>">
-        <i class="fa-solid fa-gear"></i> Settings
+        <i class="fa-solid fa-gear"></i> <span>Settings</span>
       </a>
       
       <div style="margin-top:auto; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">

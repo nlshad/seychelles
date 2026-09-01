@@ -3,6 +3,15 @@
 
 RewriteEngine On
 
+# Blog Clean URL Rewrites under /blogs/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^blogs/?$ blogs/index.php [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^blogs/([a-zA-Z0-9\-]+)/?$ blogs/post.php?slug=$1 [L,QSA]
+
 # Enable PHP processing inside .html files if supported
 <FilesMatch "\.html$">
     <IfModule mod_php7.c>

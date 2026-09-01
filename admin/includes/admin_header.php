@@ -78,6 +78,9 @@ try {
       <a href="vessels.php" class="sidebar-link <?php echo $current_page === 'vessels.php' ? 'active' : ''; ?>">
         <i class="fa-solid fa-ship"></i> <span>Vessel Schedules</span>
       </a>
+      <a href="blogs.php" class="sidebar-link <?php echo $current_page === 'blogs.php' ? 'active' : ''; ?>">
+        <i class="fa-solid fa-newspaper"></i> <span>Blog Posts & Guides</span>
+      </a>
       <a href="settings.php" class="sidebar-link <?php echo $current_page === 'settings.php' ? 'active' : ''; ?>">
         <i class="fa-solid fa-gear"></i> <span>Settings</span>
       </a>

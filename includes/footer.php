@@ -34,6 +34,8 @@
             <a href="Airfreight-service-dubai-airfreight-service-to-seychelles-airfreight-dubai-best-airfreight-team-in-dubai-airfreight-clearance-airfreight-to-seychelles.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Air Freight Services</a>
             <a href="sea-freight-dubai-lcl-service-to-dubai-best-seafreight-service-to-dubai-seafreight-service-mauritius-seafreight-to-seychelles-uafl-service-maersk-safmarine.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Sea Freight Services</a>
             <a href="sourcing-service-dubai-shop-and-ship-service-in-dubai-dubai-best-cargo-door-door.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Shop & Ship / Sourcing</a>
+            <a href="latest-news.html" class="footer-link"><i class="fa-solid fa-newspaper me-1 text-primary"></i> Shipping Blog & News</a>
+            <a href="ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles.html" class="footer-link" style="color:#FF7A00; font-weight:600;"><i class="fa-solid fa-book-open me-1 text-accent"></i> Jebel Ali to Seychelles Guide</a>
             <a href="Enquiry.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Online Enquiry</a>
             <a href="Contact.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Contact Us</a>
             <a href="sitemap.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Sitemap</a>
@@ -74,6 +76,15 @@
               <i class="fa-regular fa-clock me-2 text-accent"></i>Working Hours: 8:00 AM - 8:00 PM (GST)
             </p>
           </div>
+        </div>
+      </div>
+
+      <!-- Shipping Blogs & Guides Bar -->
+      <div style="border-top:1px solid rgba(255,255,255,0.08); margin-top:2rem; padding-top:1.25rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-size:0.85rem; color:#94A3B8;">
+        <div>
+          <strong style="color:#FFFFFF; margin-right:0.5rem;"><i class="fa-solid fa-blog text-accent me-1"></i> Shipping Blogs & Guides:</strong>
+          <a href="blogs/ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles" style="color:#60A5FA; text-decoration:none; margin-right:1rem;">Jebel Ali to Port Victoria Seychelles Cargo Guide</a>
+          <a href="blogs/" style="color:#60A5FA; text-decoration:none;">Logistics Blogs & Guides Directory</a>
         </div>
       </div>
 

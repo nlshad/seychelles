@@ -101,12 +101,40 @@ function init_database() {
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );");
 
-    // Ensure bg_image column exists if table was created previously
+    // Blogs Table
+    $db->exec("CREATE TABLE IF NOT EXISTS blogs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        slug TEXT UNIQUE NOT NULL,
+        category TEXT DEFAULT 'Sea Freight',
+        read_time TEXT DEFAULT '5 min read',
+        views_count INTEGER DEFAULT 0,
+        meta_title TEXT,
+        meta_description TEXT,
+        meta_keywords TEXT,
+        feature_image TEXT DEFAULT '',
+        banner_image TEXT DEFAULT '',
+        excerpt TEXT DEFAULT '',
+        content TEXT NOT NULL,
+        status TEXT DEFAULT 'Published',
+        author TEXT DEFAULT 'Seychelles Cargo Team',
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );");
+
+    // Ensure blog columns exist if table was created previously
     try {
         $db->exec("ALTER TABLE vessel_schedules ADD COLUMN bg_image TEXT DEFAULT '';");
-    } catch (PDOException $e) {
-        // Column already exists
-    }
+    } catch (PDOException $e) {}
+    try {
+        $db->exec("ALTER TABLE blogs ADD COLUMN category TEXT DEFAULT 'Sea Freight';");
+    } catch (PDOException $e) {}
+    try {
+        $db->exec("ALTER TABLE blogs ADD COLUMN read_time TEXT DEFAULT '5 min read';");
+    } catch (PDOException $e) {}
+    try {
+        $db->exec("ALTER TABLE blogs ADD COLUMN views_count INTEGER DEFAULT 0;");
+    } catch (PDOException $e) {}
 
     // Seed default admin user if none exists
     $stmt = $db->query("SELECT COUNT(*) FROM users");

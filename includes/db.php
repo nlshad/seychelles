@@ -4,7 +4,9 @@
  * Uses PDO SQLite for zero-configuration, ultra-fast persistence.
  */
 
-define('DB_PATH', __DIR__ . '/../data/database.sqlite');
+if (!defined('DB_PATH')) {
+    define('DB_PATH', __DIR__ . '/../data/database.sqlite');
+}
 
 function get_db_connection() {
     static $db = null;
@@ -12,7 +14,7 @@ function get_db_connection() {
         $data_dir = __DIR__ . '/../data';
         if (!file_exists($data_dir)) {
             @mkdir($data_dir, 0755, true);
-            @file_put_contents($data_dir . '/.htaccess', "Deny from all\n");
+            @file_put_contents($data_dir . '/.htaccess', "<IfModule mod_authz_core.c>\nRequire all denied\n</IfModule>\n<IfModule !mod_authz_core.c>\nDeny from all\n</IfModule>\n");
         }
         
         try {
@@ -27,18 +29,18 @@ function get_db_connection() {
             static $initialized = false;
             if (!$initialized) {
                 $initialized = true;
-                $chk = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='blogs'")->fetchColumn();
+                $chk = @$db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='blogs'")->fetchColumn();
                 if (!$chk) {
                     init_database();
                 }
             }
-        } catch (PDOException $e) {
+        } catch (Throwable $e) {
             try {
                 $db = new PDO('sqlite:' . DB_PATH);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
                 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            } catch (PDOException $ex) {
-                die('Database Connection Error');
+            } catch (Throwable $ex) {
+                $db = null;
             }
         }
     }

@@ -12,12 +12,16 @@ $page_keywords = "Seychelles Cargo Blogs, Dubai Shipping Guides, Jebel Ali Cargo
 
 // Fetch All Published Blogs
 $db_blogs = [];
-try {
-    $stmt = $db->prepare("SELECT * FROM blogs WHERE status = 'Published' ORDER BY id DESC");
-    $stmt->execute();
-    $db_blogs = $stmt->fetchAll() ?: [];
-} catch (Exception $e) {
-    $db_blogs = [];
+if ($db) {
+    try {
+        $stmt = $db->prepare("SELECT * FROM blogs WHERE status = 'Published' ORDER BY id DESC");
+        if ($stmt) {
+            $stmt->execute();
+            $db_blogs = $stmt->fetchAll() ?: [];
+        }
+    } catch (Throwable $e) {
+        $db_blogs = [];
+    }
 }
 
 // Category List

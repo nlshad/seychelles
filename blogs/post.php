@@ -9,12 +9,16 @@ $db = get_db_connection();
 $slug = sanitize_input($_GET['slug'] ?? '');
 
 $blog = null;
-try {
-    $stmt = $db->prepare("SELECT * FROM blogs WHERE slug = ? AND status = 'Published'");
-    $stmt->execute([$slug]);
-    $blog = $stmt->fetch();
-} catch (Exception $e) {
-    $blog = null;
+if ($db) {
+    try {
+        $stmt = $db->prepare("SELECT * FROM blogs WHERE slug = ? AND status = 'Published'");
+        if ($stmt) {
+            $stmt->execute([$slug]);
+            $blog = $stmt->fetch();
+        }
+    } catch (Throwable $e) {
+        $blog = null;
+    }
 }
 
 // Fallback for featured guide if DB record is missing

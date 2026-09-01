@@ -220,40 +220,45 @@ function get_sector_flag_badge($destination) {
         <?php else: ?>
           <?php foreach ($schedules as $s): 
             $flag = get_sector_flag_badge($s['destination']);
+            $cleanImg = !empty($s['bg_image']) ? preg_replace('/\?.*/', '', basename($s['bg_image'])) : '';
+            $shortImg = mb_strimwidth($cleanImg, 0, 18, '...');
           ?>
             <tr class="searchable-row">
               <td><strong>#<?php echo $s['id']; ?></strong></td>
-              <td>
-                <div style="display:flex; align-items:center; gap:0.5rem;">
-                  <span style="font-size:1.25rem; line-height:1;"><?php echo $flag; ?></span>
-                  <strong style="font-size:0.95rem; color:#0F172A;"><?php echo htmlspecialchars($s['destination']); ?> Sector</strong>
+              <td style="white-space:nowrap;">
+                <div style="display:inline-flex; align-items:center; gap:0.5rem;">
+                  <span style="font-size:1.35rem; line-height:1; vertical-align:middle; font-family:'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;"><?php echo $flag; ?></span>
+                  <strong style="font-size:0.925rem; color:#0F172A;"><?php echo htmlspecialchars($s['destination']); ?> Sector</strong>
                 </div>
               </td>
-              <td>
-                <span style="color:#DC2626; font-weight:700; background:#FEF2F2; padding:0.25rem 0.6rem; border-radius:6px; border:1px solid #FCA5A5;">
-                  <i class="fa-regular fa-clock me-1"></i><?php echo date('M d, Y', strtotime($s['cutoff_date'])); ?>
+              <td style="white-space:nowrap;">
+                <span style="color:#DC2626; font-weight:700; background:#FEF2F2; padding:0.3rem 0.65rem; border-radius:6px; border:1px solid #FCA5A5; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.85rem;">
+                  <i class="fa-regular fa-clock me-1 text-danger"></i><?php echo date('M d, Y', strtotime($s['cutoff_date'])); ?>
                 </span>
               </td>
-              <td>
-                <strong style="color:#0F172A;">
+              <td style="white-space:nowrap;">
+                <strong style="color:#0F172A; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.88rem;">
                   <i class="fa-solid fa-ship me-1 text-primary"></i><?php echo date('M d, Y', strtotime($s['etd_date'])); ?>
                 </strong>
               </td>
-              <td>
-                <span style="color:#059669; font-weight:700;">
-                  <i class="fa-solid fa-anchor me-1"></i><?php echo date('M d, Y', strtotime($s['eta_date'])); ?>
+              <td style="white-space:nowrap;">
+                <span style="color:#059669; font-weight:700; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.88rem;">
+                  <i class="fa-solid fa-anchor me-1 text-success"></i><?php echo date('M d, Y', strtotime($s['eta_date'])); ?>
                 </span>
               </td>
-              <td>
+              <td style="white-space:nowrap;">
                 <?php if (!empty($s['bg_image'])): ?>
-                  <span style="font-size:0.78rem; color:#0066FF; background:#EFF6FF; padding:0.25rem 0.55rem; border-radius:4px; border:1px solid #BFDBFE;" title="<?php echo htmlspecialchars($s['bg_image']); ?>">
-                    <i class="fa-solid fa-image me-1"></i><?php echo htmlspecialchars(basename($s['bg_image'])); ?>
-                  </span>
+                  <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#EFF6FF; border:1px solid #BFDBFE; padding:0.25rem 0.6rem; border-radius:6px;" title="<?php echo htmlspecialchars($s['bg_image']); ?>">
+                    <i class="fa-solid fa-image text-primary" style="font-size:0.85rem;"></i>
+                    <span style="font-size:0.78rem; font-weight:600; color:#0066FF; max-width:130px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                      <?php echo htmlspecialchars($shortImg); ?>
+                    </span>
+                  </div>
                 <?php else: ?>
-                  <span style="font-size:0.75rem; color:var(--admin-muted); font-style:italic;">Default</span>
+                  <span style="font-size:0.75rem; color:var(--admin-muted); font-style:italic;">Default Theme</span>
                 <?php endif; ?>
               </td>
-              <td>
+              <td style="white-space:nowrap;">
                 <span class="badge badge-<?php 
                   if ($s['status']==='Booking Open') echo 'quoted';
                   elseif ($s['status']==='Closing Soon') echo 'pending';

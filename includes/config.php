@@ -30,7 +30,5 @@ $SECTORS = [
     'dar-es-salam' => 'Dar Es Salaam',
     'ghana'      => 'Ghana',
     'india'      => 'India',
-    'nepal'      => 'Nepal',
-    'bangladesh' => 'Bangladesh',
     'china'      => 'China'
 ];

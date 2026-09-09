@@ -150,8 +150,6 @@
               <option value="Zambia">Zambia</option>
               <option value="Maldives">Maldives</option>
               <option value="India">India</option>
-              <option value="Nepal">Nepal</option>
-              <option value="Bangladesh">Bangladesh</option>
               <option value="China">China</option>
               <option value="Other">Other</option>
             </select>

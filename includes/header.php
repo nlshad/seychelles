@@ -127,8 +127,6 @@ if (!isset($asset_prefix)) {
               <a href="consolidation-service-to-zambia.html" class="dropdown-item">🇿🇲 Zambia Sector</a>
               <a href="consolidation-service-to-maldives.html" class="dropdown-item">🇲🇻 Maldives Sector</a>
               <a href="door-to-door-service-to-india.html" class="dropdown-item">🇮🇳 India Sector</a>
-              <a href="door-to-door-service-to-nepal.html" class="dropdown-item">🇳🇵 Nepal Sector</a>
-              <a href="door-to-door-service-to-bangladesh.html" class="dropdown-item">🇧🇩 Bangladesh Sector</a>
             </div>
           </div>
 

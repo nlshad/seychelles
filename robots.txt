@@ -14,10 +14,8 @@ Allow: /Contact.html
 Allow: /courier_services_to_seychelles.html
 Allow: /custom-clearance-dubai-import-clearance-dubai-best-door-to-door-service-international-movers-dubai-best-movers.html
 Allow: /door-to-door-service-from-dubai-to-india-best-door-to-door-dubai-uae-dubai-cargo.html
-Allow: /door-to-door-service-to-bangladesh.html
 Allow: /door-to-door-service-to-india.html
 Allow: /door-to-door-service-to-mauritius.html
-Allow: /door-to-door-service-to-nepal.html
 Allow: /door-to-door-service-to-seychelles.html
 Allow: /door-to-door-service-to-zanzibar.html
 Allow: /door_to_door_delivery_to_india.html

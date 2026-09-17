@@ -130,7 +130,7 @@ $archived_count = $db->query("SELECT COUNT(*) FROM quotes WHERE status = 'Archiv
           <th>Phone / WhatsApp</th>
           <th>City Origin</th>
           <th>Destination Sector</th>
-          <th>Departure Date</th>
+          <th>Cargo Details / Message</th>
           <th>Status</th>
           <th>Submitted Date</th>
           <th style="text-align:right;">Actions</th>
@@ -146,6 +146,7 @@ $archived_count = $db->query("SELECT COUNT(*) FROM quotes WHERE status = 'Archiv
         <?php else: ?>
           <?php foreach ($quotes as $q): 
             $waPhone = preg_replace('/[^0-9]/', '', $q['contact']);
+            $msgSnippet = $q['message'] ?: ($q['volume'] ?: 'No notes');
           ?>
             <tr class="searchable-row">
               <td><strong>#<?php echo $q['id']; ?></strong></td>
@@ -170,7 +171,11 @@ $archived_count = $db->query("SELECT COUNT(*) FROM quotes WHERE status = 'Archiv
                   <i class="fa-solid fa-location-dot me-1"></i><?php echo htmlspecialchars($q['destination']); ?>
                 </span>
               </td>
-              <td><?php echo htmlspecialchars($q['departure_date'] ?: 'Flexible'); ?></td>
+              <td>
+                <span style="font-size:0.85rem; color:#334155; display:block; max-width:200px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="<?php echo htmlspecialchars($msgSnippet); ?>">
+                  <i class="fa-solid fa-box-open me-1 text-primary"></i><?php echo htmlspecialchars($msgSnippet); ?>
+                </span>
+              </td>
               <td>
                 <span class="badge badge-<?php echo strtolower($q['status']); ?>">
                   <i class="fa-solid <?php 
@@ -191,6 +196,7 @@ $archived_count = $db->query("SELECT COUNT(*) FROM quotes WHERE status = 'Archiv
                             "origin" => $q["origin"],
                             "destination" => $q["destination"],
                             "departure_date" => $q["departure_date"] ?: "Flexible",
+                            "volume" => $q["volume"] ?? "",
                             "message" => $q["message"] ?? "",
                             "status" => $q["status"],
                             "created_at" => date("M d, Y H:i", strtotime($q["created_at"]))
@@ -326,8 +332,14 @@ function openQuoteModal(data) {
   
   document.getElementById('modalOrigin').innerText = data.origin || 'Dubai (DXB)';
   document.getElementById('modalDestination').innerText = data.destination;
-  document.getElementById('modalDeparture').innerText = data.departure_date;
-  document.getElementById('modalMessage').innerText = data.message || 'No additional message attached.';
+  let detailsText = '';
+  if (data.volume) {
+    detailsText += 'Cargo Volume: ' + data.volume + '\n';
+  }
+  if (data.message) {
+    detailsText += (detailsText ? 'Message / Details: ' : '') + data.message;
+  }
+  document.getElementById('modalMessage').innerText = detailsText || 'No additional message or cargo details attached.';
 
   // Status badge & select
   const badge = document.getElementById('modalStatusBadge');

@@ -69,6 +69,8 @@ function init_database() {
         origin TEXT NOT NULL,
         destination TEXT NOT NULL,
         departure_date TEXT,
+        message TEXT DEFAULT '',
+        volume TEXT DEFAULT '',
         status TEXT DEFAULT 'Pending',
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );");
@@ -151,6 +153,12 @@ function init_database() {
     } catch (PDOException $e) {}
     try {
         $db->exec("ALTER TABLE blogs ADD COLUMN views_count INTEGER DEFAULT 0;");
+    } catch (PDOException $e) {}
+    try {
+        $db->exec("ALTER TABLE quotes ADD COLUMN message TEXT DEFAULT '';");
+    } catch (PDOException $e) {}
+    try {
+        $db->exec("ALTER TABLE quotes ADD COLUMN volume TEXT DEFAULT '';");
     } catch (PDOException $e) {}
 
     // Seed default admin user if none exists

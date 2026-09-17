@@ -33,13 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insert into Database
     try {
         $db = get_db_connection();
-        $stmt = $db->prepare("INSERT INTO quotes (name, contact, origin, destination, departure_date) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $db->prepare("INSERT INTO quotes (name, contact, origin, destination, departure_date, message, volume) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([
             $name,
             $contact,
             $poster ?: 'Dubai, UAE',
             $recipient ?: 'Not specified',
-            $departure ?: 'Flexible'
+            $departure ?: 'Flexible',
+            $message ?: '',
+            $volume ?: ''
         ]);
     } catch (Exception $e) {
         // Log error silently if db fails, send mail regardless

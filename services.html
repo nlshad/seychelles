@@ -32,97 +32,110 @@ require_once __DIR__ . '/includes/header.php';
         </div>
       </div>
 
-      <!-- Right Column: Interactive Multi-Modal Logistics Visual Animation -->
-      <div class="services-hero-visual-wrap">
-        <div class="logistics-radar-canvas">
-          <!-- Ambient Radar Pulse Concentric Rings -->
-          <div class="radar-pulse-ring ring-1"></div>
-          <div class="radar-pulse-ring ring-2"></div>
-          <div class="radar-pulse-ring ring-3"></div>
+      <!-- Right Column: Minimalist Floating Service Cards Showcase -->
+      <div class="services-hero-cards-showcase">
+        <!-- Ambient Warm Glow Background -->
+        <div class="cards-showcase-glow"></div>
 
-          <!-- Central Dubai Logistics Hub -->
-          <div class="central-hub-node">
-            <div class="hub-core-pulse">
-              <i class="fa-solid fa-location-dot"></i>
+        <!-- Top Floating Card: Express Air Freight -->
+        <div class="float-card float-card-air" onclick="openQuoteModal('Air Freight')" role="button" tabindex="0" title="Book Express Air Cargo">
+          <div class="float-card-header">
+            <div class="float-icon-box air-icon-box">
+              <i class="fa-solid fa-plane-departure"></i>
             </div>
-            <div class="hub-label">
-              DUBAI HUB<br><small>Jebel Ali & DXB</small>
+            <div class="float-card-title-group">
+              <div class="float-card-badge air-badge"><span class="badge-dot dot-blue"></span> Express 24–48h</div>
+              <h4 class="float-card-title">Air Cargo Express</h4>
             </div>
           </div>
-
-          <!-- Animated Transit Flight & Sea Paths SVG -->
-          <svg class="transit-tracks-svg" viewBox="0 0 460 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Air Flight Corridor Arc -->
-            <path class="route-line air-path" d="M 230 190 Q 320 80 390 100" />
-            <!-- Sea Voyage Route Arc -->
-            <path class="route-line sea-path" d="M 230 190 Q 140 280 80 270" />
-            <!-- Door to Door Route Arc -->
-            <path class="route-line door-path" d="M 230 190 Q 340 270 380 290" />
-            <!-- China / Warehousing Route Arc -->
-            <path class="route-line hub-path" d="M 230 190 Q 110 110 80 90" />
-          </svg>
-
-          <!-- Animated Flying Cargo Plane -->
-          <div class="animated-vehicle air-vehicle" title="Express Air Cargo in transit">
-            <i class="fa-solid fa-plane-up"></i>
-            <div class="vehicle-pulse-glow air-glow"></div>
+          <div class="float-card-route">
+            <span class="route-point">DXB / DWC</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+            <span class="route-point">SEZ (Mahé)</span>
+            <span class="route-meta">Daily Flights</span>
           </div>
+        </div>
 
-          <!-- Animated Ocean Freight Vessel -->
-          <div class="animated-vehicle sea-vehicle" title="Weekly Ocean Vessel in transit">
-            <i class="fa-solid fa-ship"></i>
-            <div class="vehicle-pulse-glow sea-glow"></div>
-          </div>
-
-          <!-- 4 Floating Multi-Modal Service Satellite Badges -->
-          <!-- Badge 1: Sea Freight -->
-          <div class="service-orbit-badge badge-sea" onclick="openQuoteModal('Sea Freight')" title="Book Sea Freight">
-            <div class="sob-icon sea-color"><i class="fa-solid fa-ship"></i></div>
-            <div class="sob-info">
-              <span class="sob-title">Weekly Sea Freight</span>
-              <span class="sob-status"><span class="live-dot dot-green"></span> Booking Open</span>
+        <!-- Main Centerpiece Card: Ocean Freight & LCL Hub -->
+        <div class="float-card float-card-primary" onclick="openQuoteModal('Sea Freight')" role="button" tabindex="0" title="Book Weekly Ocean Freight">
+          <div class="float-card-header">
+            <div class="float-icon-box sea-icon-box">
+              <i class="fa-solid fa-ship"></i>
+            </div>
+            <div class="float-card-title-group">
+              <div class="float-card-top-row">
+                <div class="float-card-badge sea-badge"><span class="badge-dot dot-green pulse-beacon"></span> Weekly Direct Line</div>
+                <span class="float-card-tag">Core Service</span>
+              </div>
+              <h3 class="float-card-main-title">Ocean Freight & LCL Consolidation</h3>
+              <p class="float-card-desc">Scheduled containerized groupage & FCL shipping from UAE to Seychelles</p>
             </div>
           </div>
 
-          <!-- Badge 2: Air Cargo -->
-          <div class="service-orbit-badge badge-air" onclick="openQuoteModal('Air Freight')" title="Book Air Freight">
-            <div class="sob-icon air-color"><i class="fa-solid fa-plane-departure"></i></div>
-            <div class="sob-info">
-              <span class="sob-title">Daily Air Express</span>
-              <span class="sob-status"><span class="live-dot dot-blue"></span> DXB Transit</span>
+          <!-- Clean Route Progress Display -->
+          <div class="hero-route-display">
+            <div class="route-station">
+              <span class="station-code">DXB</span>
+              <span class="station-name">Jebel Ali Port</span>
+            </div>
+            <div class="route-transit-line">
+              <span class="transit-badge"><i class="fa-regular fa-clock me-1"></i> 8–10 Days</span>
+              <div class="route-line-bar">
+                <div class="route-line-fill"></div>
+                <span class="route-line-pulse"></span>
+              </div>
+            </div>
+            <div class="route-station text-end">
+              <span class="station-code">SEZ</span>
+              <span class="station-name">Port Victoria</span>
             </div>
           </div>
 
-          <!-- Badge 3: Door to Door -->
-          <div class="service-orbit-badge badge-door" onclick="openQuoteModal('Door to Door')" title="Book Door to Door">
-            <div class="sob-icon door-color"><i class="fa-solid fa-truck-fast"></i></div>
-            <div class="sob-info">
-              <span class="sob-title">Door to Door</span>
-              <span class="sob-status"><span class="live-dot dot-orange"></span> Direct Delivery</span>
+          <!-- Feature Specs Mini Bar -->
+          <div class="float-card-specs">
+            <div class="spec-item">
+              <span class="spec-label">Sailing Cut-off</span>
+              <span class="spec-val">Every Friday</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-item">
+              <span class="spec-label">Customs</span>
+              <span class="spec-val">ASYCUDA Prepared</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-item">
+              <span class="spec-label">Warehousing</span>
+              <span class="spec-val">7 Days Free Hub</span>
             </div>
           </div>
+        </div>
 
-          <!-- Badge 4: Sourcing & Warehousing -->
-          <div class="service-orbit-badge badge-warehouse" onclick="openQuoteModal('Warehousing & Sourcing')" title="Warehousing Hubs">
-            <div class="sob-icon wh-color"><i class="fa-solid fa-warehouse"></i></div>
-            <div class="sob-info">
-              <span class="sob-title">Dubai & China Hubs</span>
-              <span class="sob-status"><span class="live-dot dot-purple"></span> Free Storage</span>
+        <!-- Bottom Floating Card: Door to Door -->
+        <div class="float-card float-card-door" onclick="openQuoteModal('Door to Door')" role="button" tabindex="0" title="Book Door to Door Logistics">
+          <div class="float-card-header">
+            <div class="float-icon-box door-icon-box">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <div class="float-card-title-group">
+              <div class="float-card-badge door-badge"><span class="badge-dot dot-orange"></span> Direct Delivery</div>
+              <h4 class="float-card-title">Full Door-to-Door Logistics</h4>
             </div>
           </div>
+          <div class="float-card-route">
+            <span class="route-point">UAE Supplier Pickup</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+            <span class="route-point">Your Seychelles Door</span>
+            <span class="route-meta">Customs Handled</span>
+          </div>
+        </div>
 
-          <!-- Bottom Live Transit Status Mini-Bar -->
-          <div class="hero-live-status-pill">
-            <div class="hlsp-indicator">
-              <span class="live-pulse-dot"></span>
-              <span>LIVE OPERATIONS</span>
-            </div>
-            <div class="hlsp-route">
-              <span>Jebel Ali / DXB</span>
-              <div class="hlsp-motion-bar"><div class="hlsp-beam"></div></div>
-              <span>Port Victoria (SEZ)</span>
-            </div>
-          </div>
+        <!-- Trust Metric Capsule Bar -->
+        <div class="showcase-trust-strip">
+          <div class="trust-pill"><i class="fa-solid fa-shield-halved text-accent"></i> Full Marine Insurance</div>
+          <div class="trust-dot">•</div>
+          <div class="trust-pill"><i class="fa-solid fa-barcode text-accent"></i> Live Cargo Tracking</div>
+          <div class="trust-dot">•</div>
+          <div class="trust-pill"><i class="fa-solid fa-cubes-stacked text-accent"></i> CBM Optimization</div>
         </div>
       </div>
     </div>

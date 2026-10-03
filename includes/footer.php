@@ -2,6 +2,7 @@
 /**
  * Seychelles International Cargo LLC - Global Footer
  */
+require_once __DIR__ . '/config.php';
 ?>
   <!-- Global Footer -->
   <footer class="footer">
@@ -17,11 +18,36 @@
           <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:1rem;">
             Seychelles International Cargo LLC is your trusted freight forwarding and door-to-door cargo partner in Dubai, UAE. Serving Seychelles, Mauritius, Zanzibar, Comoros, Dar Es Salaam, Uganda, Zambia, Maldives, India, China, and beyond.
           </p>
-          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-plane-up me-1 text-primary"></i> Air Freight</span>
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-ship me-1 text-primary"></i> Sea Freight</span>
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-boxes-stacked me-1 text-primary"></i> LCL / FCL</span>
             <span style="background:rgba(255,255,255,0.06); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.75rem; color:#cbd5e1;"><i class="fa-solid fa-truck-ramp-box me-1 text-primary"></i> Door to Door</span>
+          </div>
+
+          <!-- Social Media Profiles -->
+          <div class="footer-social-wrap">
+            <span class="footer-social-title"><i class="fa-solid fa-share-nodes text-accent"></i> Follow Us</span>
+            <div class="footer-social-links">
+              <a href="<?php echo defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : 'https://www.facebook.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn facebook" title="Follow us on Facebook" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="<?php echo defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : 'https://www.instagram.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn instagram" title="Follow us on Instagram" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="<?php echo defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : 'https://www.linkedin.com/company/seychelles-international-cargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn linkedin" title="Connect on LinkedIn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="<?php echo defined('COMPANY_WHATSAPP_LINK') ? COMPANY_WHATSAPP_LINK : 'https://wa.me/971552038001'; ?>" target="_blank" rel="noopener" class="footer-social-btn whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="<?php echo defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : 'https://twitter.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn twitter" title="Follow us on X (Twitter)" aria-label="Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="<?php echo defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : 'https://www.youtube.com/@seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn youtube" title="Watch on YouTube" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -89,9 +115,18 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="footer-bottom" style="justify-content:center; text-align:center;">
+      <div class="footer-bottom">
         <div>
           &copy; <?php echo date('Y'); ?> Seychelles International Cargo LLC. All Rights Reserved.
+        </div>
+        <div class="footer-bottom-social">
+          <span style="color:#64748B; font-size:0.8rem; margin-right:0.35rem;">Connect:</span>
+          <a href="<?php echo defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : 'https://www.facebook.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="<?php echo defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : 'https://www.instagram.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="<?php echo defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : 'https://www.linkedin.com/company/seychelles-international-cargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="<?php echo defined('COMPANY_WHATSAPP_LINK') ? COMPANY_WHATSAPP_LINK : 'https://wa.me/971552038001'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="<?php echo defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : 'https://twitter.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="X (Twitter)" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="<?php echo defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : 'https://www.youtube.com/@seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ if (!isset($asset_prefix)) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Modern Main CSS Design System -->
-  <link rel="stylesheet" href="<?php echo $asset_prefix; ?>css/main.css?v=23.0">
+  <link rel="stylesheet" href="<?php echo $asset_prefix; ?>css/main.css?v=24.0">
 </head>
 <body>
 
@@ -90,10 +90,13 @@ if (!isset($asset_prefix)) {
           
           <!-- Services Dropdown -->
           <div class="nav-item-dropdown">
-            <a href="#" class="nav-link">
+            <a href="services.html" class="nav-link <?php echo is_active_page('services.html'); ?>">
               <i class="fa-solid fa-boxes-packing me-1" style="font-size:0.85rem;"></i> Services <i class="fa-solid fa-chevron-down ms-1" style="font-size:0.75rem;"></i>
             </a>
             <div class="dropdown-menu">
+              <a href="services.html" class="dropdown-item" style="border-bottom:1px solid #f1f5f9; font-weight:700; color:#FF7A00;">
+                <i class="fa-solid fa-layer-group me-2 text-accent"></i> All Services Overview
+              </a>
               <a href="Airfreight-service-dubai-airfreight-service-to-seychelles-airfreight-dubai-best-airfreight-team-in-dubai-airfreight-clearance-airfreight-to-seychelles.html" class="dropdown-item">
                 <i class="fa-solid fa-plane-up me-2 text-primary"></i> Air Freight
               </a>
@@ -108,6 +111,12 @@ if (!isset($asset_prefix)) {
               </a>
               <a href="Warehousing-service-dubai-best-warehouse-inventory-warehouse-lcl-service-warehousing-service-uae-warehousing-sharjah.html" class="dropdown-item">
                 <i class="fa-solid fa-warehouse me-2 text-primary"></i> Warehousing & Storage
+              </a>
+              <a href="custom-clearance-dubai-import-clearance-dubai-best-door-to-door-service-international-movers-dubai-best-movers.html" class="dropdown-item">
+                <i class="fa-solid fa-file-shield me-2 text-primary"></i> Customs Clearance
+              </a>
+              <a href="packing_and_moving_service.html" class="dropdown-item">
+                <i class="fa-solid fa-box-archive me-2 text-primary"></i> Packing & Crating
               </a>
             </div>
           </div>
@@ -162,6 +171,7 @@ if (!isset($asset_prefix)) {
       </div>
       <div class="mobile-nav-links">
         <a href="index.html" class="mobile-nav-link"><i class="fa-solid fa-house me-2"></i> Home</a>
+        <a href="services.html" class="mobile-nav-link" style="color:#FF7A00; font-weight:700;"><i class="fa-solid fa-boxes-packing me-2 text-accent"></i> All Services</a>
         <a href="door-to-door-service-from-dubai-to-india-best-door-to-door-dubai-uae-dubai-cargo.html" class="mobile-nav-link"><i class="fa-solid fa-circle-info me-2"></i> About Us</a>
         <a href="Airfreight-service-dubai-airfreight-service-to-seychelles-airfreight-dubai-best-airfreight-team-in-dubai-airfreight-clearance-airfreight-to-seychelles.html" class="mobile-nav-link"><i class="fa-solid fa-plane-up me-2"></i> Air Freight</a>
         <a href="sea-freight-dubai-lcl-service-to-dubai-best-seafreight-service-to-dubai-seafreight-service-mauritius-seafreight-to-seychelles-uafl-service-maersk-safmarine.html" class="mobile-nav-link"><i class="fa-solid fa-ship me-2"></i> Sea Freight</a>

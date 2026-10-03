@@ -15,6 +15,11 @@
   <changefreq>always</changefreq>
 </url>
 <url>
+  <loc>http://seychellescargo.com/services.html</loc>
+  <changefreq>always</changefreq>
+  <priority>0.9</priority>
+</url>
+<url>
   <loc>http://seychellescargo.com/ship-cargo-jebel-ali-dubai-to-port-victoria-seychelles.html</loc>
   <changefreq>always</changefreq>
 </url>

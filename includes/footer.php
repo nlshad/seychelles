@@ -69,6 +69,7 @@ require_once __DIR__ . '/config.php';
           <div class="footer-links">
             <a href="index.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Home</a>
             <a href="door-to-door-service-from-dubai-to-india-best-door-to-door-dubai-uae-dubai-cargo.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> About Us</a>
+            <a href="services.html" class="footer-link" style="color:#FF7A00; font-weight:600;"><i class="fa-solid fa-boxes-packing me-1 text-accent"></i> All Services Overview</a>
             <a href="Airfreight-service-dubai-airfreight-service-to-seychelles-airfreight-dubai-best-airfreight-team-in-dubai-airfreight-clearance-airfreight-to-seychelles.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Air Freight Services</a>
             <a href="sea-freight-dubai-lcl-service-to-dubai-best-seafreight-service-to-dubai-seafreight-service-mauritius-seafreight-to-seychelles-uafl-service-maersk-safmarine.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Sea Freight Services</a>
             <a href="sourcing-service-dubai-shop-and-ship-service-in-dubai-dubai-best-cargo-door-door.html" class="footer-link"><i class="fa-solid fa-angle-right me-1 text-primary"></i> Shop & Ship / Sourcing</a>

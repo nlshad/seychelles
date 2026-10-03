@@ -9,24 +9,121 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Services Hero Header -->
 <section class="services-hero">
   <div class="container" style="position:relative; z-index:10;">
-    <div style="max-width:850px;">
-      <span class="services-pill-badge">
-        <i class="fa-solid fa-boxes-packing text-accent"></i> Global Logistics & Freight Capabilities
-      </span>
-      <h1 style="font-size:clamp(2rem, 4vw, 3.25rem); font-weight:800; line-height:1.2; margin-bottom:1.25rem; color:#FFFFFF;">
-        End-to-End <span style="background:linear-gradient(135deg, #FF7A00 0%, #FFA726 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Cargo Solutions</span> For Every Shipper
-      </h1>
-      <p style="font-size:1.1rem; color:#94A3B8; line-height:1.7; margin-bottom:1.75rem;">
-        From small parcel LCL consolidation to full container loads (FCL), daily express air flights, and China-Dubai sourcing. We deliver reliable, secure cargo transit with 100% customs clearance and door delivery across the Indian Ocean and Africa.
-      </p>
-      
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
-        <button class="btn btn-accent btn-lg" onclick="openQuoteModal()">
-          Request Instant Quote <i class="fa-solid fa-arrow-right ms-2"></i>
-        </button>
-        <a href="https://wa.me/971552038001" target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.15); color:#FFFFFF;">
-          <i class="fa-brands fa-whatsapp text-success me-2"></i> Chat with Freight Expert
-        </a>
+    <div class="services-hero-grid">
+      <!-- Left Column: Hero Content (Preserved 100%) -->
+      <div class="services-hero-content">
+        <span class="services-pill-badge">
+          <i class="fa-solid fa-boxes-packing text-accent"></i> Global Logistics & Freight Capabilities
+        </span>
+        <h1 class="services-hero-title">
+          End-to-End <span class="text-gradient-orange">Cargo Solutions</span> For Every Shipper
+        </h1>
+        <p class="services-hero-subtitle">
+          From small parcel LCL consolidation to full container loads (FCL), daily express air flights, and China-Dubai sourcing. We deliver reliable, secure cargo transit with 100% customs clearance and door delivery across the Indian Ocean and Africa.
+        </p>
+        
+        <div class="services-hero-actions">
+          <button class="btn btn-accent btn-lg" onclick="openQuoteModal()">
+            Request Instant Quote <i class="fa-solid fa-arrow-right ms-2"></i>
+          </button>
+          <a href="https://wa.me/971552038001" target="_blank" rel="noopener" class="btn btn-secondary btn-lg btn-whatsapp-hero">
+            <i class="fa-brands fa-whatsapp text-success me-2"></i> Chat with Freight Expert
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Multi-Modal Logistics Visual Animation -->
+      <div class="services-hero-visual-wrap">
+        <div class="logistics-radar-canvas">
+          <!-- Ambient Radar Pulse Concentric Rings -->
+          <div class="radar-pulse-ring ring-1"></div>
+          <div class="radar-pulse-ring ring-2"></div>
+          <div class="radar-pulse-ring ring-3"></div>
+
+          <!-- Central Dubai Logistics Hub -->
+          <div class="central-hub-node">
+            <div class="hub-core-pulse">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="hub-label">
+              DUBAI HUB<br><small>Jebel Ali & DXB</small>
+            </div>
+          </div>
+
+          <!-- Animated Transit Flight & Sea Paths SVG -->
+          <svg class="transit-tracks-svg" viewBox="0 0 460 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Air Flight Corridor Arc -->
+            <path class="route-line air-path" d="M 230 190 Q 320 80 390 100" />
+            <!-- Sea Voyage Route Arc -->
+            <path class="route-line sea-path" d="M 230 190 Q 140 280 80 270" />
+            <!-- Door to Door Route Arc -->
+            <path class="route-line door-path" d="M 230 190 Q 340 270 380 290" />
+            <!-- China / Warehousing Route Arc -->
+            <path class="route-line hub-path" d="M 230 190 Q 110 110 80 90" />
+          </svg>
+
+          <!-- Animated Flying Cargo Plane -->
+          <div class="animated-vehicle air-vehicle" title="Express Air Cargo in transit">
+            <i class="fa-solid fa-plane-up"></i>
+            <div class="vehicle-pulse-glow air-glow"></div>
+          </div>
+
+          <!-- Animated Ocean Freight Vessel -->
+          <div class="animated-vehicle sea-vehicle" title="Weekly Ocean Vessel in transit">
+            <i class="fa-solid fa-ship"></i>
+            <div class="vehicle-pulse-glow sea-glow"></div>
+          </div>
+
+          <!-- 4 Floating Multi-Modal Service Satellite Badges -->
+          <!-- Badge 1: Sea Freight -->
+          <div class="service-orbit-badge badge-sea" onclick="openQuoteModal('Sea Freight')" title="Book Sea Freight">
+            <div class="sob-icon sea-color"><i class="fa-solid fa-ship"></i></div>
+            <div class="sob-info">
+              <span class="sob-title">Weekly Sea Freight</span>
+              <span class="sob-status"><span class="live-dot dot-green"></span> Booking Open</span>
+            </div>
+          </div>
+
+          <!-- Badge 2: Air Cargo -->
+          <div class="service-orbit-badge badge-air" onclick="openQuoteModal('Air Freight')" title="Book Air Freight">
+            <div class="sob-icon air-color"><i class="fa-solid fa-plane-departure"></i></div>
+            <div class="sob-info">
+              <span class="sob-title">Daily Air Express</span>
+              <span class="sob-status"><span class="live-dot dot-blue"></span> DXB Transit</span>
+            </div>
+          </div>
+
+          <!-- Badge 3: Door to Door -->
+          <div class="service-orbit-badge badge-door" onclick="openQuoteModal('Door to Door')" title="Book Door to Door">
+            <div class="sob-icon door-color"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="sob-info">
+              <span class="sob-title">Door to Door</span>
+              <span class="sob-status"><span class="live-dot dot-orange"></span> Direct Delivery</span>
+            </div>
+          </div>
+
+          <!-- Badge 4: Sourcing & Warehousing -->
+          <div class="service-orbit-badge badge-warehouse" onclick="openQuoteModal('Warehousing & Sourcing')" title="Warehousing Hubs">
+            <div class="sob-icon wh-color"><i class="fa-solid fa-warehouse"></i></div>
+            <div class="sob-info">
+              <span class="sob-title">Dubai & China Hubs</span>
+              <span class="sob-status"><span class="live-dot dot-purple"></span> Free Storage</span>
+            </div>
+          </div>
+
+          <!-- Bottom Live Transit Status Mini-Bar -->
+          <div class="hero-live-status-pill">
+            <div class="hlsp-indicator">
+              <span class="live-pulse-dot"></span>
+              <span>LIVE OPERATIONS</span>
+            </div>
+            <div class="hlsp-route">
+              <span>Jebel Ali / DXB</span>
+              <div class="hlsp-motion-bar"><div class="hlsp-beam"></div></div>
+              <span>Port Victoria (SEZ)</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

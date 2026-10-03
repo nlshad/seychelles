@@ -2311,3 +2311,443 @@ select.form-control-dark option {
   background: radial-gradient(circle, rgba(255, 122, 0, 0.2) 0%, transparent 70%);
   pointer-events: none;
 }
+
+/* ==========================================================================
+   Services Hero Animation Visual & Multi-Modal Radar
+   ========================================================================== */
+.services-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+.services-hero-title {
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  color: #FFFFFF;
+}
+.services-hero-subtitle {
+  font-size: 1.1rem;
+  color: #94A3B8;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.services-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn-whatsapp-hero {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+.btn-whatsapp-hero:hover {
+  background: rgba(37, 211, 102, 0.18);
+  border-color: rgba(37, 211, 102, 0.4);
+  color: #FFFFFF;
+}
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FF7A00 0%, #FFA726 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Radar Canvas Container */
+.services-hero-visual-wrap {
+  position: relative;
+  width: 100%;
+}
+.logistics-radar-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 420px;
+  margin: 0 auto;
+  background: radial-gradient(circle at 50% 50%, #0F172A 0%, #070B12 100%);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 122, 0, 0.28);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(255, 122, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Concentric Radar Rings */
+.radar-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.radar-pulse-ring.ring-1 {
+  width: 130px;
+  height: 130px;
+  border: 1px dashed rgba(255, 122, 0, 0.35);
+  animation: radarSpin 25s linear infinite;
+}
+.radar-pulse-ring.ring-2 {
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.radar-pulse-ring.ring-3 {
+  width: 370px;
+  height: 370px;
+  border: 1px dashed rgba(56, 189, 248, 0.18);
+  animation: radarPulse 7s ease-in-out infinite;
+}
+
+/* Central Logistics Hub Node */
+.central-hub-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  pointer-events: none;
+}
+.hub-core-pulse {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.4) 0%, rgba(255, 122, 0, 0.1) 70%);
+  border: 2px solid #FF7A00;
+  box-shadow: 0 0 25px rgba(255, 122, 0, 0.6), inset 0 0 15px rgba(255, 122, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.35rem;
+  animation: hubBreathing 3s ease-in-out infinite alternate;
+}
+.hub-label {
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-top: 0.4rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+.hub-label small {
+  color: #FF7A00;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+/* SVG Route Track Arcs */
+.transit-tracks-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 6;
+}
+.route-line {
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  animation: dashOffset 20s linear infinite;
+  fill: none;
+}
+.air-path {
+  stroke: #38BDF8;
+  opacity: 0.75;
+}
+.sea-path {
+  stroke: #10B981;
+  opacity: 0.75;
+}
+.door-path {
+  stroke: #FF7A00;
+  opacity: 0.65;
+}
+.hub-path {
+  stroke: #A855F7;
+  opacity: 0.65;
+}
+
+/* Moving Vehicles on Paths */
+.animated-vehicle {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.air-vehicle {
+  color: #38BDF8;
+  font-size: 1.25rem;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.9));
+  animation: airMotion 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.sea-vehicle {
+  color: #34D399;
+  font-size: 1.35rem;
+  filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.9));
+  animation: seaMotion 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.vehicle-pulse-glow {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.6;
+}
+.air-glow {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.8) 0%, transparent 70%);
+}
+.sea-glow {
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.8) 0%, transparent 70%);
+}
+
+/* 4 Orbit Service Badges */
+.service-orbit-badge {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 0.55rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  z-index: 15;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.service-orbit-badge:hover {
+  transform: scale(1.08) translateY(-3px) !important;
+  border-color: #FF7A00;
+  box-shadow: 0 12px 32px rgba(255, 122, 0, 0.3);
+}
+.badge-sea {
+  bottom: 64px;
+  left: 14px;
+  animation: floatSea 6s ease-in-out infinite 0.5s;
+}
+.badge-air {
+  top: 18px;
+  right: 18px;
+  animation: floatAir 5.5s ease-in-out infinite;
+}
+.badge-door {
+  bottom: 64px;
+  right: 14px;
+  animation: floatDoor 5.8s ease-in-out infinite 1s;
+}
+.badge-warehouse {
+  top: 18px;
+  left: 18px;
+  animation: floatWh 6.5s ease-in-out infinite 1.5s;
+}
+
+.sob-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.sob-icon.sea-color {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.sob-icon.air-color {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+.sob-icon.door-color {
+  background: rgba(255, 122, 0, 0.15);
+  color: #FF7A00;
+  border: 1px solid rgba(255, 122, 0, 0.3);
+}
+.sob-icon.wh-color {
+  background: rgba(168, 85, 247, 0.15);
+  color: #C084FC;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.sob-info {
+  display: flex;
+  flex-direction: column;
+}
+.sob-title {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.sob-status {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-green { background: #10B981; box-shadow: 0 0 8px #10B981; }
+.dot-blue { background: #38BDF8; box-shadow: 0 0 8px #38BDF8; }
+.dot-orange { background: #FF7A00; box-shadow: 0 0 8px #FF7A00; }
+.dot-purple { background: #C084FC; box-shadow: 0 0 8px #C084FC; }
+
+/* Bottom Live Transit Status Mini-Bar */
+.hero-live-status-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  right: 14px;
+  background: rgba(7, 11, 18, 0.95);
+  border: 1px solid rgba(255, 122, 0, 0.22);
+  border-radius: 9999px;
+  padding: 0.45rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  font-size: 0.74rem;
+  color: #94A3B8;
+}
+.hlsp-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+}
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  animation: pulseBeacon 1.8s infinite;
+}
+.hlsp-route {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #E2E8F0;
+  font-weight: 600;
+}
+.hlsp-motion-bar {
+  width: 65px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+.hlsp-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25px;
+  background: linear-gradient(90deg, transparent, #FF7A00, transparent);
+  animation: pipelineBeamMotion 2s infinite linear;
+}
+
+/* Keyframe Animations */
+@keyframes radarSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes radarPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.06); opacity: 0.65; }
+}
+@keyframes hubBreathing {
+  0% { transform: scale(0.96); box-shadow: 0 0 20px rgba(255, 122, 0, 0.4); }
+  100% { transform: scale(1.04); box-shadow: 0 0 35px rgba(255, 122, 0, 0.8); }
+}
+@keyframes dashOffset {
+  to { stroke-dashoffset: -120; }
+}
+@keyframes floatAir {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes floatSea {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(6px); }
+}
+@keyframes floatDoor {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes floatWh {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(7px); }
+}
+@keyframes airMotion {
+  0% { top: 46%; left: 50%; opacity: 0; transform: scale(0.6) rotate(35deg); }
+  18% { opacity: 1; transform: scale(1) rotate(25deg); }
+  82% { opacity: 1; transform: scale(1.08) rotate(15deg); }
+  100% { top: 16%; left: 82%; opacity: 0; transform: scale(0.7) rotate(10deg); }
+}
+@keyframes seaMotion {
+  0% { top: 52%; left: 48%; opacity: 0; transform: scale(0.65) rotate(-130deg); }
+  22% { opacity: 1; transform: scale(1) rotate(-138deg); }
+  78% { opacity: 1; transform: scale(1.08) rotate(-145deg); }
+  100% { top: 74%; left: 18%; opacity: 0; transform: scale(0.7) rotate(-152deg); }
+}
+@keyframes pulseBeacon {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+@media (max-width: 991px) {
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .logistics-radar-canvas {
+    max-width: 440px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logistics-radar-canvas {
+    max-width: 100%;
+    height: 350px;
+  }
+  .service-orbit-badge {
+    padding: 0.4rem 0.65rem;
+  }
+  .sob-title {
+    font-size: 0.74rem;
+  }
+  .hero-live-status-pill {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.75rem;
+  }
+  .hlsp-motion-bar {
+    width: 45px;
+  }
+}

@@ -2358,413 +2358,186 @@ select.form-control-dark option {
 }
 
 /* ==========================================================================
-   Services Hero: Minimalist Floating Service Cards Showcase
+   Services Hero: Silhouette Port Operations Animation (Pure Visual, No Text)
    ========================================================================== */
-.services-hero-cards-showcase {
+.services-hero-port-visual {
   position: relative;
   width: 100%;
   max-width: 530px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
 }
 
-/* Ambient Warm Glow in Background */
-.cards-showcase-glow {
-  position: absolute;
-  top: 15%;
-  right: -5%;
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, rgba(255, 122, 0, 0.16) 0%, rgba(56, 189, 248, 0.08) 55%, transparent 75%);
-  filter: blur(50px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Base Glassmorphism Float Card */
-.float-card {
-  position: relative;
-  z-index: 2;
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 18px;
-  padding: 1.1rem 1.35rem;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  outline: none;
-}
-.float-card:hover,
-.float-card:focus-visible {
-  border-color: rgba(255, 122, 0, 0.45);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 122, 0, 0.14);
-  transform: translateY(-4px) !important;
-}
-
-/* Organic Stagger Layout & Micro-Floating Animations */
-.float-card-air {
-  margin-left: 2.5rem;
-  animation: floatAirSubtle 7s ease-in-out infinite;
-}
-.float-card-door {
-  margin-right: 2rem;
-  animation: floatDoorSubtle 8s ease-in-out infinite 0.6s;
-}
-.float-card-air:hover,
-.float-card-door:hover {
-  animation-play-state: paused;
-}
-
-@keyframes floatAirSubtle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-@keyframes floatDoorSubtle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
-}
-
-/* Card Header */
-.float-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-.float-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  flex-shrink: 0;
-}
-.air-icon-box {
-  background: rgba(56, 189, 248, 0.12);
-  color: #38BDF8;
-  border: 1px solid rgba(56, 189, 248, 0.28);
-}
-.sea-icon-box {
-  background: rgba(255, 122, 0, 0.14);
-  color: #FF7A00;
-  border: 1px solid rgba(255, 122, 0, 0.35);
-}
-.door-icon-box {
-  background: rgba(245, 158, 11, 0.12);
-  color: #F59E0B;
-  border: 1px solid rgba(245, 158, 11, 0.28);
-}
-
-.float-card-title-group {
-  flex: 1;
-  min-width: 0;
-}
-.float-card-top-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.3rem;
-  gap: 0.5rem;
-}
-.float-card-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 0.2rem 0.55rem;
-  border-radius: 9999px;
-  margin-bottom: 0.25rem;
-}
-.air-badge {
-  background: rgba(56, 189, 248, 0.12);
-  color: #7DD3FC;
-  border: 1px solid rgba(56, 189, 248, 0.22);
-}
-.sea-badge {
-  background: rgba(16, 185, 129, 0.12);
-  color: #6EE7B7;
-  border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.door-badge {
-  background: rgba(255, 122, 0, 0.12);
-  color: #FDBA74;
-  border: 1px solid rgba(255, 122, 0, 0.22);
-}
-
-.badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.dot-blue { background: #38BDF8; box-shadow: 0 0 6px #38BDF8; }
-.dot-green { background: #10B981; box-shadow: 0 0 6px #10B981; }
-.dot-orange { background: #FF7A00; box-shadow: 0 0 6px #FF7A00; }
-.pulse-beacon {
-  animation: pulseBeacon 1.8s infinite;
-}
-
-.float-card-tag {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #FF7A00;
-  background: rgba(255, 122, 0, 0.12);
-  border: 1px solid rgba(255, 122, 0, 0.25);
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-}
-
-.float-card-title {
-  color: #FFFFFF;
-  font-size: 0.96rem;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.3;
-}
-.float-card-main-title {
-  color: #FFFFFF;
-  font-size: 1.15rem;
-  font-weight: 800;
-  margin: 0 0 0.25rem 0;
-  line-height: 1.3;
-}
-.float-card-desc {
-  color: #94A3B8;
-  font-size: 0.8rem;
-  line-height: 1.45;
-  margin: 0;
-}
-
-/* Secondary Cards Route Line */
-.float-card-route {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-top: 0.75rem;
-  padding-top: 0.65rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: 0.8rem;
-}
-.route-point {
-  color: #E2E8F0;
-  font-weight: 600;
-}
-.route-arrow {
-  color: #64748B;
-  font-size: 0.75rem;
-}
-.route-meta {
-  margin-left: auto;
-  font-size: 0.74rem;
-  color: #FF7A00;
-  font-weight: 600;
-}
-
-/* Primary Featured Ocean Card */
-.float-card-primary {
-  background: linear-gradient(145deg, rgba(20, 29, 48, 0.92) 0%, rgba(11, 17, 30, 0.96) 100%);
-  border: 1px solid rgba(255, 122, 0, 0.28);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  padding: 1.35rem 1.45rem;
-}
-
-/* Detailed Route Display in Primary Card */
-.hero-route-display {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 1.15rem 0 1.05rem 0;
-  padding: 0.85rem 1rem;
-  background: rgba(7, 11, 18, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-}
-.route-station {
-  display: flex;
-  flex-direction: column;
-}
-.station-code {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  letter-spacing: 0.05em;
-  line-height: 1.1;
-}
-.station-name {
-  font-size: 0.72rem;
-  color: #94A3B8;
-  margin-top: 0.15rem;
-}
-.route-transit-line {
-  flex: 1;
-  max-width: 170px;
-  margin: 0 1.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.45rem;
-}
-.transit-badge {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #FF7A00;
-  background: rgba(255, 122, 0, 0.1);
-  padding: 0.15rem 0.55rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 122, 0, 0.2);
-}
-.route-line-bar {
+.port-silhouette-stage {
   position: relative;
   width: 100%;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 9999px;
+  border-radius: 22px;
   overflow: hidden;
-}
-.route-line-fill {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #FF7A00 0%, #38BDF8 100%);
-  opacity: 0.4;
-}
-.route-line-pulse {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 35px;
-  background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
-  animation: transitBeam 2.2s infinite linear;
-}
-@keyframes transitBeam {
-  0% { left: -35px; }
-  100% { left: 100%; }
+  background: #060913;
+  border: 1px solid rgba(255, 122, 0, 0.22);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 35px rgba(255, 122, 0, 0.08);
 }
 
-/* Feature Specs Mini-Grid */
-.float-card-specs {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
-.spec-item {
-  display: flex;
-  flex-direction: column;
-}
-.spec-label {
-  font-size: 0.68rem;
-  color: #64748B;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-}
-.spec-val {
-  font-size: 0.78rem;
-  color: #F1F5F9;
-  font-weight: 700;
-  margin-top: 0.15rem;
-}
-.spec-divider {
-  width: 1px;
-  height: 22px;
-  background: rgba(255, 255, 255, 0.08);
+.port-scene-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 580 / 400;
+  pointer-events: none;
+  user-select: none;
 }
 
-/* Trust Metric Capsule Bar */
-.showcase-trust-strip {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  padding: 0.65rem 1rem;
-  background: rgba(15, 23, 42, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 9999px;
-  backdrop-filter: blur(12px);
-  margin-top: 0.25rem;
+/* Twinkling Stars in Twilight Sky */
+.twinkle-1 {
+  animation: starTwinkle 3s ease-in-out infinite alternate;
 }
-.trust-pill {
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: #94A3B8;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
+.twinkle-2 {
+  animation: starTwinkle 4.5s ease-in-out infinite alternate 1.5s;
 }
-.trust-pill i {
-  color: #FF7A00;
-}
-.trust-dot {
-  color: #475569;
-  font-size: 0.7rem;
+@keyframes starTwinkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.3); }
 }
 
-@keyframes pulseBeacon {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+/* Distant High Altitude Aircraft Glide */
+.distant-aircraft {
+  animation: aircraftGlide 24s linear infinite;
+  transform-origin: center;
+}
+@keyframes aircraftGlide {
+  0% { transform: translate(590px, 35px); }
+  100% { transform: translate(-80px, 15px); }
+}
+.aircraft-beacon {
+  animation: beaconPulse 1.2s infinite;
+}
+@keyframes beaconPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; filter: drop-shadow(0 0 4px #38BDF8); }
 }
 
-/* Responsive adjustments */
+/* Harbor Water Ripple Motions */
+.animated-water-wave.wave-back {
+  animation: waveMotionBack 8s ease-in-out infinite alternate;
+}
+.animated-water-wave.wave-front {
+  animation: waveMotionFront 6s ease-in-out infinite alternate;
+}
+@keyframes waveMotionBack {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-18px); }
+}
+@keyframes waveMotionFront {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(18px); }
+}
+
+/* Docked Cargo Vessel Gentle Ocean Sway */
+.docked-vessel {
+  animation: vesselSway 5.5s ease-in-out infinite alternate;
+  transform-origin: 180px 290px;
+}
+@keyframes vesselSway {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(2.5px) rotate(-0.3deg); }
+  100% { transform: translateY(0) rotate(0.2deg); }
+}
+
+/* Vessel Mast Navigation Beacons */
+.nav-beacon-mast {
+  animation: beaconPulseWhite 2s infinite;
+}
+.nav-beacon-port {
+  animation: beaconPulseRed 1.8s infinite;
+}
+@keyframes beaconPulseWhite {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; filter: drop-shadow(0 0 4px #FFFFFF); }
+}
+@keyframes beaconPulseRed {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; filter: drop-shadow(0 0 4px #EF4444); }
+}
+
+/* Crane Apex Aviation Warning Light */
+.crane-warning-beacon {
+  animation: beaconPulseRed 1.6s infinite;
+}
+
+/* STS Container Gantry Crane Trolley Horizontal Movement Across Boom */
+/* Sequence (12s total):
+   0% - 20%: Over ship hold (X=240px)
+   20% - 46%: Travels horizontally across boom to quayside (X=385px)
+   46% - 72%: Over quayside (X=385px)
+   72% - 94%: Travels back over boom to ship hold (X=240px)
+   94% - 100%: Holds over ship hold
+*/
+.crane-operating-trolley {
+  animation: trolleyMove 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+@keyframes trolleyMove {
+  0%, 20% { transform: translateX(240px); }
+  46%, 72% { transform: translateX(385px); }
+  94%, 100% { transform: translateX(240px); }
+}
+
+/* Crane Hoist Cables Vertical Lower & Lift Operation */
+/* Sequence (12s total):
+   0% - 6%: Lowered into ship hold (Y=42px)
+   6% - 18%: Hoists UP to clearance height (Y=0px)
+   18% - 46%: Held UP during transit across boom
+   46% - 56%: Lowers down to quayside level (Y=62px)
+   56% - 64%: Container unhooked at quay (Y=62px)
+   64% - 72%: Empty spreader hoists UP to clearance height (Y=0px)
+   72% - 94%: Held UP during transit back to ship
+   94% - 100%: Lowers back down into ship hold (Y=42px)
+*/
+.crane-hoist-cables {
+  animation: cableHoistMove 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+@keyframes cableHoistMove {
+  0%, 6% { transform: translateY(42px); }
+  18%, 46% { transform: translateY(0px); }
+  56%, 64% { transform: translateY(62px); }
+  72%, 94% { transform: translateY(0px); }
+  100% { transform: translateY(42px); }
+}
+
+/* Lifted Container Visibility: Stays visible until placed on dock, disappears on return trip */
+.lifted-container {
+  animation: containerCycle 12s steps(1) infinite;
+}
+@keyframes containerCycle {
+  0%, 62% { opacity: 1; }
+  63%, 98% { opacity: 0; }
+  99%, 100% { opacity: 1; }
+}
+
+/* Quayside Moving Terminal Truck (Yard Hustler Loop) */
+.quayside-truck {
+  animation: truckLoop 14s linear infinite;
+}
+@keyframes truckLoop {
+  0% { transform: translate(570px, 256px); }
+  42% { transform: translate(365px, 256px); }
+  58% { transform: translate(365px, 256px); }
+  100% { transform: translate(270px, 256px); opacity: 0.1; }
+}
+
+/* Responsive Rules */
 @media (max-width: 991px) {
   .services-hero-grid {
     grid-template-columns: 1fr;
     gap: 2.75rem;
   }
-  .services-hero-cards-showcase {
+  .services-hero-port-visual {
     max-width: 100%;
-  }
-  .float-card-air {
-    margin-left: 0;
-  }
-  .float-card-door {
-    margin-right: 0;
   }
 }
 
 @media (max-width: 576px) {
-  .float-card {
-    padding: 1rem 1.15rem;
-  }
-  .float-card-primary {
-    padding: 1.15rem 1.15rem;
-  }
-  .float-card-main-title {
-    font-size: 1.02rem;
-  }
-  .hero-route-display {
-    padding: 0.75rem;
-  }
-  .route-transit-line {
-    margin: 0 0.65rem;
-    max-width: 110px;
-  }
-  .station-code {
-    font-size: 1rem;
-  }
-  .spec-val {
-    font-size: 0.72rem;
-  }
-  .showcase-trust-strip {
-    border-radius: 14px;
-    padding: 0.6rem 0.8rem;
-    justify-content: flex-start;
-  }
-  .trust-dot {
-    display: none;
+  .port-silhouette-stage {
+    border-radius: 16px;
   }
 }
+
 

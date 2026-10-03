@@ -32,110 +32,214 @@ require_once __DIR__ . '/includes/header.php';
         </div>
       </div>
 
-      <!-- Right Column: Minimalist Floating Service Cards Showcase -->
-      <div class="services-hero-cards-showcase">
-        <!-- Ambient Warm Glow Background -->
-        <div class="cards-showcase-glow"></div>
+      <!-- Right Column: Silhouette Port Operations Animation (Pure Visual, No Text) -->
+      <div class="services-hero-port-visual" aria-hidden="true">
+        <div class="port-silhouette-stage">
+          <svg class="port-scene-svg" viewBox="0 0 580 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Dusk / Night Sky Gradient with Warm Horizon Glow -->
+              <linearGradient id="portSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#060913"/>
+                <stop offset="50%" stop-color="#0B1326"/>
+                <stop offset="78%" stop-color="#1A1833"/>
+                <stop offset="92%" stop-color="#381926"/>
+                <stop offset="100%" stop-color="#FF6A00"/>
+              </linearGradient>
 
-        <!-- Top Floating Card: Express Air Freight -->
-        <div class="float-card float-card-air" onclick="openQuoteModal('Air Freight')" role="button" tabindex="0" title="Book Express Air Cargo">
-          <div class="float-card-header">
-            <div class="float-icon-box air-icon-box">
-              <i class="fa-solid fa-plane-departure"></i>
-            </div>
-            <div class="float-card-title-group">
-              <div class="float-card-badge air-badge"><span class="badge-dot dot-blue"></span> Express 24–48h</div>
-              <h4 class="float-card-title">Air Cargo Express</h4>
-            </div>
-          </div>
-          <div class="float-card-route">
-            <span class="route-point">DXB / DWC</span>
-            <span class="route-arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
-            <span class="route-point">SEZ (Mahé)</span>
-            <span class="route-meta">Daily Flights</span>
-          </div>
-        </div>
+              <!-- Deep Ocean Water Gradient -->
+              <linearGradient id="portSeaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0A1426"/>
+                <stop offset="35%" stop-color="#060C17"/>
+                <stop offset="100%" stop-color="#020408"/>
+              </linearGradient>
 
-        <!-- Main Centerpiece Card: Ocean Freight & LCL Hub -->
-        <div class="float-card float-card-primary" onclick="openQuoteModal('Sea Freight')" role="button" tabindex="0" title="Book Weekly Ocean Freight">
-          <div class="float-card-header">
-            <div class="float-icon-box sea-icon-box">
-              <i class="fa-solid fa-ship"></i>
-            </div>
-            <div class="float-card-title-group">
-              <div class="float-card-top-row">
-                <div class="float-card-badge sea-badge"><span class="badge-dot dot-green pulse-beacon"></span> Weekly Direct Line</div>
-                <span class="float-card-tag">Core Service</span>
-              </div>
-              <h3 class="float-card-main-title">Ocean Freight & LCL Consolidation</h3>
-              <p class="float-card-desc">Scheduled containerized groupage & FCL shipping from UAE to Seychelles</p>
-            </div>
-          </div>
+              <!-- Crane Floodlight Conical Gradient -->
+              <linearGradient id="craneLightGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" stop-color="rgba(255, 235, 180, 0.35)"/>
+                <stop offset="40%" stop-color="rgba(255, 200, 120, 0.12)"/>
+                <stop offset="100%" stop-color="rgba(255, 122, 0, 0)"/>
+              </linearGradient>
 
-          <!-- Clean Route Progress Display -->
-          <div class="hero-route-display">
-            <div class="route-station">
-              <span class="station-code">DXB</span>
-              <span class="station-name">Jebel Ali Port</span>
-            </div>
-            <div class="route-transit-line">
-              <span class="transit-badge"><i class="fa-regular fa-clock me-1"></i> 8–10 Days</span>
-              <div class="route-line-bar">
-                <div class="route-line-fill"></div>
-                <span class="route-line-pulse"></span>
-              </div>
-            </div>
-            <div class="route-station text-end">
-              <span class="station-code">SEZ</span>
-              <span class="station-name">Port Victoria</span>
-            </div>
-          </div>
+              <!-- Truck Headlight Beam Gradient -->
+              <linearGradient id="truckLightGrad" x1="100%" y1="50%" x2="0%" y2="50%">
+                <stop offset="0%" stop-color="rgba(255, 255, 255, 0.4)"/>
+                <stop offset="100%" stop-color="rgba(255, 255, 255, 0)"/>
+              </linearGradient>
 
-          <!-- Feature Specs Mini Bar -->
-          <div class="float-card-specs">
-            <div class="spec-item">
-              <span class="spec-label">Sailing Cut-off</span>
-              <span class="spec-val">Every Friday</span>
-            </div>
-            <div class="spec-divider"></div>
-            <div class="spec-item">
-              <span class="spec-label">Customs</span>
-              <span class="spec-val">ASYCUDA Prepared</span>
-            </div>
-            <div class="spec-divider"></div>
-            <div class="spec-item">
-              <span class="spec-label">Warehousing</span>
-              <span class="spec-val">7 Days Free Hub</span>
-            </div>
-          </div>
-        </div>
+              <!-- Water Wave Reflection Gradient -->
+              <linearGradient id="waveGlintGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="transparent"/>
+                <stop offset="50%" stop-color="rgba(255, 122, 0, 0.25)"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </linearGradient>
+            </defs>
 
-        <!-- Bottom Floating Card: Door to Door -->
-        <div class="float-card float-card-door" onclick="openQuoteModal('Door to Door')" role="button" tabindex="0" title="Book Door to Door Logistics">
-          <div class="float-card-header">
-            <div class="float-icon-box door-icon-box">
-              <i class="fa-solid fa-truck-fast"></i>
-            </div>
-            <div class="float-card-title-group">
-              <div class="float-card-badge door-badge"><span class="badge-dot dot-orange"></span> Direct Delivery</div>
-              <h4 class="float-card-title">Full Door-to-Door Logistics</h4>
-            </div>
-          </div>
-          <div class="float-card-route">
-            <span class="route-point">UAE Supplier Pickup</span>
-            <span class="route-arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
-            <span class="route-point">Your Seychelles Door</span>
-            <span class="route-meta">Customs Handled</span>
-          </div>
-        </div>
+            <!-- Sky Background Layer -->
+            <rect width="580" height="400" fill="url(#portSkyGrad)" />
 
-        <!-- Trust Metric Capsule Bar -->
-        <div class="showcase-trust-strip">
-          <div class="trust-pill"><i class="fa-solid fa-shield-halved text-accent"></i> Full Marine Insurance</div>
-          <div class="trust-dot">•</div>
-          <div class="trust-pill"><i class="fa-solid fa-barcode text-accent"></i> Live Cargo Tracking</div>
-          <div class="trust-dot">•</div>
-          <div class="trust-pill"><i class="fa-solid fa-cubes-stacked text-accent"></i> CBM Optimization</div>
+            <!-- Twinkling Night Stars -->
+            <g class="stars-group">
+              <circle cx="45" cy="35" r="1" fill="#FFFFFF" opacity="0.6"/>
+              <circle cx="120" cy="55" r="1.2" fill="#FFFFFF" opacity="0.8" class="twinkle-1"/>
+              <circle cx="195" cy="28" r="0.9" fill="#FFFFFF" opacity="0.5"/>
+              <circle cx="280" cy="42" r="1.3" fill="#FFFFFF" opacity="0.7" class="twinkle-2"/>
+              <circle cx="360" cy="25" r="1" fill="#FFFFFF" opacity="0.6"/>
+              <circle cx="440" cy="48" r="1.2" fill="#FFFFFF" opacity="0.75" class="twinkle-1"/>
+              <circle cx="510" cy="30" r="0.9" fill="#FFFFFF" opacity="0.5"/>
+            </g>
+
+            <!-- Subtle Crescent Moon -->
+            <path d="M 505 45 A 14 14 0 0 0 522 62 A 16 16 0 1 1 505 45 Z" fill="#FFEAA7" opacity="0.65"/>
+
+            <!-- High Altitude Cargo Aircraft Silhouette (Glides across sky) -->
+            <g class="distant-aircraft">
+              <path d="M 0 0 L 22 4 L 38 4 L 46 1 L 52 1 L 44 6 L 46 10 L 41 8 L 34 6 L 16 6 L 8 16 L 3 16 L 8 6 L 0 6 Z" fill="#0B1324" transform="scale(0.8)"/>
+              <circle cx="28" cy="4" r="1.5" fill="#38BDF8" class="aircraft-beacon"/>
+            </g>
+
+            <!-- Distant Island Silhouette Peaks (Seychelles Archipelago Horizon) -->
+            <path d="M 0 252 Q 45 238 90 248 T 210 236 T 330 248 T 460 238 T 580 246 L 580 270 L 0 270 Z" fill="#0A1120" opacity="0.65"/>
+            <path d="M 0 260 Q 60 250 130 258 T 270 248 T 410 258 T 580 252 L 580 272 L 0 272 Z" fill="#0F172A"/>
+
+            <!-- Calm Ocean Water Area -->
+            <rect x="0" y="270" width="345" height="130" fill="url(#portSeaGrad)"/>
+
+            <!-- Animated Water Ripple Waves -->
+            <path class="animated-water-wave wave-back" d="M 0 275 Q 40 272 80 275 T 160 275 T 240 275 T 320 275 T 345 275 L 345 285 L 0 285 Z" fill="url(#waveGlintGrad)" opacity="0.4"/>
+            <path class="animated-water-wave wave-front" d="M 0 288 Q 50 284 100 288 T 200 288 T 300 288 T 345 288 L 345 300 L 0 300 Z" fill="url(#waveGlintGrad)" opacity="0.3"/>
+
+            <!-- Container Ship Group (Gently Sways / Bobs on Ocean) -->
+            <g class="docked-vessel">
+              <!-- Vessel Hull -->
+              <path d="M 28 296 L 45 264 L 320 264 L 320 304 Q 280 308 180 308 Q 70 308 28 296 Z" fill="#0C1424"/>
+              <!-- Red/Orange Waterline Stripe -->
+              <path d="M 32 295 L 320 295 L 320 299 L 36 299 Z" fill="#FF7A00" opacity="0.7"/>
+
+              <!-- Ship Accommodation & Bridge Superstructure (Aft) -->
+              <polygon points="50,264 50,212 96,212 96,264" fill="#0E182A"/>
+              <polygon points="54,212 54,196 92,196 92,212" fill="#142036"/>
+              <!-- Bridge Glass Windows (Warm Ambient Glow) -->
+              <rect x="58" y="200" width="30" height="4" rx="1" fill="#FEF08A" opacity="0.8"/>
+              <!-- Ship Radar Mast -->
+              <line x1="73" y1="196" x2="73" y2="175" stroke="#1E293B" stroke-width="2"/>
+              <line x1="68" y1="184" x2="78" y2="184" stroke="#1E293B" stroke-width="1.5"/>
+              <!-- Navigation Beacons (Red Port Light & Masthead White) -->
+              <circle cx="73" cy="173" r="1.5" fill="#FFFFFF" class="nav-beacon-mast"/>
+              <circle cx="50" cy="214" r="1.5" fill="#EF4444" class="nav-beacon-port"/>
+
+              <!-- Stacked Cargo Containers on Ship Deck -->
+              <!-- Tier 1 -->
+              <rect x="105" y="246" width="38" height="17" rx="1" fill="#1E293B"/>
+              <rect x="145" y="246" width="38" height="17" rx="1" fill="#C25E00"/>
+              <rect x="185" y="246" width="38" height="17" rx="1" fill="#0F172A"/>
+              <rect x="225" y="246" width="38" height="17" rx="1" fill="#0284C7"/>
+              <rect x="265" y="246" width="38" height="17" rx="1" fill="#1E293B"/>
+              <!-- Tier 2 -->
+              <rect x="107" y="228" width="38" height="17" rx="1" fill="#0E7490"/>
+              <rect x="147" y="228" width="38" height="17" rx="1" fill="#1E293B"/>
+              <rect x="187" y="228" width="38" height="17" rx="1" fill="#FF7A00"/>
+              <rect x="227" y="228" width="38" height="17" rx="1" fill="#1E293B"/>
+              <!-- Tier 3 (Partial Stack) -->
+              <rect x="149" y="210" width="38" height="17" rx="1" fill="#0F172A"/>
+              <rect x="189" y="210" width="38" height="17" rx="1" fill="#1E293B"/>
+            </g>
+
+            <!-- Port Quay / Berth Pier (Solid Dock Ground) -->
+            <polygon points="325,282 580,282 580,400 325,400" fill="#0B111F"/>
+            <!-- Quayside Edge Warning Stripe -->
+            <line x1="325" y1="282" x2="580" y2="282" stroke="#FF7A00" stroke-width="2.5" stroke-dasharray="14 7" stroke-opacity="0.75"/>
+
+            <!-- Mooring Bollards on Dock Edge -->
+            <rect x="330" y="278" width="5" height="5" rx="1" fill="#334155"/>
+            <rect x="420" y="278" width="5" height="5" rx="1" fill="#334155"/>
+            <!-- Mooring Lines to Ship -->
+            <line x1="316" y1="280" x2="332" y2="280" stroke="#64748B" stroke-width="1.2" stroke-opacity="0.6"/>
+
+            <!-- Quayside Container Stacks (Terminal Yard) -->
+            <g class="yard-container-stacks">
+              <!-- Bay 1 (Back) -->
+              <rect x="475" y="248" width="36" height="16" rx="1" fill="#141E30"/>
+              <rect x="513" y="248" width="36" height="16" rx="1" fill="#1E293B"/>
+              <rect x="475" y="231" width="36" height="16" rx="1" fill="#0F172A"/>
+              <rect x="513" y="231" width="36" height="16" rx="1" fill="#C25E00"/>
+              <rect x="495" y="214" width="36" height="16" rx="1" fill="#1E293B"/>
+
+              <!-- Bay 2 (Fore) -->
+              <rect x="535" y="265" width="40" height="16" rx="1" fill="#0284C7"/>
+              <rect x="535" y="248" width="40" height="16" rx="1" fill="#1E293B"/>
+            </g>
+
+            <!-- Quayside Moving Terminal Truck (Yard Hustler Hauling Container) -->
+            <g class="quayside-truck">
+              <!-- Container Chassis -->
+              <rect x="30" y="8" width="38" height="16" rx="1" fill="#FF7A00"/>
+              <rect x="26" y="23" width="44" height="3" fill="#1E293B"/>
+              <!-- Tractor Cab -->
+              <polygon points="12,14 26,14 26,26 12,26" fill="#0F172A"/>
+              <polygon points="12,14 18,14 18,19 12,19" fill="#FEF08A" opacity="0.7"/>
+              <!-- Truck Wheels -->
+              <circle cx="16" cy="27" r="3" fill="#334155"/>
+              <circle cx="34" cy="27" r="3" fill="#334155"/>
+              <circle cx="64" cy="27" r="3" fill="#334155"/>
+              <!-- Forward Headlight Beam -->
+              <polygon points="12,19 0,16 0,26 12,22" fill="url(#truckLightGrad)"/>
+            </g>
+
+            <!-- Heavy Ship-to-Shore (STS) Container Gantry Crane -->
+            <g class="sts-gantry-crane">
+              <!-- Crane Floodlight Light Cone -->
+              <polygon points="275,108 190,285 360,285" fill="url(#craneLightGrad)"/>
+
+              <!-- Crane Portal Legs on Quay -->
+              <!-- Sea-side Leg -->
+              <line x1="338" y1="282" x2="368" y2="108" stroke="#152034" stroke-width="4.5"/>
+              <line x1="348" y1="282" x2="370" y2="108" stroke="#1E293B" stroke-width="3"/>
+              <!-- Land-side Leg -->
+              <line x1="432" y1="282" x2="408" y2="108" stroke="#152034" stroke-width="4.5"/>
+              <line x1="422" y1="282" x2="406" y2="108" stroke="#1E293B" stroke-width="3"/>
+              <!-- Leg Cross Bracing -->
+              <line x1="345" y1="230" x2="425" y2="230" stroke="#1E293B" stroke-width="2"/>
+              <line x1="345" y1="230" x2="415" y2="160" stroke="#1E293B" stroke-width="1.5"/>
+              <line x1="425" y1="230" x2="355" y2="160" stroke="#1E293B" stroke-width="1.5"/>
+              <line x1="355" y1="160" x2="415" y2="160" stroke="#1E293B" stroke-width="2"/>
+
+              <!-- Apex Tower & Machinery House -->
+              <polygon points="364,108 388,48 412,108" fill="#101827"/>
+              <rect x="372" y="82" width="34" height="24" rx="2" fill="#172338"/>
+              <rect x="376" y="86" width="12" height="6" rx="1" fill="#FEF08A" opacity="0.8"/>
+
+              <!-- Top Apex Red Aviation Warning Light -->
+              <circle cx="388" cy="46" r="2" fill="#EF4444" class="crane-warning-beacon"/>
+
+              <!-- Horizontal Boom Arm (Extends over ship and back over land) -->
+              <!-- Waterside Boom (reaching over vessel to X: 165) -->
+              <line x1="165" y1="108" x2="475" y2="108" stroke="#1E2A42" stroke-width="5"/>
+              <line x1="165" y1="104" x2="475" y2="104" stroke="#0F172A" stroke-width="2"/>
+              <!-- Forestay Tension Cables -->
+              <line x1="388" y1="48" x2="225" y2="106" stroke="#475569" stroke-width="1.2"/>
+              <line x1="388" y1="48" x2="315" y2="106" stroke="#475569" stroke-width="1.2"/>
+              <line x1="388" y1="48" x2="455" y2="106" stroke="#475569" stroke-width="1.2"/>
+            </g>
+
+            <!-- Dynamic Animated Crane Trolley, Hoist Cables & Moving Container -->
+            <!-- Cycles through: Lower to ship hold -> Pick up container -> Hoist -> Travel to dock -> Lower to quay -> Return -->
+            <g class="crane-operating-trolley">
+              <!-- Trolley Unit on Boom Rail -->
+              <rect x="-10" y="100" width="20" height="7" rx="1" fill="#FF7A00"/>
+              <!-- Hoist Cables Group (Expands / Retracts) -->
+              <g class="crane-hoist-cables">
+                <line x1="-7" y1="107" x2="-7" y2="165" stroke="#94A3B8" stroke-width="0.9"/>
+                <line x1="7" y1="107" x2="7" y2="165" stroke="#94A3B8" stroke-width="0.9"/>
+                <!-- Container Spreader Frame -->
+                <rect x="-18" y="165" width="36" height="4" rx="1" fill="#F8FAFC"/>
+                <!-- Lifted 40ft Shipping Container -->
+                <rect x="-18" y="169" width="36" height="16" rx="1" fill="#FF7A00" class="lifted-container"/>
+                <!-- Container Corner Casts & End-Door Lines -->
+                <line x1="-18" y1="177" x2="18" y2="177" stroke="rgba(0,0,0,0.3)" stroke-width="0.8"/>
+                <line x1="0" y1="169" x2="0" y2="185" stroke="rgba(0,0,0,0.3)" stroke-width="0.8"/>
+              </g>
+            </g>
+          </svg>
         </div>
       </div>
     </div>

@@ -2358,54 +2358,52 @@ select.form-control-dark option {
 }
 
 /* ==========================================================================
-   Services Hero: Silhouette Port Operations Animation (Pure Visual, No Text)
+   Services Hero: Silhouette Port Operations Animation (Frameless & Blended)
    ========================================================================== */
 .services-hero-port-visual {
   position: relative;
   width: 100%;
-  max-width: 530px;
+  max-width: 580px;
   margin: 0 auto;
-}
-
-.port-silhouette-stage {
-  position: relative;
-  width: 100%;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #060913;
-  border: 1px solid rgba(255, 122, 0, 0.22);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 35px rgba(255, 122, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .port-scene-svg {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 580 / 400;
+  aspect-ratio: 620 / 420;
+  background: transparent;
   pointer-events: none;
   user-select: none;
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.45));
 }
 
-/* Twinkling Stars in Twilight Sky */
-.twinkle-1 {
-  animation: starTwinkle 3s ease-in-out infinite alternate;
+/* Twinkling Stars */
+.star-twinkle-1 {
+  animation: starTwinkle 3.2s ease-in-out infinite alternate;
 }
-.twinkle-2 {
-  animation: starTwinkle 4.5s ease-in-out infinite alternate 1.5s;
+.star-twinkle-2 {
+  animation: starTwinkle 4.5s ease-in-out infinite alternate 1.2s;
+}
+.star-twinkle-3 {
+  animation: starTwinkle 5.5s ease-in-out infinite alternate 2.4s;
 }
 @keyframes starTwinkle {
-  0% { opacity: 0.3; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.3); }
+  0% { opacity: 0.25; transform: scale(0.75); }
+  100% { opacity: 0.95; transform: scale(1.3); }
 }
 
-/* Distant High Altitude Aircraft Glide */
+/* High Altitude Cargo Plane Gliding Across High Sky */
 .distant-aircraft {
-  animation: aircraftGlide 24s linear infinite;
+  animation: aircraftGlide 26s linear infinite;
   transform-origin: center;
 }
 @keyframes aircraftGlide {
-  0% { transform: translate(590px, 35px); }
-  100% { transform: translate(-80px, 15px); }
+  0% { transform: translate(630px, 42px); }
+  100% { transform: translate(-90px, 18px); }
 }
 .aircraft-beacon {
   animation: beaconPulse 1.2s infinite;
@@ -2415,47 +2413,61 @@ select.form-control-dark option {
   50% { opacity: 1; filter: drop-shadow(0 0 4px #38BDF8); }
 }
 
-/* Harbor Water Ripple Motions */
+/* Liquid Ocean Water Ripples */
 .animated-water-wave.wave-back {
-  animation: waveMotionBack 8s ease-in-out infinite alternate;
+  animation: waveMotionBack 8.5s ease-in-out infinite alternate;
+}
+.animated-water-wave.wave-mid {
+  animation: waveMotionMid 7s ease-in-out infinite alternate;
 }
 .animated-water-wave.wave-front {
-  animation: waveMotionFront 6s ease-in-out infinite alternate;
+  animation: waveMotionFront 5.8s ease-in-out infinite alternate;
 }
 @keyframes waveMotionBack {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-18px); }
+  100% { transform: translateX(-22px); }
+}
+@keyframes waveMotionMid {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(16px); }
 }
 @keyframes waveMotionFront {
   0% { transform: translateX(0); }
-  100% { transform: translateX(18px); }
+  100% { transform: translateX(-14px); }
 }
 
-/* Docked Cargo Vessel Gentle Ocean Sway */
+/* Docked Container Vessel Natural Buoyancy Sway */
 .docked-vessel {
-  animation: vesselSway 5.5s ease-in-out infinite alternate;
-  transform-origin: 180px 290px;
+  animation: vesselHeave 6s ease-in-out infinite alternate;
+  transform-origin: 190px 300px;
 }
-@keyframes vesselSway {
+@keyframes vesselHeave {
   0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(2.5px) rotate(-0.3deg); }
-  100% { transform: translateY(0) rotate(0.2deg); }
+  50% { transform: translateY(2.8px) rotate(-0.35deg); }
+  100% { transform: translateY(0.5px) rotate(0.25deg); }
 }
 
 /* Vessel Mast Navigation Beacons */
 .nav-beacon-mast {
-  animation: beaconPulseWhite 2s infinite;
+  animation: beaconPulseWhite 2.2s infinite;
 }
 .nav-beacon-port {
   animation: beaconPulseRed 1.8s infinite;
 }
+.nav-beacon-starboard {
+  animation: beaconPulseGreen 1.8s infinite 0.9s;
+}
 @keyframes beaconPulseWhite {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; filter: drop-shadow(0 0 4px #FFFFFF); }
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; filter: drop-shadow(0 0 5px #FFFFFF); }
 }
 @keyframes beaconPulseRed {
   0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; filter: drop-shadow(0 0 4px #EF4444); }
+  50% { opacity: 1; filter: drop-shadow(0 0 5px #EF4444); }
+}
+@keyframes beaconPulseGreen {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; filter: drop-shadow(0 0 5px #10B981); }
 }
 
 /* Crane Apex Aviation Warning Light */
@@ -2463,64 +2475,47 @@ select.form-control-dark option {
   animation: beaconPulseRed 1.6s infinite;
 }
 
-/* STS Container Gantry Crane Trolley Horizontal Movement Across Boom */
-/* Sequence (12s total):
-   0% - 20%: Over ship hold (X=240px)
-   20% - 46%: Travels horizontally across boom to quayside (X=385px)
-   46% - 72%: Over quayside (X=385px)
-   72% - 94%: Travels back over boom to ship hold (X=240px)
-   94% - 100%: Holds over ship hold
-*/
+/* STS Container Gantry Crane Trolley Horizontal Boom Travel */
 .crane-operating-trolley {
-  animation: trolleyMove 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: trolleyTraverse 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
-@keyframes trolleyMove {
-  0%, 20% { transform: translateX(240px); }
-  46%, 72% { transform: translateX(385px); }
-  94%, 100% { transform: translateX(240px); }
+@keyframes trolleyTraverse {
+  0%, 20% { transform: translateX(238px); }
+  46%, 72% { transform: translateX(410px); }
+  94%, 100% { transform: translateX(238px); }
 }
 
 /* Crane Hoist Cables Vertical Lower & Lift Operation */
-/* Sequence (12s total):
-   0% - 6%: Lowered into ship hold (Y=42px)
-   6% - 18%: Hoists UP to clearance height (Y=0px)
-   18% - 46%: Held UP during transit across boom
-   46% - 56%: Lowers down to quayside level (Y=62px)
-   56% - 64%: Container unhooked at quay (Y=62px)
-   64% - 72%: Empty spreader hoists UP to clearance height (Y=0px)
-   72% - 94%: Held UP during transit back to ship
-   94% - 100%: Lowers back down into ship hold (Y=42px)
-*/
 .crane-hoist-cables {
-  animation: cableHoistMove 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: hoistCablesVertical 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
-@keyframes cableHoistMove {
-  0%, 6% { transform: translateY(42px); }
+@keyframes hoistCablesVertical {
+  0%, 6% { transform: translateY(44px); }
   18%, 46% { transform: translateY(0px); }
-  56%, 64% { transform: translateY(62px); }
+  56%, 64% { transform: translateY(68px); }
   72%, 94% { transform: translateY(0px); }
-  100% { transform: translateY(42px); }
+  100% { transform: translateY(44px); }
 }
 
-/* Lifted Container Visibility: Stays visible until placed on dock, disappears on return trip */
+/* Lifted Container Visibility */
 .lifted-container {
-  animation: containerCycle 12s steps(1) infinite;
+  animation: containerTransferCycle 12s steps(1) infinite;
 }
-@keyframes containerCycle {
+@keyframes containerTransferCycle {
   0%, 62% { opacity: 1; }
   63%, 98% { opacity: 0; }
   99%, 100% { opacity: 1; }
 }
 
-/* Quayside Moving Terminal Truck (Yard Hustler Loop) */
+/* Quayside Moving Terminal Truck */
 .quayside-truck {
-  animation: truckLoop 14s linear infinite;
+  animation: truckTraverseLoop 14s linear infinite;
 }
-@keyframes truckLoop {
-  0% { transform: translate(570px, 256px); }
-  42% { transform: translate(365px, 256px); }
-  58% { transform: translate(365px, 256px); }
-  100% { transform: translate(270px, 256px); opacity: 0.1; }
+@keyframes truckTraverseLoop {
+  0% { transform: translate(610px, 264px); }
+  40% { transform: translate(385px, 264px); }
+  58% { transform: translate(385px, 264px); }
+  100% { transform: translate(280px, 264px); opacity: 0; }
 }
 
 /* Responsive Rules */
@@ -2534,10 +2529,5 @@ select.form-control-dark option {
   }
 }
 
-@media (max-width: 576px) {
-  .port-silhouette-stage {
-    border-radius: 16px;
-  }
-}
 
 

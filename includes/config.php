@@ -15,12 +15,12 @@ define('COMPANY_EMAIL', 'sales@seychellescargo.com');
 define('FORM_TARGET_EMAIL', 'sales@seychellescargo.com');
 define('COMPANY_ADDRESS', 'Bur Dubai, Dubai, United Arab Emirates');
 
-// Social Media Links (Update with official company profile URLs)
-define('SOCIAL_FACEBOOK', 'https://www.facebook.com/seychellescargo');
-define('SOCIAL_INSTAGRAM', 'https://www.instagram.com/seychellescargo');
-define('SOCIAL_LINKEDIN', 'https://www.linkedin.com/company/seychelles-international-cargo');
-define('SOCIAL_TWITTER', 'https://twitter.com/seychellescargo');
-define('SOCIAL_YOUTUBE', 'https://www.youtube.com/@seychellescargo');
+// Social Media Links (Official company profile URLs)
+define('SOCIAL_FACEBOOK', 'https://www.facebook.com/seychellescargo/');
+define('SOCIAL_INSTAGRAM', 'https://www.instagram.com/seychellesintlcargo/');
+define('SOCIAL_LINKEDIN', 'https://www.linkedin.com/company/seychelles-international-cargo-llc');
+define('SOCIAL_TWITTER', '');
+define('SOCIAL_YOUTUBE', '');
 
 // Base URL detection
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || ($_SERVER['SERVER_PORT'] ?? 80) == 443) ? "https://" : "http://";

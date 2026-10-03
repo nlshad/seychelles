@@ -29,24 +29,36 @@ require_once __DIR__ . '/config.php';
           <div class="footer-social-wrap">
             <span class="footer-social-title"><i class="fa-solid fa-share-nodes text-accent"></i> Follow Us</span>
             <div class="footer-social-links">
-              <a href="<?php echo defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : 'https://www.facebook.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn facebook" title="Follow us on Facebook" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="<?php echo defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : 'https://www.instagram.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn instagram" title="Follow us on Instagram" aria-label="Instagram">
+              <?php if (defined('SOCIAL_INSTAGRAM') && !empty(SOCIAL_INSTAGRAM)): ?>
+              <a href="<?php echo SOCIAL_INSTAGRAM; ?>" target="_blank" rel="noopener" class="footer-social-btn instagram" title="Follow us on Instagram" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
               </a>
-              <a href="<?php echo defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : 'https://www.linkedin.com/company/seychelles-international-cargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn linkedin" title="Connect on LinkedIn" aria-label="LinkedIn">
+              <?php endif; ?>
+              <?php if (defined('SOCIAL_FACEBOOK') && !empty(SOCIAL_FACEBOOK)): ?>
+              <a href="<?php echo SOCIAL_FACEBOOK; ?>" target="_blank" rel="noopener" class="footer-social-btn facebook" title="Follow us on Facebook" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <?php endif; ?>
+              <?php if (defined('SOCIAL_LINKEDIN') && !empty(SOCIAL_LINKEDIN)): ?>
+              <a href="<?php echo SOCIAL_LINKEDIN; ?>" target="_blank" rel="noopener" class="footer-social-btn linkedin" title="Connect on LinkedIn" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
-              <a href="<?php echo defined('COMPANY_WHATSAPP_LINK') ? COMPANY_WHATSAPP_LINK : 'https://wa.me/971552038001'; ?>" target="_blank" rel="noopener" class="footer-social-btn whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp">
+              <?php endif; ?>
+              <?php if (defined('COMPANY_WHATSAPP_LINK') && !empty(COMPANY_WHATSAPP_LINK)): ?>
+              <a href="<?php echo COMPANY_WHATSAPP_LINK; ?>" target="_blank" rel="noopener" class="footer-social-btn whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="<?php echo defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : 'https://twitter.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn twitter" title="Follow us on X (Twitter)" aria-label="Twitter">
+              <?php endif; ?>
+              <?php if (defined('SOCIAL_TWITTER') && !empty(SOCIAL_TWITTER)): ?>
+              <a href="<?php echo SOCIAL_TWITTER; ?>" target="_blank" rel="noopener" class="footer-social-btn twitter" title="Follow us on X (Twitter)" aria-label="Twitter">
                 <i class="fa-brands fa-x-twitter"></i>
               </a>
-              <a href="<?php echo defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : 'https://www.youtube.com/@seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-social-btn youtube" title="Watch on YouTube" aria-label="YouTube">
+              <?php endif; ?>
+              <?php if (defined('SOCIAL_YOUTUBE') && !empty(SOCIAL_YOUTUBE)): ?>
+              <a href="<?php echo SOCIAL_YOUTUBE; ?>" target="_blank" rel="noopener" class="footer-social-btn youtube" title="Watch on YouTube" aria-label="YouTube">
                 <i class="fa-brands fa-youtube"></i>
               </a>
+              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -121,12 +133,24 @@ require_once __DIR__ . '/config.php';
         </div>
         <div class="footer-bottom-social">
           <span style="color:#64748B; font-size:0.8rem; margin-right:0.35rem;">Connect:</span>
-          <a href="<?php echo defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : 'https://www.facebook.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="<?php echo defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : 'https://www.instagram.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="<?php echo defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : 'https://www.linkedin.com/company/seychelles-international-cargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="<?php echo defined('COMPANY_WHATSAPP_LINK') ? COMPANY_WHATSAPP_LINK : 'https://wa.me/971552038001'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="<?php echo defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : 'https://twitter.com/seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="X (Twitter)" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="<?php echo defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : 'https://www.youtube.com/@seychellescargo'; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <?php if (defined('SOCIAL_INSTAGRAM') && !empty(SOCIAL_INSTAGRAM)): ?>
+          <a href="<?php echo SOCIAL_INSTAGRAM; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <?php endif; ?>
+          <?php if (defined('SOCIAL_FACEBOOK') && !empty(SOCIAL_FACEBOOK)): ?>
+          <a href="<?php echo SOCIAL_FACEBOOK; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <?php endif; ?>
+          <?php if (defined('SOCIAL_LINKEDIN') && !empty(SOCIAL_LINKEDIN)): ?>
+          <a href="<?php echo SOCIAL_LINKEDIN; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <?php endif; ?>
+          <?php if (defined('COMPANY_WHATSAPP_LINK') && !empty(COMPANY_WHATSAPP_LINK)): ?>
+          <a href="<?php echo COMPANY_WHATSAPP_LINK; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <?php endif; ?>
+          <?php if (defined('SOCIAL_TWITTER') && !empty(SOCIAL_TWITTER)): ?>
+          <a href="<?php echo SOCIAL_TWITTER; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="X (Twitter)" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <?php endif; ?>
+          <?php if (defined('SOCIAL_YOUTUBE') && !empty(SOCIAL_YOUTUBE)): ?>
+          <a href="<?php echo SOCIAL_YOUTUBE; ?>" target="_blank" rel="noopener" class="footer-bottom-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
